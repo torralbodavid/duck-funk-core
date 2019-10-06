@@ -14,14 +14,15 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
+
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'duck-funk-core');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'duck-funk-core');
+        $this->loadViewsFrom(__DIR__.'/resources/views/'.config('duck-funk.template'), 'duck-funk-core');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('duck-funk-core.php'),
+                __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
             ], 'config');
 
             // Publishing the views.
@@ -50,7 +51,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk-core');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
 
         // Register the main class to use with the facade
         $this->app->singleton('duck-funk-core', function () {
