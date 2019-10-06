@@ -8,7 +8,7 @@ return [
     /*
      * The route the CMS core will get to build the website.
      */
-    'route' => "/",
+    'route' => '/',
 
     /*
      * The view template the CMS core will get to build the website.
@@ -16,5 +16,5 @@ return [
      * As default, Duck Funk Core will get fuse template.
      */
 
-    'template' => "fuse"
+    'template' => 'fuse',
 ];
