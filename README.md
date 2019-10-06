@@ -1,11 +1,11 @@
-# Very short description of the package
+# Duck Funk Core
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
 [![Build Status](https://img.shields.io/travis/torralbodavid/duck-funk-core/master.svg?style=flat-square)](https://travis-ci.org/torralbodavid/duck-funk-core)
 [![Quality Score](https://img.shields.io/scrutinizer/g/torralbodavid/duck-funk-core.svg?style=flat-square)](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core)
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This is the core of the Duck Funk CMS for Arcturus emulator.
 
 ## Installation
 
