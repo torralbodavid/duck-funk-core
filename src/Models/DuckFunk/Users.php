@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Models\DuckFunk;
-
 
 use Illuminate\Database\Eloquent\Model;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\Users as ArcturusUsers;
