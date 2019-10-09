@@ -13,6 +13,6 @@ Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\Duc
     });
 });
 
-Route::fallback(function() {
+Route::fallback(function () {
     return 'Hm, why did you land here somehow?';
 });
