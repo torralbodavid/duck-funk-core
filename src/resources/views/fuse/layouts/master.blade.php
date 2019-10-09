@@ -14,7 +14,6 @@
   @include('duck-funk-core::layouts.header')
     <div class="wrapper">
         <div class="container-fluid">
-        @include('duck-funk-core::layouts.settings')
           @yield('content')
         </div>
     </div>
