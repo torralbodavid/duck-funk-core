@@ -104,7 +104,7 @@
                                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings"></i> Settings</a>
                                     <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline"></i> Lock screen</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item text-danger" href="#"><i class="mdi mdi-power text-danger"></i> Logout</a>
+                                    <a class="dropdown-item text-danger" href="{{ route('logout') }}"><i class="mdi mdi-power text-danger"></i> Logout</a>
                                 </div>
                             </div>
                         </li>
@@ -342,7 +342,7 @@
                 <div class="page-title-box">
                     <div class="row align-items-center">
                         <div class="col-sm-6">
-                            <h4 class="page-title">Blank Page</h4>
+                            <h4 class="page-title">{{ auth()->user()->name }}</h4>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0);"><i class="mdi mdi-home-outline"></i></a></li>
                                 <li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages </a></li>
