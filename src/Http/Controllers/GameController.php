@@ -13,4 +13,9 @@ class GameController extends Controller
     {
         return 'DuckFunk-'.Str::random(25).'-SSO';
     }
+
+    public function showHotel()
+    {
+        dd("show client");
+    }
 }

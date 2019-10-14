@@ -6,6 +6,11 @@
 return [
 
     /*
+     * The hotel name
+     */
+    'name' => 'Duck Funk',
+
+    /*
      * The route the CMS core will get to build the website.
      */
     'route' => '/',

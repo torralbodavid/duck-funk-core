@@ -3,6 +3,7 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,15 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views/'.config('duck-funk.template'), 'duck-funk-core');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
+
+        $this->app['config']->set('auth.providers.avatars', [
+            'driver' => 'eloquent',
+            'model' => Users::class,
+        ]);
+        $this->app['config']->set('auth.guards.avatars', [
+            'driver' => 'session',
+            'provider' => 'avatars',
+        ]);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
