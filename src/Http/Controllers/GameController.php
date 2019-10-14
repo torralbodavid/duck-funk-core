@@ -2,10 +2,8 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
-use Torralbodavid\DuckFunkCore\DuckFunkCore;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
+use Illuminate\Routing\Controller;
 
 class GameController extends Controller
 {
@@ -16,6 +14,6 @@ class GameController extends Controller
 
     public function showHotel()
     {
-        dd("show client");
+        dd('show client');
     }
 }

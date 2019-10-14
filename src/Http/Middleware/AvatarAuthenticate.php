@@ -1,9 +1,8 @@
 <?php
 
 namespace Torralbodavid\DuckFunkCore\Http\Middleware;
-use Closure;
-use Illuminate\Auth\AuthenticationException;
 
+use Closure;
 
 class AvatarAuthenticate
 {
