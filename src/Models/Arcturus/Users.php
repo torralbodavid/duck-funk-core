@@ -3,8 +3,8 @@
 namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Carbon\Carbon;
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 class Users extends Model implements Authenticatable
 {
@@ -27,7 +27,8 @@ class Users extends Model implements Authenticatable
         return $this->hasMany(Bans::class, 'id', 'user_id');
     }
 
-    public function getLastLogin(){
+    public function getLastLogin()
+    {
         return Carbon::parse($this->last_login)->diffForHumans();
     }
 
