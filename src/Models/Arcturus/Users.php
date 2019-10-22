@@ -92,5 +92,4 @@ class Users extends Model implements Authenticatable
     {
         return auth()->user()->getRememberTokenName();
     }
-
 }
