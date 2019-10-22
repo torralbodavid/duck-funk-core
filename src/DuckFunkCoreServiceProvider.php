@@ -3,7 +3,6 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
