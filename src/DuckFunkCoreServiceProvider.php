@@ -21,15 +21,6 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
 
-        $this->app['config']->set('auth.providers.avatars', [
-            'driver' => 'eloquent',
-            'model' => Users::class,
-        ]);
-        $this->app['config']->set('auth.guards.avatars', [
-            'driver' => 'session',
-            'provider' => 'avatars',
-        ]);
-
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('duck-funk.php'),

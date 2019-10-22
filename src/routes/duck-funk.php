@@ -29,12 +29,7 @@ Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\Duc
             Route::get('login', 'AvatarLoginController@login')->name('avatarLogin');
         });
 
-        /*
-         * Those routes user will see if there is an avatar selected
-         */
-        Route::group(['middleware' => \Torralbodavid\DuckFunkCore\Http\Middleware\AvatarAuthenticate::class], function () {
-            Route::get('hotel', 'GameController@showHotel')->name('hotel');
-        });
+        Route::get('hotel', 'GameController@showHotel')->name('hotel');
     });
 });
 
