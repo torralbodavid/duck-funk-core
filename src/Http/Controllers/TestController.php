@@ -6,6 +6,6 @@ class TestController
 {
     public function hello()
     {
-        return 'hello';
+        return GameController::generateSSO();
     }
 }
