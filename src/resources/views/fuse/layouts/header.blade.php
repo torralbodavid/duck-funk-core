@@ -95,7 +95,7 @@
                         <li class="dropdown notification-list list-inline-item">
                             <div class="dropdown notification-list nav-pro-img">
                                 <a class="dropdown-toggle nav-link arrow-none nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                    <img src="assets/images/users/user-4.jpg" alt="user" class="rounded-circle">
+                                    <img src="{{ config('duck-funk.hotel') }}habbo-imaging/avatarimage?figure={{ auth()->user()->look }}&direction=3&head_direction=4&gesture=sml&action=&size=n&headonly=1" alt="user" class="rounded-circle">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                     <!-- item-->
