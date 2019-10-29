@@ -4,5 +4,8 @@ namespace Torralbodavid\DuckFunkCore;
 
 class DuckFunkCore
 {
-    // Build your next great package.
+    /*
+     * Package version
+     */
+    const PACKAGE_VERSION = '0.0.1';
 }

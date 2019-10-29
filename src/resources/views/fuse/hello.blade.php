@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
 <div class="col-sm-6">
-    <h4 class="page-title">Blank page</h4>
+    <h4 class="page-title">{{ auth()->user() }}</h4>
     <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
          <li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages</a></li>
@@ -20,7 +20,7 @@
         <div class="card">
             <div class="card-body">
                 <div style="min-height: 300px;">
-                    <p>Your content here</p>
+                    <p>Your content here test</p>
                 </div>
             </div>
         </div>

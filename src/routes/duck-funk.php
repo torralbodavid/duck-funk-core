@@ -6,13 +6,33 @@ use Illuminate\Support\Facades\Route;
  *
  */
 
+/*
+ * All routes inside here requires a login
+ */
 Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
+    /*
+     * Check where we start to construct the routes based in the config route param
+     */
     Route::prefix(config('duck-funk.route'))->group(function () {
-        Route::get('duck', 'DuckController')->name('duck');
+
+        /*
+         * Those routes user will see if has logged in but has no avatar selected
+         */
+        Route::get('home', 'DuckController')->name('home');
         Route::get('hello', 'TestController@hello')->name('hello');
+
+        /*
+         * Avatar settings
+         */
+        Route::prefix('avatars')->group(function () {
+            Route::get('select', 'AvatarController@select')->name('avatarSelect');
+            Route::get('login', 'AvatarLoginController@login')->name('avatarLogin');
+        });
+
+        Route::get('hotel', 'GameController@showHotel')->name('hotel');
     });
 });
 
 Route::fallback(function () {
-    return 'Hm, why did you land here somehow?';
+    abort(404, 'Page not found');
 });
