@@ -34,5 +34,5 @@ Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\Duc
 });
 
 Route::fallback(function () {
-    return 'Hm, why did you land here somehow?';
+    abort(404, 'Page not found');
 });
