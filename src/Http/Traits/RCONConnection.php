@@ -6,8 +6,7 @@ use Illuminate\Http\JsonResponse;
 use Torralbodavid\DuckFunkCore\Http\RCON\RCONSocket;
 
 /**
- * Trait RCONConnection
- * @package Torralbodavid\DuckFunkCore\Http\Traits
+ * Trait RCONConnection.
  */
 trait RCONConnection
 {
@@ -29,7 +28,7 @@ trait RCONConnection
     }
 
     /**
-     * Change room owner
+     * Change room owner.
      * @param int $room_id The id of the room to change.
      * @param int $user_id The new user id of the room.
      * @param string $username The new owner name of the room.
@@ -48,7 +47,7 @@ trait RCONConnection
     }
 
     /**
-     * Create mod ticket
+     * Create mod ticket.
      * @param string $message The message that was included in the report.
      * @param int $reported_id User id of the reported player.
      * @param int $reported_room_id The room that was reported.
@@ -79,7 +78,7 @@ trait RCONConnection
     }
 
     /**
-     * Disconnect a user
+     * Disconnect a user.
      * @param string $username Optional user id of the player to disconnect.
      * @param int|null $user_id Optional username of the player to disconnect.
      * @return JsonResponse
@@ -97,12 +96,12 @@ trait RCONConnection
     }
 
     /**
-     * Execute a command through user id
-     * @param String $command Complete string including the semicolon at the start for the command to execute.
+     * Execute a command through user id.
+     * @param string $command Complete string including the semicolon at the start for the command to execute.
      * @param int $user_id User id of the player to execute the command for.
      * @return JsonResponse
      */
-    public static function executeCommand(String $command, int $user_id)
+    public static function executeCommand(string $command, int $user_id)
     {
         return (new RCONSocket([
             'key' => 'executeCommand',
@@ -114,7 +113,7 @@ trait RCONConnection
     }
 
     /**
-     * Forward an user into a selected room
+     * Forward an user into a selected room.
      * @param int $room_id Room id of the room to forward the player to.
      * @param int $user_id User id of the player to forward.
      * @return JsonResponse
@@ -131,7 +130,7 @@ trait RCONConnection
     }
 
     /**
-     * Send a friend request
+     * Send a friend request.
      * @param int $target_id User id of the player that receives a friend request.
      * @param int $user_id User id of the player that creates a friend request.
      * @return JsonResponse
@@ -148,7 +147,7 @@ trait RCONConnection
     }
 
     /**
-     * Give a badge to an user
+     * Give a badge to an user.
      * @param string $badge Badge code of the badge that the player will receive.
      * @param int $user_id User id of the player that receives a badge.
      * @return JsonResponse
@@ -165,7 +164,7 @@ trait RCONConnection
     }
 
     /**
-     * Give clothes to an user
+     * Give clothes to an user.
      * @param int $clothing_id The clothing ID
      * @param int $user_id The id of the user to alert.
      * @return JsonResponse
@@ -182,7 +181,7 @@ trait RCONConnection
     }
 
     /**
-     * Give credits to an user
+     * Give credits to an user.
      * @param int $credits Amount of credits that the player will be awarded.
      * @param int $user_id User id of the player that will receive credits.
      * @return JsonResponse
@@ -199,7 +198,7 @@ trait RCONConnection
     }
 
     /**
-     * Give pixels to an user
+     * Give pixels to an user.
      * @param int $pixels Amount of pixels that the player will be awarded.
      * @param int $user_id User id of the player that will receive the pixels.
      * @return JsonResponse
@@ -234,7 +233,7 @@ trait RCONConnection
     }
 
     /**
-     * Give respects to someone
+     * Give respects to someone.
      * @param int $daily_respects Amount that will be added to the current daily respect points.
      * @param int $respect_given Amount that will be counted towards given respect statistic.
      * @param int $respect_received Amount that will be counted towards received respect statistic.
@@ -255,17 +254,17 @@ trait RCONConnection
     }
 
     /**
-     * Send an alert to everyone online
-     * @param String $message The message to display to all users online.
-     * @param String $url The link to include.
+     * Send an alert to everyone online.
+     * @param string $message The message to display to all users online.
+     * @param string $url The link to include.
      * @return JsonResponse
      */
-    public static function hotelAlert(String $message, String $url = null)
+    public static function hotelAlert(string $message, string $url = null)
     {
         $response = [
             'key' => 'hotelAlert',
             'data' => [
-                'message' => $message
+                'message' => $message,
             ],
         ];
 
@@ -275,7 +274,7 @@ trait RCONConnection
     }
 
     /**
-     * Ignore an user
+     * Ignore an user.
      * @param int $target_id User id of the player that will be ignored
      * @param int $user_id User id of the player that will ignore target_id.
      * @return JsonResponse
@@ -292,7 +291,7 @@ trait RCONConnection
     }
 
     /**
-     * Send an image alert to an user
+     * Send an image alert to an user.
      * @param string $bubble_key Key of the bubble alert to define extra parameters in the external_flash_texts.
      * @param string $display_type Display type
      * @param string $image Image to display.
@@ -321,7 +320,7 @@ trait RCONConnection
     }
 
     /**
-     * Send an alert to all online users
+     * Send an alert to all online users.
      * @param string $bubble_key Key of the bubble alert to define extra parameters in the external_flash_texts.
      * @param string $display_type Display type
      * @param string $image Image to display.
@@ -342,13 +341,13 @@ trait RCONConnection
                 'message' => $message,
                 'title' => $title,
                 'url' => $url,
-                'url_message' => $url_message
+                'url_message' => $url_message,
             ],
         ]))->run();
     }
 
     /**
-     * Add progress to an user achievement
+     * Add progress to an user achievement.
      * @param int $achievement_id ID of the achievement.
      * @param int $progress Amount to progress.
      * @param int $user_id User id of the player that needs an achievement progress.
@@ -367,7 +366,7 @@ trait RCONConnection
     }
 
     /**
-     * Add a room event into a room
+     * Add a room event into a room.
      * @param string $message Message that will have the room event
      * @param int $room_id Room id of the room that will have the event
      * @param int $user_id
@@ -386,7 +385,7 @@ trait RCONConnection
     }
 
     /**
-     * Send a gift to an user
+     * Send a gift to an user.
      * @param int $itemid Item id to gift.
      * @param string $message Message to include in the gift.
      * @param int $user_id User id of the player that receives a gift.
@@ -405,7 +404,7 @@ trait RCONConnection
     }
 
     /**
-     * Send room bundle to an user
+     * Send room bundle to an user.
      * @param int $catalog_page Id of the catalog page to buy.
      * @param int $user_id User id of the player that will receive a room bundle.
      * @return JsonResponse
@@ -422,12 +421,12 @@ trait RCONConnection
     }
 
     /**
-     * Change the motto of an user
-     * @param String $motto The motto to set.
+     * Change the motto of an user.
+     * @param string $motto The motto to set.
      * @param int $user_id The user id to change the motto for.
      * @return JsonResponse
      */
-    public static function setMotto(String $motto, int $user_id)
+    public static function setMotto(string $motto, int $user_id)
     {
         return (new RCONSocket([
             'key' => 'setMotto',
@@ -439,7 +438,7 @@ trait RCONConnection
     }
 
     /**
-     * Update an user rank
+     * Update an user rank.
      * @param int $rank ID of the rank to set.
      * @param int $user_id User id of the player to set the rank for.
      * @return JsonResponse
@@ -464,13 +463,13 @@ trait RCONConnection
         return (new RCONSocket([
             'key' => 'staffAlert',
             'data' => [
-                'message' => $message
+                'message' => $message,
             ],
         ]))->run();
     }
 
     /**
-     * Follow an user to another room
+     * Follow an user to another room.
      * @param int $follow_id The user to stalk to.
      * @param int $user_id User id of the player to stalk to another user.
      * @return JsonResponse
@@ -515,7 +514,7 @@ trait RCONConnection
         return (new RCONSocket([
             'key' => 'updatecatalog',
             'data' => [
-                'message' => $message
+                'message' => $message,
             ],
         ]))->run();
     }
@@ -526,18 +525,18 @@ trait RCONConnection
      * @param int $block_following Optional: Block following in the hotel.
      * @param int $block_friendrequests Optional: Block friendrequests in the hotel.
      * @param int $block_roominvites Optional: Block receiving room invites in the hotel.
-     * @param String $look Optional: Look of the player.
+     * @param string $look Optional: Look of the player.
      * @param int $old_chat Optional: Use new chat.
      * @param int $user_id User id of the player to update.
      * @return JsonResponse
      */
-    public static function updateUser(int $achievement_score, int $block_camera_follow, int $block_following, int $block_friendrequests, int $block_roominvites, String $look, int $old_chat, int $user_id)
+    public static function updateUser(int $achievement_score, int $block_camera_follow, int $block_following, int $block_friendrequests, int $block_roominvites, string $look, int $old_chat, int $user_id)
     {
         $response = [
             'key' => 'updateUser',
             'data' => [
                 'achievement_score' => $achievement_score,
-                'user_id' => $user_id
+                'user_id' => $user_id,
             ],
         ];
 
@@ -560,7 +559,7 @@ trait RCONConnection
         return (new RCONSocket([
             'key' => 'updateWordFilter',
             'data' => [
-                'message' => $message
+                'message' => $message,
             ],
         ]))->run();
     }
