@@ -4,8 +4,8 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
-use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
+use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
 
 class GameController extends Controller
 {
@@ -23,6 +23,5 @@ class GameController extends Controller
     public function showHotel()
     {
         return view('duck-funk-core::hotel.hotel', ['sso' => $this::generateSSO()]);
-
     }
 }
