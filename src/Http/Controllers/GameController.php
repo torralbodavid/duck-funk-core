@@ -2,10 +2,10 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
-use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
+use Illuminate\Support\Str;
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
 
 class GameController extends Controller
 {
