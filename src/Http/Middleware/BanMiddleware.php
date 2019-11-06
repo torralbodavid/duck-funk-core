@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Http\Middleware;
 
 use Carbon\Carbon;
@@ -20,11 +19,12 @@ class BanMiddleware
         $this->currentTimestamp = Carbon::now()->timestamp;
         $this->banRoute = Route::current()->getAction('as') == 'ban';
 
-        if($this->accountBan()){
-            if ($this->banRoute){
+        if ($this->accountBan()) {
+            if ($this->banRoute) {
                 //Auth::logout();
 
                 app()->instance('expulsion', $this->ban);
+
                 return $next($request);
             } else {
                 return redirect()->route('ban');
@@ -34,7 +34,6 @@ class BanMiddleware
         }
 
         return $next($request);
-
     }
 
     /*
@@ -42,7 +41,7 @@ class BanMiddleware
      */
     private function accountBan(): bool
     {
-        if (Auth::check()){
+        if (Auth::check()) {
             $ban = Bans::with('user')
                 ->where('user_id', auth()->id())
                 ->where('ban_expire', '>', $this->currentTimestamp)
@@ -51,13 +50,13 @@ class BanMiddleware
                 ->sortByDesc('ban_expire')
                 ->first();
 
-            if (! is_null($ban)){
+            if (! is_null($ban)) {
                 $this->ban = $ban;
+
                 return true;
             }
         }
 
         return false;
     }
-
 }

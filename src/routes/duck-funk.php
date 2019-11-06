@@ -20,7 +20,7 @@ Route::group(['middleware' => ['web', 'auth', \Torralbodavid\DuckFunkCore\Http\M
          */
         Route::get('home', 'DuckController')->name('home');
         Route::get('hello', 'TestController@hello')->name('hello');
-        Route::get('expulsion', function (){
+        Route::get('expulsion', function () {
             return view('duck-funk-core::ban');
         })->name('ban');
 
