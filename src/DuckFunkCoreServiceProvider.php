@@ -31,9 +31,9 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
             ], 'views');*/
 
             // Publishing assets.
-              /*$this->publishes([
-                __DIR__.'/resources/assets' => public_path('vendor/duck-funk-core'),
-            ], 'assets');*/
+              $this->publishes([
+                __DIR__.'/resources/assets/images' => public_path('vendor/duck-funk-core/images'),
+            ], 'images');
 
             // Publishing the translation files.
             /*$this->publishes([
