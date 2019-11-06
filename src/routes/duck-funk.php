@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 /*
  * All routes inside here requires a login
  */
-Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
+Route::group(['middleware' => ['web', 'auth', \Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware::class], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
     /*
      * Check where we start to construct the routes based in the config route param
      */
@@ -20,6 +20,9 @@ Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Torralbodavid\Duc
          */
         Route::get('home', 'DuckController')->name('home');
         Route::get('hello', 'TestController@hello')->name('hello');
+        Route::get('expulsion', function (){
+            return view('duck-funk-core::ban');
+        })->name('ban');
 
         /*
          * Avatar settings
