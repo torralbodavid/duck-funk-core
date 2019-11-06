@@ -4,8 +4,8 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class GameController extends Controller
 {
