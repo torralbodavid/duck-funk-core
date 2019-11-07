@@ -6,6 +6,7 @@
 @section('content')
     @php
         $ban = resolve('expulsion');
+        $user_session = resolve('user_session');
         $banExpire = \Carbon\Carbon::createFromTimestamp($ban->ban_expire);
     @endphp
     <div class="pt-5 my-5">
@@ -15,8 +16,8 @@
                     <div class="card maintenance-box shadow-none">
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <h3>{{ $ban->user->username }}, has sido expulsado</h3>
-                                <p>Por favor, lee las notas a continuación.</p>
+                                <h3>{{ $user_session }}, has sido expulsado</h3>
+                                <p>Tu sesión en el hotel ha finalizado. Puedes saber más acerca de tu expulsión a continuación.</p>
                             </div>
                         </div>
                     </div>
