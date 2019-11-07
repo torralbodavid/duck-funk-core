@@ -1,8 +1,6 @@
 # Duck Funk Core
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
-[![Build Status](https://img.shields.io/travis/torralbodavid/duck-funk-core/master.svg?style=flat-square)](https://travis-ci.org/torralbodavid/duck-funk-core)
-[![Quality Score](https://img.shields.io/scrutinizer/g/torralbodavid/duck-funk-core.svg?style=flat-square)](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core)
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
 
 This is the core of the Duck Funk CMS for Arcturus emulator.
@@ -13,18 +11,6 @@ You can install the package via composer:
 
 ```bash
 composer require torralbodavid/duck-funk-core
-```
-
-## Usage
-
-``` php
-// Usage description here
-```
-
-### Testing
-
-``` bash
-composer test
 ```
 
 ### Changelog
