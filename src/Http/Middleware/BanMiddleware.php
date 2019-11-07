@@ -66,7 +66,6 @@ class BanMiddleware
      */
     private function ipBan(): bool
     {
-
         if (Auth::check()) {
             $ban = Bans::with('user')
                 ->where('ip', request()->ip())
