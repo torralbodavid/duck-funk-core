@@ -2,6 +2,34 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.0.2 - 2019-11-13
+
+### Added
+- Ban middleware
+- New Habbo based icons released. Those can be found at `src/resources/assets/scss/_sprites.scss`.
+   #### Mid Icon usage
+   
+   	```
+        <i class="retro-mid retro-mid-{slug}"></i>
+    ```
+     
+  #### Icon usage
+  
+  	```
+        <i class="retro-mid retro-{slug}"></i>
+    ```
+  
+  #### Examples:
+
+	```
+    <i class="retro-mid retro-mid-alert_triangle"></i>
+    <i class="retro retro-clock"></i>
+    ```
+    
+
+### Modified
+- Some refactor such as `src/routes/duck-funk.php`
+
 ## 0.0.1 - 2019-10-29
 
 - Initial release
