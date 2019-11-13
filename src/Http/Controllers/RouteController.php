@@ -22,13 +22,11 @@ class RouteController extends Controller
      */
     private function redirectTo(Request $request)
     {
-        if($request->getMethod() && $request->getMethod() == 'GET')
-        {
+        if ($request->getMethod() && $request->getMethod() == 'GET') {
             // Check if has parent_id
-            if (! $this->hasParent($this->getLastRoute())){
+            if (! $this->hasParent($this->getLastRoute())) {
                 return redirect()->action('UserController@profile');
             }
-
         }
 
         return abort(404);
@@ -37,7 +35,8 @@ class RouteController extends Controller
     /*
      * Check the route parent as we have in the database
      */
-    private function hasParent(string $slug): bool{
+    private function hasParent(string $slug): bool
+    {
         // TODO: Missing database connection
         return true;
     }
@@ -45,15 +44,16 @@ class RouteController extends Controller
     /*
      * Count all slugs on route
      */
-    private function getRouteCount(): int {
+    private function getRouteCount(): int
+    {
         return $this->route->count();
     }
 
     /*
      * Get the last route slug
      */
-    private function getLastRoute(): string {
+    private function getLastRoute(): string
+    {
         return $this->route->last();
     }
-
 }
