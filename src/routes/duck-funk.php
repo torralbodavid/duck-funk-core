@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use \Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
+use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +18,6 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
      * Check where we start to construct the routes based in the config route param
      */
     Route::prefix(config('duck-funk.route'))->group(function () {
-
         Route::get('home', 'DuckController')->name('home');
         Route::get('expulsion', function () {
             return view('duck-funk-core::ban');
@@ -28,6 +27,6 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
     });
 });
 
-Route::fallback(function (){
+Route::fallback(function () {
     abort(404);
 });
