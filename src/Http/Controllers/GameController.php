@@ -2,10 +2,10 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
-use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Users;
+use Illuminate\Support\Str;
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class GameController extends Controller
 {
@@ -13,7 +13,7 @@ class GameController extends Controller
 
     public static function generateSSO()
     {
-        $setSSO = Users::find(auth()->id());
+        $setSSO = User::find(auth()->id());
         $setSSO->auth_ticket = 'DuckFunk-'.Str::random(25).'-SSO';
         $setSSO->save();
 

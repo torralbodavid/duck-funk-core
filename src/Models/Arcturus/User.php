@@ -3,10 +3,10 @@
 namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class Users extends Model implements Authenticatable
+class User extends Model implements Authenticatable
 {
     protected $table = 'users';
     protected $guarded = [];

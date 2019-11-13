@@ -6,11 +6,9 @@
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-        @include('layouts.head')
+        @include('duck-funk-core::layouts.head')
   </head>
-    <body class="pb-0">
+    <body class="bg-image pb-0">
         @yield('content')
-        @include('layouts.footer')    
-        @include('layouts.footer-script')    
     </body>
 </html>
