@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Console;
-
 
 use Illuminate\Console\Command;
 

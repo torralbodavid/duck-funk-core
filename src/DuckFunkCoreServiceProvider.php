@@ -42,9 +42,9 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            if($this->app->runningInConsole()) {
+            if ($this->app->runningInConsole()) {
                 $this->commands([
-                    PermissionMapper::class
+                    PermissionMapper::class,
                 ]);
             }
         }
