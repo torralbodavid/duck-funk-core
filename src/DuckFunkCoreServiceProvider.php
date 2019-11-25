@@ -3,6 +3,7 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Torralbodavid\DuckFunkCore\Console\PermissionMapper;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -41,7 +42,11 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            if($this->app->runningInConsole()) {
+                $this->commands([
+                    PermissionMapper::class
+                ]);
+            }
         }
     }
 
