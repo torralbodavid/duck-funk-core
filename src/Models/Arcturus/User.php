@@ -5,9 +5,12 @@ namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Model implements Authenticatable
 {
+    use HasRoles;
+
     protected $table = 'users';
     protected $guarded = [];
 
