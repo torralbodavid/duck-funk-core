@@ -34,7 +34,6 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
                 Route::get('/', 'HousekeepingController')->name('housekeeping');
             });
         });
-
     });
 });
 
