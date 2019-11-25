@@ -8,4 +8,9 @@ class Permissions extends Model
 {
     protected $table = 'permissions';
     protected $guarded = [];
+
+    public function canReadHousekeeping()
+    {
+        return $this->duck_funk_housekeeping_read;
+    }
 }
