@@ -17,6 +17,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views/'.config('duck-funk.template'), 'duck-funk-core');
+        $this->loadViewsFrom(__DIR__.'/resources/views/housekeeping', 'housekeeping');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
