@@ -6,6 +6,6 @@ class HousekeepingController
 {
     public function __invoke()
     {
-        return 'housekeeping';
+        return view('housekeeping::dashboard');
     }
 }
