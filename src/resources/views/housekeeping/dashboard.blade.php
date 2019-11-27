@@ -835,11 +835,10 @@
                 <div class="mx-3">
                     <div class="bg-white user-wid-content p-1 rounded">
                         <div class="user-img">
-                            @dd(test())
-                            <img src="{{ config('duck-funk.hotel') }}habbo-imaging/avatarimage?figure={{ DuckFunkCore::getUser()->look }}&direction=3&head_direction=4&gesture=sml&action=&size=n&headonly=1" alt="user-img" class="rounded-circle img-fluid">
+                            <img src="{{ config('duck-funk.hotel') }}habbo-imaging/avatarimage?figure={{ core()->getUser()->look }}&direction=3&head_direction=4&gesture=sml&action=&size=n&headonly=1" alt="user-img" class="rounded-circle img-fluid">
                         </div>
-                        <h5 class="font-14 mb-1"><a href="javascript: void(0);">{{ DuckFunkCore::getUser()->username }}</a> </h5>
-                        <p class="text-muted mb-2"><small>{{ DuckFunkCore::getUser()->permissions->rank_name }}</small></p>
+                        <h5 class="font-14 mb-1"><a href="javascript: void(0);">{{ core()->getUser()->username }}</a> </h5>
+                        <p class="text-muted mb-2"><small>{{ core()->getUser()->permissions->rank_name }}</small></p>
                     </div>
                 </div>
             </div>
@@ -869,19 +868,19 @@
 
 
 <!-- datepicker -->
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
 
 <!-- vector map  -->
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 
 <!-- apexcharts -->
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/apexcharts/apexcharts.min.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/apexcharts/apexcharts.min.js') }}"></script>
 
 <!-- Peity JS -->
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/peity-chart/jquery.peity.min.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/peity-chart/jquery.peity.min.js') }}"></script>
 
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/plugins/peity-chart/jquery.peity.min.js') }}"></script>
+<script src="{{ asset('vendor/duck-funk-core/plugins/peity-chart/jquery.peity.min.js') }}"></script>
 
 <script src="{{ asset('vendor/duck-funk-core/js/housekeeping/pages/dashboard.js') }}"></script>
 
