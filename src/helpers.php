@@ -1,6 +1,8 @@
 <?php
 
-function test()
+use Torralbodavid\DuckFunkCore\DuckFunkCore;
+
+function core()
 {
-    return 'work!';
+    return app('duck-funk-core');
 }
