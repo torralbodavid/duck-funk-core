@@ -20,6 +20,15 @@ class GameController extends Controller
         return $setSSO->auth_ticket;
     }
 
+    public static function updateIp()
+    {
+        $setSSO = core()->getUser();
+        $setSSO->auth_ticket = 'DuckFunk-'.Str::random(25).'-SSO';
+        $setSSO->save();
+
+        return $setSSO->auth_ticket;
+    }
+
     public function showHotel()
     {
         return view('duck-funk-core::hotel.hotel', ['sso' => $this::generateSSO()]);

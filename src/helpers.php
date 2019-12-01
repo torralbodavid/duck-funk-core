@@ -2,5 +2,5 @@
 
 function core()
 {
-    return app('duck-funk-core');
+    return app(DuckFunkCore::class);
 }
