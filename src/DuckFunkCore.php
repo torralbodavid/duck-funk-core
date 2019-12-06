@@ -12,13 +12,12 @@ class DuckFunkCore
      */
     const PACKAGE_VERSION = '0.0.2';
 
-    public static function getUser()
+    protected User $user;
+
+    public function __construct()
     {
-        return User::find(Auth::id());
+        $this->user = User::find(Auth::id());
     }
 
-    public static function canSeeHousekeeping()
-    {
-        return self::getUser()->permissions->canReadHousekeeping();
-    }
+    public function user(): User { return User::find(Auth::id()); }
 }

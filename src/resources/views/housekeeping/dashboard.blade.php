@@ -835,10 +835,10 @@
                 <div class="mx-3">
                     <div class="bg-white user-wid-content p-1 rounded">
                         <div class="user-img">
-                            <img src="{{ config('duck-funk.hotel') }}habbo-imaging/avatarimage?figure={{ core()->getUser()->look }}&direction=3&head_direction=4&gesture=sml&action=&size=n&headonly=1" alt="user-img" class="rounded-circle img-fluid">
+                            <img src="{{ config('duck-funk.hotel') }}habbo-imaging/avatarimage?figure={{ core()->user()->look }}&direction=3&head_direction=4&gesture=sml&action=&size=n&headonly=1" alt="user-img" class="rounded-circle img-fluid">
                         </div>
-                        <h5 class="font-14 mb-1"><a href="javascript: void(0);">{{ core()->getUser()->username }}</a> </h5>
-                        <p class="text-muted mb-2"><small>{{ core()->getUser()->permissions->rank_name }}</small></p>
+                        <h5 class="font-14 mb-1"><a href="javascript: void(0);">{{ core()->user()->username }}</a> </h5>
+                        <p class="text-muted mb-2"><small>{{ core()->user()->permissions->rank_name }}</small></p>
                     </div>
                 </div>
             </div>
