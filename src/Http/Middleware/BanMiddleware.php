@@ -22,7 +22,7 @@ class BanMiddleware
         if ($this->accountBan() || $this->ipBan() || $this->machineBan() || $this->superBan()) {
             if ($this->banRoute) {
                 app()->instance('expulsion', $this->ban);
-                app()->instance('user_session', Auth::user()->username);
+                app()->instance('user_session', core()->user()->username);
 
                 Auth::logout();
 
@@ -44,7 +44,7 @@ class BanMiddleware
     {
         if (Auth::check()) {
             $ban = Bans::with('user')
-                ->where('user_id', auth()->id())
+                ->where('user_id', core()->user()->id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'account')
                 ->get()
@@ -92,7 +92,7 @@ class BanMiddleware
     {
         if (Auth::check()) {
             $ban = Bans::with('user')
-                ->where('machine_id', Auth::user()->machine_id)
+                ->where('machine_id', core()->user()->machine_id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'machine')
                 ->get()
@@ -116,7 +116,7 @@ class BanMiddleware
     {
         if (Auth::check()) {
             $ban = Bans::with('user')
-                ->where('user_id', auth()->id())
+                ->where('user_id', core()->user()->id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'super')
                 ->get()
