@@ -3,7 +3,6 @@
 namespace Torralbodavid\DuckFunkCore\Http\Middleware;
 
 use Closure;
-use Torralbodavid\DuckFunkCore\DuckFunkCore;
 
 class HousekeepingMiddleware
 {
