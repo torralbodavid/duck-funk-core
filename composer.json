@@ -17,13 +17,14 @@
     ],
     "require": {
         "php": "^7.4",
+        "laravel/framework": "6.*",
         "ext-json": "*",
         "ext-sockets": "*",
-        "illuminate/support": "~5.8.0|^6.0"
+        "illuminate/support": "^5.8.15|^6.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8.0|^4.0",
-        "phpunit/phpunit": "^7.0"
+        "orchestra/testbench": "3.8.*|4.*",
+        "phpunit/phpunit": "^8.4"
     },
     "autoload": {
         "psr-4": {
