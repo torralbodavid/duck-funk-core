@@ -9,8 +9,7 @@ class DuckController extends Controller
 {
     public function __invoke()
     {
-        $users = User::where('mail', auth()->user()->email)->with('permissions')->first();
 
-        return view('duck-funk-core::hello', ['hello' => $users->permissions()->first()->rank_name]);
+        return view('duck-funk-core::hello', ['hello' => core()->user()->permissions->name]);
     }
 }
