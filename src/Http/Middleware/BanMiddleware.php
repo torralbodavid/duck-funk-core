@@ -11,7 +11,7 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\Bans;
 class BanMiddleware
 {
     private $currentTimestamp;
-    private $ban;
+    private Bans $ban;
     private $banRoute;
 
     public function handle($request, Closure $next)
