@@ -8,6 +8,7 @@ class Permissions extends Model
 {
     protected $table = 'permissions';
     protected $guarded = [];
+    public $timestamps = false;
 
     public function canReadHousekeeping()
     {
