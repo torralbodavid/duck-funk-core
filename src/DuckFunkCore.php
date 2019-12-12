@@ -10,7 +10,7 @@ class DuckFunkCore
     /*
      * Package version
      */
-    const PACKAGE_VERSION = '0.0.2';
+    const PACKAGE_VERSION = '0.0.3';
 
     protected User $user;
 
