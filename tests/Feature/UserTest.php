@@ -17,7 +17,7 @@ class UserTest extends TestCase
             'password' => $user->password,
             'account_created' => $user->account_created,
             'ip_register' => $user->ip_register,
-            'ip_current' => $user->ip_current
+            'ip_current' => $user->ip_current,
         ]);
     }
 }
