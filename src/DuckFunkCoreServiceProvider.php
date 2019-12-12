@@ -23,21 +23,21 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
 
-            $this->publishes([
+        $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
             ], 'config');
 
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/resources/views' => resource_path('views/vendor/duck-funk-core'),
-            ], 'views');*/
+        // Publishing the views.
+        /*$this->publishes([
+            __DIR__.'/resources/views' => resource_path('views/vendor/duck-funk-core'),
+        ], 'views');*/
 
-            // Publishing assets.
-            $this->publishes([
+        // Publishing assets.
+        $this->publishes([
                 __DIR__.'/resources/assets/images' => public_path('vendor/duck-funk-core/images'),
             ], 'images');
 
-            // Publishing the translation files.
+        // Publishing the translation files.
             /*$this->publishes([
                 __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
             ], 'lang');*/
