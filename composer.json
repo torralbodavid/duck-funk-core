@@ -1,13 +1,10 @@
 {
     "name": "torralbodavid/duck-funk-core",
-    "description": "",
+    "description": "The Core of torralbodavid/duck-funk Arcturus CMS project",
     "keywords": [
         "torralbodavid",
         "duck-funk-core"
     ],
-    "homepage": "https://github.com/torralbodavid/duck-funk-core",
-    "license": "GPL-2.0-or-later",
-    "type": "library",
     "authors": [
         {
             "name": "David Torralbo Pérez",
@@ -15,18 +12,23 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/torralbodavid/duck-funk-core",
+    "license": "GPL-2.0-or-later",
+    "type": "library",
     "require": {
         "php": "^7.4",
-        "laravel/framework": "^5.7|^6.0",
+        "laravel/framework": "^6.7",
         "ext-json": "*",
         "ext-sockets": "*",
-        "illuminate/support": "^5.8.15|^6.0"
+        "illuminate/support": "^6.7",
+        "fzaninotto/Faker": "^1.9"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0|^8.0",
-        "orchestra/testbench": "^3.7|^4.0",
-        "mockery/mockery": "0.9.*|^1.0"
+        "phpunit/phpunit": "^8.5",
+        "orchestra/testbench": "^4.4",
+        "mockery/mockery": "^1.3"
     },
+    "prefer-stable" : true,
     "autoload": {
         "psr-4": {
             "Torralbodavid\\DuckFunkCore\\": "src"
