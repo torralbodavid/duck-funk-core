@@ -23,7 +23,6 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
 
-        if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
             ], 'config');
@@ -45,7 +44,6 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
-        }
     }
 
     /**
