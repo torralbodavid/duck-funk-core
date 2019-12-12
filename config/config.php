@@ -16,6 +16,11 @@ return [
     'route' => '/',
 
     /*
+     * The route the CMS core will get to build the housekeeping.
+     */
+    'housekeeping_route' => '/labs',
+
+    /*
      * The view template the CMS core will get to build the website.
      *
      * As default, Duck Funk Core will get fuse template.

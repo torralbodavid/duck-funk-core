@@ -1,11 +1,15 @@
 {
-    "/css/style.css": "/css/style.css?id=6fca3d4c407b6413faed",
+    "/css/style.css": "/css/style.css?id=1b55a9d40671aebe6328",
+    "/css/housekeeping/style.css": "/css/housekeeping/style.css?id=46efd189bc5503d8bfe6",
     "/js/jquery.min.js": "/js/jquery.min.js?id=220afd743d9e9643852e",
     "/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js?id=a454220fc07088bf1fdd",
     "/js/jquery.slimscroll.js": "/js/jquery.slimscroll.js?id=6ee5ab5d89857be6eaf0",
+    "/js/metismenu.min.js": "/js/metismenu.min.js?id=0dacc6a4754f01226ba1",
     "/js/waves.min.js": "/js/waves.min.js?id=9a5b3dfca09d9e3005dc",
     "/js/app.js": "/js/app.js?id=e7ce62c33e00b7e84570",
+    "/js/housekeeping/app.js": "/js/housekeeping/app.js?id=413881456f9b1a283503",
     "/css/bootstrap.min.css": "/css/bootstrap.min.css?id=92af3981f10606ab3532",
     "/css/icons.css": "/css/icons.css?id=9f39910821cf09d06cdc",
-    "/css/icons.css.map": "/css/icons.css.map?id=78705e621b6b5f3632dd"
+    "/css/icons.css.map": "/css/icons.css.map?id=78705e621b6b5f3632dd",
+    "/css/metismenu.min.css": "/css/metismenu.min.css?id=613ad4dd9a45074e5768"
 }

@@ -2,6 +2,16 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.0.3 - 2019-12-12
+
+### Added
+- Add test environment: Added factories, test database migrations and first tests.
+- Labs: Add housekeeping engine: Access through session checking that user has the correct permissions. Also added dashboard layout.
+
+### Modified
+- Update dependencies
+- Some code refactor
+
 ## 0.0.2 - 2019-11-13
 
 ### Added

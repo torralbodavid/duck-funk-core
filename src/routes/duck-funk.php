@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
+use Torralbodavid\DuckFunkCore\Http\Middleware\HousekeepingMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -24,6 +25,15 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
         })->name('ban');
 
         Route::get('hotel', 'GameController@showHotel')->name('hotel');
+
+        /*
+         * Housekeeping routes
+         */
+        Route::group(['middleware' => [HousekeepingMiddleware::class, 'password.confirm'], 'namespace' => 'Housekeeping'], function () {
+            Route::prefix(config('duck-funk.housekeeping_route'))->group(function () {
+                Route::get('/', 'HousekeepingController')->name('housekeeping');
+            });
+        });
     });
 });
 
