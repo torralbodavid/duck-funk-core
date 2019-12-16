@@ -25,7 +25,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
         $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
-            ], 'config');
+            ], 'duck-funk-core/config');
 
         // Publishing the views.
         /*$this->publishes([
@@ -34,8 +34,9 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
         // Publishing assets.
         $this->publishes([
-                __DIR__.'/resources/assets/images' => public_path('vendor/duck-funk-core/images'),
-            ], 'images');
+            __DIR__.'/../public' => public_path('vendor/duck-funk-core'),
+            __DIR__.'/resources/assets/images' => public_path('vendor/duck-funk-core/images'),
+        ], 'duck-funk-core/assets');
 
         // Publishing the translation files.
             /*$this->publishes([
