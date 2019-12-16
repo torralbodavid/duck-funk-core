@@ -1,6 +1,8 @@
 {
     "/css/style.css": "/css/style.css?id=1b55a9d40671aebe6328",
     "/css/housekeeping/style.css": "/css/housekeeping/style.css?id=46efd189bc5503d8bfe6",
+    "/js/labs/dependencies/initial.min.js": "/js/labs/dependencies/initial.min.js?id=c2365275a644d0ae1a65",
+    "/js/labs/dependencies/dashboard.min.js": "/js/labs/dependencies/dashboard.min.js?id=3249559f44e96309ddf7",
     "/js/jquery.min.js": "/js/jquery.min.js?id=220afd743d9e9643852e",
     "/js/bootstrap.bundle.min.js": "/js/bootstrap.bundle.min.js?id=a454220fc07088bf1fdd",
     "/js/jquery.slimscroll.js": "/js/jquery.slimscroll.js?id=6ee5ab5d89857be6eaf0",

@@ -2,15 +2,26 @@ const mix = require('laravel-mix');
 const webpack = require('webpack');
 
 /*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
+Labs initialize
  */
+mix
+    .combine([
+        'src/resources/assets/js/jquery.min.js',
+        'src/resources/assets/js/bootstrap.bundle.min.js',
+        'src/resources/assets/js/metismenu.min.js',
+        'src/resources/assets/js/jquery.slimscroll.js',
+        'src/resources/assets/js/waves.min.js'
+    ], 'public/js/labs/dependencies/initial.min.js')
+    //dashboard dependencies
+    .combine([
+        'src/resources/assets/js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js',
+        'src/resources/assets/js/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js',
+        'src/resources/assets/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+        'src/resources/assets/js/plugins/apexcharts/apexcharts.min.js',
+        'src/resources/assets/js/plugins/peity-chart/jquery.peity.min.js',
+        'src/resources/assets/housekeeping-js/pages/dashboard.js',
+    ], 'public/js/labs/dependencies/dashboard.min.js')
+    .version();
 
 mix.options({
     uglify: {
@@ -35,12 +46,9 @@ mix.options({
     .copy('src/resources/assets/css/icons.css', 'public/css')
     .copy('src/resources/assets/css/icons.css.map', 'public/css')
     .copy('src/resources/assets/css/metismenu.min.css', 'public/css')
-    .copy('src/resources/assets/js/plugins', 'public/plugins')
-    .copy('src/resources/assets/housekeeping-js/pages', 'public/js/housekeeping/pages')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
     .version()
-    .copy('public', '../duck-funk/public/vendor/duck-funk-core')
     .webpackConfig({
         resolve: {
             symlinks: false,

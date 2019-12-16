@@ -859,33 +859,12 @@
     </div>
 </div>
 
-<!-- jQuery  -->
-<script src="{{ asset('vendor/duck-funk-core/js/jquery.min.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/js/metismenu.min.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/js/jquery.slimscroll.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/js/waves.min.js') }}"></script>
-
-
-<!-- datepicker -->
-<script src="{{ asset('vendor/duck-funk-core/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-
-<!-- vector map  -->
-<script src="{{ asset('vendor/duck-funk-core/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
-<script src="{{ asset('vendor/duck-funk-core/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-
-<!-- apexcharts -->
-<script src="{{ asset('vendor/duck-funk-core/plugins/apexcharts/apexcharts.min.js') }}"></script>
-
-<!-- Peity JS -->
-<script src="{{ asset('vendor/duck-funk-core/plugins/peity-chart/jquery.peity.min.js') }}"></script>
-
-<script src="{{ asset('vendor/duck-funk-core/plugins/peity-chart/jquery.peity.min.js') }}"></script>
-
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/pages/dashboard.js') }}"></script>
+<!-- Dependencies  -->
+<script src="{{ mix('/js/labs/dependencies/initial.min.js', '/vendor/duck-funk-core') }}"></script>
+<script src="{{ mix('/js/labs/dependencies/dashboard.min.js', '/vendor/duck-funk-core') }}"></script>
 
 <!-- App js -->
-<script src="{{ asset('vendor/duck-funk-core/js/housekeeping/app.js') }}"></script>
+<script src="{{ mix('/js/housekeeping/app.js', '/vendor/duck-funk-core') }}"></script>
 
 </body>
 
