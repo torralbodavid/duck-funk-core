@@ -2,6 +2,14 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.1.0 - 2019-12-16
+
+### Added
+- Labs dependencies now runs through mix.
+
+### Fixed
+- Deleted tons of useless javascript files.
+
 ## 0.0.3 - 2019-12-12
 
 ### Added
