@@ -11,15 +11,15 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- datepicker -->
-    <link href="{{ asset('vendor/duck-funk-core/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/bootstrap-datepicker.min.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
 
     <!-- jvectormap -->
-    <link href="{{ asset('vendor/duck-funk-core/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/jquery-jvectormap-2.0.2.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
 
-    <link href="{{ asset('vendor/duck-funk-core/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('vendor/duck-funk-core/css/metismenu.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('vendor/duck-funk-core/css/icons.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('vendor/duck-funk-core/css/housekeeping/style.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/bootstrap.min.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/metismenu.min.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/icons.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/housekeeping/style.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

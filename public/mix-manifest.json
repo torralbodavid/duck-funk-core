@@ -13,5 +13,7 @@
     "/css/bootstrap.min.css": "/css/bootstrap.min.css?id=92af3981f10606ab3532",
     "/css/icons.css": "/css/icons.css?id=9f39910821cf09d06cdc",
     "/css/icons.css.map": "/css/icons.css.map?id=78705e621b6b5f3632dd",
-    "/css/metismenu.min.css": "/css/metismenu.min.css?id=613ad4dd9a45074e5768"
+    "/css/metismenu.min.css": "/css/metismenu.min.css?id=613ad4dd9a45074e5768",
+    "/css/bootstrap-datepicker.min.css": "/css/bootstrap-datepicker.min.css?id=cd2c0b0211d190705a33",
+    "/css/jquery-jvectormap-2.0.2.css": "/css/jquery-jvectormap-2.0.2.css?id=40ee64e9cfd56a2fbb02"
 }
