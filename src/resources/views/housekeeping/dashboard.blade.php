@@ -445,6 +445,23 @@
                 <!-- end row -->
 
                 <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="mt-0 header-title mb-4">Muro</h4>
+
+                                <div id="dashboard-wall">
+                                    <div class="spinner-grow text-primary" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
                     <div class="col-xl-4">
                         <div class="card">
                             <div class="card-body">
@@ -865,6 +882,13 @@
 
 <!-- App js -->
 <script src="{{ mix('/js/housekeeping/app.js', '/vendor/duck-funk-core') }}"></script>
+<script src="{{ mix('/js/housekeeping/legacy/dashboard.js', '/vendor/duck-funk-core') }}"></script>
+<script>
+    $(function() {
+        let dashboard = new Dashboard('https://raw.githubusercontent.com/torralbodavid/duck-funk-core/master/CHANGELOG.md', '{{ route('dashboard-parser') }}');
+        dashboard.dashboardWall()
+    });
+</script>
 
 </body>
 

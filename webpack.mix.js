@@ -50,6 +50,7 @@ mix.options({
     .copy('src/resources/assets/js/plugins/jvectormap/jquery-jvectormap-2.0.2.css', 'public/css')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
+    .js('src/resources/assets/js/duck_funk/labs/dashboard.js', 'public/js/housekeeping/legacy')
     .version()
     .webpackConfig({
         resolve: {
