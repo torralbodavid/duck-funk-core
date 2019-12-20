@@ -49,20 +49,4 @@ class DashboardController
 
         return $this->wallContent;
     }
-
-    /*private function getUpdateWall(): JsonResponse
-    {
-        $client = new Client();
-        $response = $client->request('GET', 'https://raw.githubusercontent.com/torralbodavid/duck-funk-core/master/CHANGELOG.md');
-
-        return ($response->getStatusCode() === 200)
-            ? response()->json([
-                'success' => true,
-                'response' => (string) Markdown::parse($response->getBody())
-            ], 422)
-            : response()->json([
-                'success' => false,
-                'response' => "We couldn't serve the wall"
-            ], 422);
-    }*/
 }
