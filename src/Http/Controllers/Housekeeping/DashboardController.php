@@ -2,7 +2,6 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Housekeeping;
 
-use GuzzleHttp\Client;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
@@ -23,7 +22,6 @@ class DashboardController
         return view('housekeeping::dashboard');
     }
 
-
     public function getUpdateWall(Request $request): JsonResponse
     {
         $this->wallContent = Markdown::parse($request->input('content'));
@@ -37,7 +35,7 @@ class DashboardController
 
         return response()->json([
             'success' => true,
-            'response' => (string) $this->replacer($elementsToReplace)
+            'response' => (string) $this->replacer($elementsToReplace),
         ], 200);
     }
 
