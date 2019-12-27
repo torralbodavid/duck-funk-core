@@ -21,7 +21,17 @@ mix
         'src/resources/assets/js/plugins/peity-chart/jquery.peity.min.js',
         'src/resources/assets/housekeeping-js/pages/dashboard.js',
     ], 'public/js/labs/dependencies/dashboard.min.js')
+    //news dependencies
+    .combine([
+        'src/resources/assets/js/plugins/tinymce-dark/jquery.tinymce.min.js',
+        'src/resources/assets/js/plugins/tinymce-dark/tinymce.min.js',
+        'src/resources/assets/housekeeping-js/pages/form-editors.int.js',
+    ], 'public/js/labs/dependencies/news.min.js')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/plugins', 'public/js/labs/dependencies/plugins')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/themes', 'public/js/labs/dependencies/themes')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/skins', 'public/js/labs/dependencies/skins')
     .version();
+
 
 mix.options({
     uglify: {

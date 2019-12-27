@@ -31,6 +31,7 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
          */
         Route::group(['middleware' => [HousekeepingMiddleware::class, 'password.confirm'], 'namespace' => 'Housekeeping'], function () {
             Route::prefix(config('duck-funk.housekeeping_route'))->group(function () {
+                Route::resource('news', 'NewsController');
                 Route::get('/', 'DashboardController@index')->name('housekeeping');
                 Route::post('dashboard-parser', 'DashboardController@getUpdateWall')->name('dashboard-parser');
             });

@@ -5,9 +5,10 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\Housekeeping;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Markdown;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Collection;
 
-class DashboardController
+class DashboardController extends Controller
 {
     private string $url;
     private string $wallContent;

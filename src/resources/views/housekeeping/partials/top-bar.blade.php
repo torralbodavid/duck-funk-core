@@ -23,20 +23,6 @@
                 </form>
             </li>
 
-            <!-- language-->
-            <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="assets/images/flags/us_flag.jpg" class="mr-2" height="12" alt=""/> English <span class="mdi mdi-chevron-down"></span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right language-switch">
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/germany_flag.jpg" alt="" height="16" /><span> German </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/italy_flag.jpg" alt="" height="16" /><span> Italian </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt="" height="16" /><span> Spanish </span></a>
-                    <a class="dropdown-item" href="#"><img src="assets/images/flags/russia_flag.jpg" alt="" height="16" /><span> Russian </span></a>
-                </div>
-            </li>
-
             <!-- full screen -->
             <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
                 <a class="nav-link waves-effect" href="#" id="btn-fullscreen">
@@ -113,21 +99,6 @@
                 <button class="button-menu-mobile open-left waves-effect">
                     <i class="mdi mdi-menu"></i>
                 </button>
-            </li>
-            <li class="d-none d-sm-block">
-                <div class="dropdown pt-3 d-inline-block">
-                    <a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Create
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
             </li>
         </ul>
 

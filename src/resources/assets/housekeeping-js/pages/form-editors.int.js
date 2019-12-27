@@ -12,7 +12,7 @@ $(document).ready(function () {
             theme: "modern",
             height:300,
             plugins: [
-                "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+                "advlist autolink link image lists charmap print preview hr anchor pagebreak",
                 "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
                 "save table contextmenu directionality emoticons template paste textcolor"
             ],
@@ -28,12 +28,5 @@ $(document).ready(function () {
             ]
         });
     }
-
-    $('.summernote').summernote({
-        height: 300,                 // set editor height
-        minHeight: null,             // set minimum height of editor
-        maxHeight: null,             // set maximum height of editor
-        focus: true                 // set focus to editable area after initializing summernote
-    });
 
 });
