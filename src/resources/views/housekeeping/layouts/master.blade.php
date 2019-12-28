@@ -14,6 +14,7 @@
     <link href="{{ mix('css/metismenu.min.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
     <link href="{{ mix('css/icons.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
     <link href="{{ mix('css/housekeeping/style.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ mix('css/filepond.css', '/vendor/duck-funk-core') }}" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
