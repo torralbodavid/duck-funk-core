@@ -2,6 +2,8 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
+[![StyleCI](https://github.styleci.io/repos/7548986/shield)](https://github.styleci.io/repos/213175095)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/?branch=master)
 
 This is the core of the Duck Funk CMS for Arcturus emulator.
 
