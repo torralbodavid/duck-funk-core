@@ -24,8 +24,8 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
 
         $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
-            ], 'duck-funk-core/config');
+            __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
+        ], 'duck-funk-core/config');
 
         // Publishing the views.
         /*$this->publishes([
