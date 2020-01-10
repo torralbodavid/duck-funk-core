@@ -40,7 +40,7 @@ class RCONSocket
               [
                   'connection' => 'failed',
                   'error'   => $exception->getMessage(),
-                  ]
+              ]
             );
         }
 
