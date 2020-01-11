@@ -17,25 +17,17 @@
                     <div class="page-title-box">
                         <div class="row align-items-center">
                             <div class="col-sm-6">
-                                <h4 class="page-title">Dashboard</h4>
+                                <h4 class="page-title">Tablero</h4>
                                 <ol class="breadcrumb">
-                                    <!-- <li class="breadcrumb-item"><a href="javascript:void(0);"><i class="mdi mdi-home-outline"></i></a></li> -->
-                                    <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
+                                    <li class="breadcrumb-item active">Bienvenido al tablero</li>
                                 </ol>
                             </div>
                             <div class="col-sm-6">
                                 <div class="float-right d-none d-md-block">
                                     <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle arrow-none waves-effect waves-light" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-settings mr-2"></i> Settings
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
+                                        <a href="{{ route('hotel') }}" target="_blank" class="btn btn-danger dropdown-toggle arrow-none waves-effect waves-light" type="button">
+                                            <i class="mdi mdi-chat mr-2"></i> Entrar al hotel
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -48,11 +40,11 @@
                             <div class="card mini-stat bg-pattern">
                                 <div class="card-body mini-stat-img">
                                     <div class="mini-stat-icon">
-                                        <i class="dripicons-broadcast bg-soft-primary text-primary float-right h4"></i>
+                                        <i class="dripicons-user-group bg-soft-primary text-primary float-right h4"></i>
                                     </div>
-                                    <h6 class="text-uppercase mb-3 mt-0">Orders</h6>
-                                    <h5 class="mb-3">1,687</h5>
-                                    <p class="text-muted mb-0"><span class="text-success mr-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> From previous period</p>
+                                    <h6 class="text-uppercase mb-3 mt-0">Registros</h6>
+                                    <h5 class="mb-3">541</h5>
+                                    <p class="text-muted mb-0"><span class="text-success mr-2"> 12% <i class="mdi mdi-arrow-up"></i> </span> más que la semana pasada</p>
                                 </div>
                             </div>
                         </div>
@@ -60,11 +52,11 @@
                             <div class="card mini-stat bg-pattern">
                                 <div class="card-body mini-stat-img">
                                     <div class="mini-stat-icon">
-                                        <i class="dripicons-box bg-soft-primary text-primary float-right h4"></i>
+                                        <i class="dripicons-monitor bg-soft-primary text-primary float-right h4"></i>
                                     </div>
-                                    <h6 class="text-uppercase mb-3 mt-0">Revenue</h6>
-                                    <h5 class="mb-3">$ 48,265</h5>
-                                    <p class="text-muted mb-0"><span class="text-danger mr-2"> -26% <i class="mdi mdi-arrow-down"></i> </span> From previous period</p>
+                                    <h6 class="text-uppercase mb-3 mt-0">Errores</h6>
+                                    <h5 class="mb-3">123</h5>
+                                    <p class="text-muted mb-0"><span class="text-danger mr-2"> -26% <i class="mdi mdi-arrow-down"></i> </span> menos que la semana pasada</p>
                                 </div>
                             </div>
                         </div>
@@ -72,11 +64,11 @@
                             <div class="card mini-stat bg-pattern">
                                 <div class="card-body mini-stat-img">
                                     <div class="mini-stat-icon">
-                                        <i class="dripicons-tags bg-soft-primary text-primary float-right h4"></i>
+                                        <i class="dripicons-heart bg-soft-primary text-primary float-right h4"></i>
                                     </div>
-                                    <h6 class="text-uppercase mb-3 mt-0">Average Price</h6>
-                                    <h5 class="mb-3">$ 14.6</h5>
-                                    <p class="text-muted mb-0"><span class="text-danger mr-2"> -26% <i class="mdi mdi-arrow-down"></i> </span> From previous period</p>
+                                    <h6 class="text-uppercase mb-3 mt-0">Mensajes</h6>
+                                    <h5 class="mb-3">12,512</h5>
+                                    <p class="text-muted mb-0"><span class="text-danger mr-2"> -26% <i class="mdi mdi-arrow-down"></i> </span> Menos que la semana pasada</p>
                                 </div>
                             </div>
                         </div>
@@ -87,13 +79,10 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="mt-0 header-title mb-4">Muro</h4>
+                                    <h4 class="mt-0 header-title mb-4">Usuarios activos</h4>
 
-                                    <div id="dashboard-wall">
-                                        <div class="spinner-grow text-primary" role="status">
-                                            <span class="sr-only">Loading...</span>
-                                        </div>
-                                    </div>
+                                    <div id="world-map-markers" class="dashboard-map-wid"></div>
+
                                 </div>
                             </div>
                         </div>
@@ -499,12 +488,6 @@
                     </div>
                 </div>
 
-                <div class="mb-4">
-                    <h5 class="font-14">Calender</h5>
-
-                    <div class="dashboard-date-pick" id="date-pick-widget" data-provide="datepicker-inline"></div>
-                </div>
-
                 <div>
                     <h5 class="font-14">Clients</h5>
 
@@ -523,7 +506,7 @@
 
     <!-- App js -->
     <script src="{{ mix('/js/housekeeping/app.js', '/vendor/duck-funk-core') }}"></script>
-    <script src="{{ mix('/js/housekeeping/legacy/dashboard.js', '/vendor/duck-funk-core') }}"></script>
+    <script src="{{ mix('/js/housekeeping/legacy/labs.js', '/vendor/duck-funk-core') }}"></script>
     <script>
         $(function() {
             let dashboard = new Dashboard('https://raw.githubusercontent.com/torralbodavid/duck-funk-core/master/CHANGELOG.md', '{{ route('dashboard-parser') }}');

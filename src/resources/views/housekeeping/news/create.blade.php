@@ -52,34 +52,20 @@
                                     <h4 class="mt-0 header-title">Crear nueva noticia</h4>
                                     <p class="text-muted mb-4">Puedes publicar una nueva noticia desde aquí.</p>
 
-                                    <form class="needs-validation" novalidate>
+                                    <form id="newsForm" class="needs-validation" novalidate>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="validationCustom01">Título de la noticia</label>
-                                                    <input type="text" class="form-control" id="title" required>
+                                                    <input type="text" class="form-control" id="title" name="title" required>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="validationCustom03">Subtítulo</label>
-                                                    <input type="text" class="form-control" id="subtitle" required>
+                                                    <input type="text" class="form-control" id="subtitle" name="subtitle" required>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="elm1">Cuerpo de la noticia</label>
-                                                    <textarea id="elm1" name="area"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <form class="needs-validation" novalidate>
+                                            <div class="col-md-6">
+                                                <!--<form class="needs-validation" novalidate>
                                                     <div class="row">
                                                         <div class="col-md-12">
                                                             <div class="form-group">
@@ -89,12 +75,46 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                </form>-->
                                             </div> <!-- end col -->
-                                        </div> <!-- end row -->
-                                        <button class="btn btn-primary" type="submit"><i
-                                                class="mdi mdi-newspaper mr-2"></i> Publicar noticia
-                                        </button>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-group">
+                                                    <label for="elm1">Cuerpo de la noticia</label>
+                                                    <textarea id="elm1" name="body"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Categorías</label>
+
+                                                    <select name="categories" id="categories" class="select2 form-control select2-multiple" multiple="multiple" data-placeholder="Choose ...">
+                                                        <optgroup label="Categorías">
+                                                            <option value="1">Novedades</option>
+                                                            <option value="2">Hotel</option>
+                                                        </optgroup>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label>Fecha de publicación</label>
+                                                    <div>
+                                                        <div class="input-group">
+                                                            <input name="publish_date" type="text" class="form-control" placeholder="dd/mm/yyyy" id="publish_date" value="{{ \Carbon\Carbon::now() }}">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                            </div>
+                                                        </div><!-- input-group -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input class="btn btn-primary" type="submit" value="Publicar noticia">
                                     </form>
                                 </div>
                             </div>
@@ -126,4 +146,13 @@
     <!-- App js -->
     <script src="{{ mix('/js/housekeeping/app.js', '/vendor/duck-funk-core') }}"></script>
     <script src="{{ mix('/js/legacy/filepond.js', '/vendor/duck-funk-core') }}"></script>
+    <script src="{{ mix('/js/housekeeping/legacy/labs.js', '/vendor/duck-funk-core') }}"></script>
+
+    <script>
+        $(function() {
+            $(".select2").select2();
+            (new CreateNews('#newsForm', '{{ route('news.store') }}'))
+        });
+    </script>
+
 @endsection
