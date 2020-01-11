@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Http\Request\Housekeeping\News;
-
 
 use Torralbodavid\DuckFunkCore\Http\Request\Request;
 
@@ -21,7 +19,7 @@ class NewsStoreRequest extends Request
             'allCategories' => 'json|required',
             'image_link' => 'max:255',
             'hotelview_news_id' => 'max:255|integer',
-            'publish_date' => 'required|date_format:Y-m-d H:i:s'
+            'publish_date' => 'required|date_format:Y-m-d H:i:s',
         ];
     }
 }
