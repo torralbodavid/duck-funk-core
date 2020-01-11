@@ -22,61 +22,21 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="calendar.html" class="waves-effect"><i class="ion ion-md-calendar"></i><span> Calendar </span></a>
-                </li>
+                <li class="menu-title">Desarrollador</li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect waves-light"><i class="ion ion-md-cart"></i><span> Ecommerce <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-analytics"></i><span>Errores <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
-                        <li><a href="ecommerce-products.html">Products</a></li>
-                        <li><a href="ecommerce-products-list.html">Products List</a></li>
-                        <li><a href="ecommerce-order-history.html">Order History</a></li>
-                        <li><a href="ecommerce-customers.html">Customers</a></li>
-                        <li><a href="ecommerce-product-edit.html">Product Edit</a></li>
+                        <li><a href="pages-login.html">Excepciones</a></li>
+                        <li><a href="pages-login-2.html">Críticos</a></li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="projects.html" class="waves-effect waves-light"><i class="ion ion-md-clipboard"></i><span> Projects </span></a>
-                </li>
-
-                <li class="menu-title">Pages</li>
-
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-wifi"></i><span> Authentication <span class="badge badge-pill badge-light float-right">New</span> </span></a>
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-apps"></i><span>Emulador <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span></span></a>
                     <ul class="submenu">
-                        <li><a href="pages-login.html">Login One</a></li>
-                        <li><a href="pages-login-2.html">Login Two</a></li>
-                        <li><a href="pages-register.html">Register One</a></li>
-                        <li><a href="pages-register-2.html">Register Two</a></li>
-                        <li><a href="pages-recoverpw.html">Recover Password One</a></li>
-                        <li><a href="pages-recoverpw-2.html">Recover Password Two</a></li>
-                        <li><a href="pages-lock-screen.html">Lock Screen One</a></li>
-                        <li><a href="pages-lock-screen-2.html">Lock Screen Two</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-copy"></i><span> Extra Pages <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a href="pages-blank.html">Blank Page</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-pricing.html">Pricing</a></li>
-                        <li><a href="pages-maintenance.html">Maintenance</a></li>
-                        <li><a href="pages-faq.html">Faq</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ion ion-md-paper-plane"></i><span> Email Templates <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li><a href="email-template-basic.html">Basic Action Email</a></li>
-                        <li><a href="email-template-alert.html">Alert Email</a></li>
-                        <li><a href="email-template-billing.html">Billing Email</a></li>
+                        <li><a href="pages-login.html">Ajustes</a></li>
+                        <li><a href="pages-login-2.html">Textos</a></li>
                     </ul>
                 </li>
 
