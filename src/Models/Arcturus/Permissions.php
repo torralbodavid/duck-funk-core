@@ -10,8 +10,13 @@ class Permissions extends Model
     protected $guarded = [];
     public $timestamps = false;
 
-    public function canReadHousekeeping()
+    public function getHousekeepingReadAttribute()
     {
         return $this->duck_funk_housekeeping_read;
+    }
+
+    public function getHousekeepingWriteAttribute()
+    {
+        return $this->duck_funk_housekeeping_write;
     }
 }
