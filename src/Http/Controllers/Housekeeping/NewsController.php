@@ -4,7 +4,6 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\Housekeeping;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Torralbodavid\DuckFunkCore\Events\NewsEvent;
 use Torralbodavid\DuckFunkCore\Http\Request\Housekeeping\News\NewsStoreRequest;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 
@@ -54,13 +53,13 @@ class NewsController extends Controller
         } catch (\Throwable $e) {
             return response()->json([
                 'message' => "Ha sucedido un error {$e->getCode()}",
-                'error' => true
+                'error' => true,
             ]);
         }
 
         return response()->json([
             'message' => 'Noticia publicada correctamente',
-            'error' => false
+            'error' => false,
         ]);
     }
 
