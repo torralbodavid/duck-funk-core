@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Observers;
-
 
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;

@@ -41,12 +41,12 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         ], 'duck-funk-core/assets');
 
         // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
-            ], 'lang');*/
+        /*$this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
+        ], 'lang');*/
 
-            // Registering package commands.
-            // $this->commands([]);
+        // Registering package commands.
+        // $this->commands([]);
         News::observe(NewsObserver::class);
     }
 
