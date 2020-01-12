@@ -4,6 +4,9 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\Housekeeping;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Torralbodavid\DuckFunkCore\Events\NewsEvent;
+use Torralbodavid\DuckFunkCore\Http\Request\Housekeeping\News\NewsStoreRequest;
+use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 
 class NewsController extends Controller
 {
@@ -30,12 +33,35 @@ class NewsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param NewsStoreRequest $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(NewsStoreRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $news = new News;
+        $news->title = $validated['title'];
+        $news->subtitle = $validated['subtitle'];
+        $news->body = $validated['body'];
+        $news->categories = $validated['allCategories'];
+        $news->draft = 0;
+        $news->author = core()->user()->id;
+        $news->published_at = $validated['publish_date'];
+
+        try {
+            $news->saveOrFail();
+        } catch (\Throwable $e) {
+            return response()->json([
+                'message' => "Ha sucedido un error {$e->getCode()}",
+                'error' => true
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Noticia publicada correctamente',
+            'error' => false
+        ]);
     }
 
     /**
