@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Models\Housekeeping;
-
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,7 +20,7 @@ class News extends Model
      * @var array
      */
     protected $dispatchesEvents = [
-        'saved' => NewsEvent::class
+        'saved' => NewsEvent::class,
     ];
 
     public function author()
