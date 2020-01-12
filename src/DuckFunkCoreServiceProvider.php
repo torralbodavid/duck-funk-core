@@ -3,6 +3,8 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
+use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -45,6 +47,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+        News::observe(NewsObserver::class);
     }
 
     /**
