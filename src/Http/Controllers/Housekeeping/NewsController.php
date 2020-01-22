@@ -46,8 +46,8 @@ class NewsController extends Controller
                 'subtitle' => $validated['subtitle'],
                 'body' => $validated['body'],
                 'author' => core()->user()->id,
-                'published_at' => $validated['publish_date']
-        ]);
+                'published_at' => $validated['publish_date'],
+            ]);
 
         $news->categories = $validated['allCategories'];
         $news->draft = 0;
@@ -87,7 +87,7 @@ class NewsController extends Controller
     public function edit(News $news)
     {
         $data = [
-            'news' => new NewsResource($news)
+            'news' => new NewsResource($news),
         ];
 
         return view('housekeeping::news.edit', $data);
