@@ -13,7 +13,7 @@ class CreateNewsTable extends Migration
             $table->string('title', 155);
             $table->string('subtitle', 255);
             $table->text('body');
-            $table->json('categories');
+            $table->json('categories')->nullable();
             $table->string('image_link', 255)->nullable();
             $table->integer('hotelview_news_id')->default(null)->nullable();
             $table->boolean('draft')->default(false);

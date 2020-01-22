@@ -9,7 +9,7 @@ class NewsEvent
 {
     use SerializesModels;
 
-    public News $news;
+    public $news;
 
     public function __construct(News $news)
     {

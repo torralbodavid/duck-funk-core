@@ -5,6 +5,7 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\Housekeeping;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Torralbodavid\DuckFunkCore\Http\Request\Housekeeping\News\NewsStoreRequest;
+use Torralbodavid\DuckFunkCore\Http\Resources\Marketing\NewsResource;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 
 class NewsController extends Controller
@@ -26,7 +27,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        return view('housekeeping::news.create');
+        return view('housekeeping::news.edit');
     }
 
     /**
@@ -39,20 +40,23 @@ class NewsController extends Controller
     {
         $validated = $request->validated();
 
-        $news = new News;
-        $news->title = $validated['title'];
-        $news->subtitle = $validated['subtitle'];
-        $news->body = $validated['body'];
+        $news = News::firstOrCreate(
+            [
+                'title' => $validated['title'],
+                'subtitle' => $validated['subtitle'],
+                'body' => $validated['body'],
+                'author' => core()->user()->id,
+                'published_at' => $validated['publish_date']
+        ]);
+
         $news->categories = $validated['allCategories'];
         $news->draft = 0;
-        $news->author = core()->user()->id;
-        $news->published_at = $validated['publish_date'];
 
         try {
             $news->saveOrFail();
         } catch (\Throwable $e) {
             return response()->json([
-                'message' => "Ha sucedido un error {$e->getCode()}",
+                'message' => "Ha sucedido un error {$e->getMessage()}",
                 'error' => true,
             ]);
         }
@@ -66,7 +70,7 @@ class NewsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -77,19 +81,23 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param News $news
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
-        //
+        $data = [
+            'news' => new NewsResource($news)
+        ];
+
+        return view('housekeeping::news.edit', $data);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,7 +108,7 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
