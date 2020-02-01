@@ -20,6 +20,14 @@ class User extends Model implements Authenticatable
     }
 
     /*
+     * Get avatar settings
+     */
+    public function settings()
+    {
+        return $this->hasOne(UserSettings::class, 'user_id', 'id');
+    }
+
+    /*
      * Get the bans for an avatar
      */
     public function bans()
@@ -91,5 +99,17 @@ class User extends Model implements Authenticatable
     public function getRememberTokenName()
     {
         return auth()->user()->getRememberTokenName();
+    }
+
+    /*
+     * Custom methods
+     */
+    public static function randomNickname()
+    {
+        $username = preg_replace("/[^A-Za-z0-9 ]/", '',
+            faker('firstName').faker('lastName').faker()->numberBetween(1, 99)
+        );
+
+        return (User::where('username', $username)->exists()) ? self::randomNickname() : $username;
     }
 }
