@@ -1,24 +1,22 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Rules;
-
 
 use Illuminate\Contracts\Validation\Rule;
 
 class UsernameWithoutIllegalWords implements Rule
 {
     const ILLEGAL_WORDS = [
-        'MOD-'
+        'MOD-',
     ];
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function passes($attribute, $value)
     {
         foreach (self::ILLEGAL_WORDS as $bannedWords) {
-            if (stripos($value, $bannedWords) !== FALSE) {
+            if (stripos($value, $bannedWords) !== false) {
                 return false;
             }
         }
@@ -27,7 +25,7 @@ class UsernameWithoutIllegalWords implements Rule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function message()
     {
