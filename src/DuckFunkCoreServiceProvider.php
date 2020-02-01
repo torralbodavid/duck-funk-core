@@ -49,7 +49,6 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         // Registering package commands.
         // $this->commands([]);
         News::observe(NewsObserver::class);
-
     }
 
     /**

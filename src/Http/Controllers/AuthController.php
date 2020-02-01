@@ -3,7 +3,6 @@
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
 use Illuminate\Routing\Controller;
-
 use Laravel\Socialite\Facades\Socialite;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
@@ -36,6 +35,5 @@ class AuthController extends Controller
 
         ]
         );
-
     }
 }

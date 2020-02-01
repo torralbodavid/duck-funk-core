@@ -18,5 +18,4 @@ class DuckFunkEventServiceProvider extends ServiceProvider
             FacebookLoginCalled::class,
         ],
     ];
-
 }

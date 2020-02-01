@@ -7,9 +7,8 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class UniqueUsername implements Rule
 {
-
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function passes($attribute, $value)
     {
@@ -17,7 +16,7 @@ class UniqueUsername implements Rule
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function message()
     {

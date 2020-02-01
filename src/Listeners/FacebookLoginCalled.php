@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Listeners;
-
 
 use Illuminate\Support\Facades\Log;
 use SocialiteProviders\Manager\SocialiteWasCalled;
@@ -16,7 +14,7 @@ class FacebookLoginCalled
      */
     public function __construct()
     {
-        Log::info("ei que tal");
+        Log::info('ei que tal');
     }
 
     /**
@@ -27,7 +25,7 @@ class FacebookLoginCalled
      */
     public function handle(SocialiteWasCalled $event)
     {
-        Log::info("ei que tal");
+        Log::info('ei que tal');
         // Access the order using $event->order...
     }
 }

@@ -106,10 +106,10 @@ class User extends Model implements Authenticatable
      */
     public static function randomNickname()
     {
-        $username = preg_replace("/[^A-Za-z0-9 ]/", '',
+        $username = preg_replace('/[^A-Za-z0-9 ]/', '',
             faker('firstName').faker('lastName').faker()->numberBetween(1, 99)
         );
 
-        return (User::where('username', $username)->exists()) ? self::randomNickname() : $username;
+        return (self::where('username', $username)->exists()) ? self::randomNickname() : $username;
     }
 }
