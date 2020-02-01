@@ -11,6 +11,10 @@ return [
     'name' => 'Duck Funk',
 
     /*
+     * Keko naming
+     */
+    'keko' => 'Duck',
+    /*
      * The route the CMS core will get to build the website.
      */
     'route' => '/',
