@@ -14,6 +14,11 @@ Route::group(['middleware' => ['web'], 'namespace' => 'App\Http\Controllers'], f
     Route::get('logout', 'Auth\LoginController@logout');
 });
 
+Route::group(['middleware' => ['web'], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
+    Route::get('auth/social', 'AuthController@redirectToProvider');
+    Route::get('auth/facebook/callback', 'AuthController@handleProviderCallback');
+});
+
 Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
     /*
      * Check where we start to construct the routes based in the config route param
