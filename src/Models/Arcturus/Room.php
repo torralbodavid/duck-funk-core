@@ -4,9 +4,14 @@ namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserSettings extends Model
+class Room extends Model
 {
-    protected $table = 'users_settings';
+    protected $table = 'rooms';
     protected $guarded = [];
     public $timestamps = false;
+
+    public function items()
+    {
+        return $this->hasMany(Item::class, 'room_id', 'id');
+    }
 }

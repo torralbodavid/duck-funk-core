@@ -4,9 +4,9 @@ namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserSettings extends Model
+class Item extends Model
 {
-    protected $table = 'users_settings';
+    protected $table = 'items';
     protected $guarded = [];
     public $timestamps = false;
 }
