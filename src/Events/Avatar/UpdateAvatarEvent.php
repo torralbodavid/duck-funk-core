@@ -3,9 +3,7 @@
 namespace Torralbodavid\DuckFunkCore\Events\Avatar;
 
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Log;
 use Torralbodavid\DuckFunkCore\Http\Request\Request;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class UpdateAvatarEvent
 {

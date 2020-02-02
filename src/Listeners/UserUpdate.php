@@ -1,10 +1,7 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Listeners;
 
-
-use Illuminate\Support\Facades\Log;
 use Torralbodavid\DuckFunkCore\Events\Avatar\UpdateAvatarEvent;
 
 class UserUpdate
@@ -16,7 +13,6 @@ class UserUpdate
      */
     public function __construct()
     {
-
     }
 
     /**
@@ -27,6 +23,5 @@ class UserUpdate
      */
     public function handle(UpdateAvatarEvent $event)
     {
-
     }
 }
