@@ -38,15 +38,15 @@ class AuthController extends Controller
                 'mail' => $user->getEmail(),
                 'account_created' => Carbon::now()->getTimestamp(),
                 'ip_register' => request()->ip(),
-                'ip_current' => request()->ip()
+                'ip_current' => request()->ip(),
             ]);
 
         UserSettings::firstOrCreate(
             ['user_id' => $user->id],
             [
                 'user_id' => $user->id,
-                'can_change_name' => "1",
-                'allow_name_change' => "1"
+                'can_change_name' => '1',
+                'allow_name_change' => '1',
             ]
         );
 
