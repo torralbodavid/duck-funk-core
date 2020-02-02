@@ -2,9 +2,12 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings;
 
 class AuthController extends Controller
 {
@@ -21,19 +24,34 @@ class AuthController extends Controller
     /**
      * Obtain the user information from Facebook.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function handleProviderCallback()
     {
         $user = Socialite::driver('facebook')->user();
 
         $user = User::firstOrCreate(
-        ['username' => User::randomNickname()],
-        [
-            'username' => User::randomNickname(),
-            'real_name' => $user->getName(),
+            ['mail' => $user->getEmail()],
+            [
+                'username' => User::randomNickname(),
+                'real_name' => $user->getName(),
+                'mail' => $user->getEmail(),
+                'account_created' => Carbon::now()->getTimestamp(),
+                'ip_register' => request()->ip(),
+                'ip_current' => request()->ip()
+            ]);
 
-        ]
+        UserSettings::firstOrCreate(
+            ['user_id' => $user->id],
+            [
+                'user_id' => $user->id,
+                'can_change_name' => "1",
+                'allow_name_change' => "1"
+            ]
         );
+
+        if (Auth::loginUsingId($user->id)) {
+            return redirect()->intended('hotel');
+        }
     }
 }
