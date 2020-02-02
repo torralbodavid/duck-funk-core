@@ -27,6 +27,10 @@ class WelcomeController extends Controller
             'username' => $request['name'],
         ]);
 
+        core()->user()->settings->update([
+            'welcome_flow_step' => 2,
+        ]);
+
         return response()->json([
             'code' => 'OK',
             'validationResult' => null,
@@ -55,6 +59,10 @@ class WelcomeController extends Controller
 
     public function roomSelect(Request $request)
     {
+
+        core()->user()->settings->update([
+            'welcome_flow_enabled' => false,
+        ]);
         //request roomIndex: 1.
     }
 }
