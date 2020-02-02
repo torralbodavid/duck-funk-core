@@ -1,6 +1,6 @@
 <?php
 
-namespace Torralbodavid\DuckFunkCore\Http\Request;
+namespace Torralbodavid\DuckFunkCore\Http\Request\Avatar;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;

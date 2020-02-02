@@ -4,13 +4,17 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\API\Welcome;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Torralbodavid\DuckFunkCore\Http\Request\UserRequest;
+use Torralbodavid\DuckFunkCore\Events\Avatar\UpdateAvatarEvent;
+use Torralbodavid\DuckFunkCore\Exceptions\Welcome\UserSave;
+use Torralbodavid\DuckFunkCore\Http\Request\Avatar\UserRequest;
+use Torralbodavid\DuckFunkCore\Http\Request\Avatar\UserSaveRequest;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class WelcomeController extends Controller
 {
     public function check(UserRequest $request)
     {
-        $validated = $request->validated();
+        $request->validated();
 
         return response()->json([
             'code' => 'OK',
@@ -19,13 +23,11 @@ class WelcomeController extends Controller
         ]);
     }
 
-    public function select(Request $request)
+    public function select(UserRequest $request)
     {
-        // name	backend1
-
-        /*return response()->json([
-            'error' => 'name_change.not_allowed'
-        ]);*/
+        core()->user()->update([
+            'username' => $request['name']
+        ]);
 
         return response()->json([
             'code' => 'OK',
@@ -34,18 +36,23 @@ class WelcomeController extends Controller
         ]);
     }
 
-    public function save(Request $request)
+    public function save(UserSaveRequest $request)
     {
-        /*
-         * figure	sh-290-74.lg-275-84.hr-110-38.ch-3030-85.hd-190-1
-         * gender	m
-         */
+
+        $request = $request->validated();
+
+        core()->user()->update([
+            'look' => $request['figure'],
+            'gender' => $request['gender']
+        ]);
+
+        //event(new UpdateAvatarEvent($request));
 
         return response()->json([
-            'uniqueId' => 123,
-            'name' => 'ddd,d',
-            'figureString' => 'hr-110-38.hd-190-1.ch-3030-85.lg-275-84.sh-290-74',
-            'motto' => null,
+            'uniqueId' => core()->user()->id,
+            'name' => core()->user()->username,
+            'figureString' => $request['figure'],
+            'motto' => core()->user()->motto,
         ]);
     }
 
