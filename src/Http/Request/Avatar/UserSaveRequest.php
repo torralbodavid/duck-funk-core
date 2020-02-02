@@ -5,10 +5,7 @@ namespace Torralbodavid\DuckFunkCore\Http\Request\Avatar;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-use Torralbodavid\DuckFunkCore\Exceptions\Welcome\UserCheck;
 use Torralbodavid\DuckFunkCore\Exceptions\Welcome\UserSave;
-use Torralbodavid\DuckFunkCore\Rules\UniqueUsername;
-use Torralbodavid\DuckFunkCore\Rules\UsernameWithoutIllegalWords;
 
 class UserSaveRequest extends FormRequest
 {
@@ -30,7 +27,7 @@ class UserSaveRequest extends FormRequest
     {
         return [
             'figure' => ['required'],
-            'gender' => ['required', 'max:1', Rule::in(['m','f'])],
+            'gender' => ['required', 'max:1', Rule::in(['m', 'f'])],
         ];
     }
 

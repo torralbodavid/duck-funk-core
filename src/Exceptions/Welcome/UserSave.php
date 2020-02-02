@@ -4,7 +4,6 @@ namespace Torralbodavid\DuckFunkCore\Exceptions\Welcome;
 
 use Exception;
 use Illuminate\Contracts\Validation\Validator;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class UserSave extends Exception
 {
@@ -26,7 +25,7 @@ class UserSave extends Exception
                 'validationResult' => [
                     'resultType' => 'INVALID_GENDER',
                     'valid' => false,
-                ]
+                ],
             ]);
         }
 

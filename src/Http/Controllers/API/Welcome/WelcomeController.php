@@ -5,10 +5,8 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\API\Welcome;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Torralbodavid\DuckFunkCore\Events\Avatar\UpdateAvatarEvent;
-use Torralbodavid\DuckFunkCore\Exceptions\Welcome\UserSave;
 use Torralbodavid\DuckFunkCore\Http\Request\Avatar\UserRequest;
 use Torralbodavid\DuckFunkCore\Http\Request\Avatar\UserSaveRequest;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class WelcomeController extends Controller
 {
@@ -26,7 +24,7 @@ class WelcomeController extends Controller
     public function select(UserRequest $request)
     {
         core()->user()->update([
-            'username' => $request['name']
+            'username' => $request['name'],
         ]);
 
         return response()->json([
@@ -38,12 +36,11 @@ class WelcomeController extends Controller
 
     public function save(UserSaveRequest $request)
     {
-
         $request = $request->validated();
 
         core()->user()->update([
             'look' => $request['figure'],
-            'gender' => $request['gender']
+            'gender' => $request['gender'],
         ]);
 
         //event(new UpdateAvatarEvent($request));
