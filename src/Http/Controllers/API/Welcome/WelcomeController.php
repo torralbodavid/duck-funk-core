@@ -59,7 +59,6 @@ class WelcomeController extends Controller
 
     public function roomSelect(Request $request)
     {
-
         core()->user()->settings->update([
             'welcome_flow_enabled' => false,
         ]);
