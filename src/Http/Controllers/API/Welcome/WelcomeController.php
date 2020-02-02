@@ -11,7 +11,7 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\Room;
 
 class WelcomeController extends Controller
 {
-    private const ROOMINDEX = [1,2,3];
+    private const ROOMINDEX = [1, 2, 3];
 
     public function check(UserRequest $request)
     {
@@ -60,19 +60,19 @@ class WelcomeController extends Controller
 
     public function roomSelect(Request $request)
     {
-        if(! in_array($request->roomIndex, self::ROOMINDEX)){
+        if (! in_array($request->roomIndex, self::ROOMINDEX)) {
             throw new Exception('Debe escoger una sala válida');
         }
 
-        if($request->roomIndex == 1) {
+        if ($request->roomIndex == 1) {
             $roomTemplate = Room::find(3);
         }
 
-        if($request->roomIndex == 2) {
+        if ($request->roomIndex == 2) {
             $roomTemplate = Room::find(5);
         }
 
-        if($request->roomIndex == 3) {
+        if ($request->roomIndex == 3) {
             $roomTemplate = Room::find(6);
         }
 
