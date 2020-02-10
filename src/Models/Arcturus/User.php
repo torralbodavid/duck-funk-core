@@ -35,9 +35,26 @@ class User extends Model implements Authenticatable
         return $this->hasMany(Bans::class, 'id', 'user_id');
     }
 
-    public function getLastLogin()
+    /**
+     * Get friend requests.
+     */
+    public function friend_requests()
     {
-        return Carbon::parse($this->last_login)->diffForHumans();
+        return $this->belongsToMany($this, 'messenger_friendrequests', 'user_to_id', 'user_from_id');
+    }
+
+    /**
+     * Get friends.
+     */
+    public function friends()
+    {
+        return $this->belongsToMany($this, 'messenger_friendships', 'user_one_id', 'user_two_id');
+    }
+
+    public function getLastLoginAttribute()
+    {
+
+        return Carbon::createFromTimestamp(auth()->user()->last_login)->diffForHumans();
     }
 
     /**
@@ -107,7 +124,7 @@ class User extends Model implements Authenticatable
     public static function randomNickname()
     {
         $username = preg_replace('/[^A-Za-z0-9 ]/', '',
-            faker('firstName').faker('lastName').faker()->numberBetween(1, 99)
+            faker('firstName') . faker('lastName') . faker()->numberBetween(1, 99)
         );
 
         return (self::where('username', $username)->exists()) ? self::randomNickname() : $username;
