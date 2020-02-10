@@ -497,7 +497,7 @@
             "menu": "false",
             "wmode": "opaque"
         };
-        swfobject.embedSWF('https://duck-funk.test/swf/gordon/PRODUCTION-201904011212-888653470/Habbo.swf', 'flash-container', '100%', '100%', '11.1.0', '//images.habbo.com/habboweb/63_1d5d8853040f30be0cc82355679bba7c/11956/web-gallery/flash/expressInstall.swf', flashvars, params, null, null);
+        swfobject.embedSWF('https://duck-funk.test/swf/gordon/PRODUCTION-201904011212-888653470/patched-habbo.swf', 'flash-container', '100%', '100%', '11.1.0', '//images.habbo.com/habboweb/63_1d5d8853040f30be0cc82355679bba7c/11956/web-gallery/flash/expressInstall.swf', flashvars, params, null, null);
     </script>
 </head>
 <body>

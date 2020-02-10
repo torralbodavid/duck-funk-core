@@ -8,6 +8,6 @@ class DuckController extends Controller
 {
     public function __invoke()
     {
-        return view('duck-funk-core::hello', ['hello' => core()->user()->permissions->name]);
+        return view('duck-funk-core::hello');
     }
 }
