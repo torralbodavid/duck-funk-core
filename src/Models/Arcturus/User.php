@@ -53,7 +53,6 @@ class User extends Model implements Authenticatable
 
     public function getLastLoginAttribute()
     {
-
         return Carbon::createFromTimestamp(auth()->user()->last_login)->diffForHumans();
     }
 
@@ -124,7 +123,7 @@ class User extends Model implements Authenticatable
     public static function randomNickname()
     {
         $username = preg_replace('/[^A-Za-z0-9 ]/', '',
-            faker('firstName') . faker('lastName') . faker()->numberBetween(1, 99)
+            faker('firstName').faker('lastName').faker()->numberBetween(1, 99)
         );
 
         return (self::where('username', $username)->exists()) ? self::randomNickname() : $username;
