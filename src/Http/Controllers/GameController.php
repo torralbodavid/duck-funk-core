@@ -13,7 +13,7 @@ class GameController extends Controller
 
     public static function generateSSO()
     {
-        $setSSO = User::find(auth()->id());
+        $setSSO = User::find(auth()->user()->id);
         $setSSO->auth_ticket = 'DuckFunk-'.Str::random(25).'-SSO';
         $setSSO->save();
 

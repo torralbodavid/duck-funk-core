@@ -16,11 +16,11 @@ class DuckFunkCore
 
     public function __construct()
     {
-        $this->user = User::find(Auth::id());
+        $this->user = User::find(Auth::user()->id);
     }
 
     public function user(): User
     {
-        return User::find(Auth::id());
+        return User::find(Auth::user()->id);
     }
 }

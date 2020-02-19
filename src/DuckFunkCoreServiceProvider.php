@@ -3,8 +3,10 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
+use Torralbodavid\DuckFunkCore\Observers\UserObserver;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -48,6 +50,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
         // Registering package commands.
         // $this->commands([]);
+        User::observe(UserObserver::class);
         News::observe(NewsObserver::class);
     }
 
