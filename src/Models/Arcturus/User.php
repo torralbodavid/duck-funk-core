@@ -30,7 +30,7 @@ class User extends Model implements Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password', 'account_created', 'ip_register', 'ip_current', 'last_login'
+        'username', 'mail', 'password', 'account_created', 'ip_register', 'ip_current', 'last_login',
     ];
 
     /**

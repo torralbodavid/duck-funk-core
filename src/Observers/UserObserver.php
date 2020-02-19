@@ -2,7 +2,6 @@
 
 namespace Torralbodavid\DuckFunkCore\Observers;
 
-use Illuminate\Support\Facades\Log;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings;
 
