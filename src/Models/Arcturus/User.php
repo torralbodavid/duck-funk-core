@@ -138,7 +138,7 @@ class User extends Model implements Authenticatable
      */
     public function getAuthPassword()
     {
-        return auth()->user()->password;
+        return $this->password;
     }
 
     /**
