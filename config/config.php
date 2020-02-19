@@ -50,5 +50,5 @@ return [
      * Welcome params
      */
 
-    'welcome_enabled' => true
+    'welcome_enabled' => true,
 ];
