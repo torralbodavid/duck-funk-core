@@ -14,3 +14,14 @@ $factory->define(User::class, function (Faker $faker) {
         'ip_current' => $faker->ipv4,
     ];
 });
+
+
+$factory->define(\Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings::class, function (Faker $faker) {
+    return [
+        'user_id' => 1,
+        'welcome_flow_enabled' => true,
+        'welcome_flow_step' => 1,
+        'allow_name_change' => true,
+        'can_change_name' => true
+    ];
+});
