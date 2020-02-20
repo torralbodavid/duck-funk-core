@@ -2,6 +2,26 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.2.0 - 2020-02-20
+
+### Added
+- Added create news page at housekeeping.
+- Added option to register directly from client.
+    + Option to create user and customize username, look and create initial room.
+ - Added faker helper in order to create random data
+ - Add API support for update nickname, look and create initial room.
+ - Add social login through facebook
+ - Add new home blades
+ - Add new User relationships: Friend Requests and Friends.
+ - Add new Room relationship: Items. Now you can know items from a room.
+ - Add new keko naming through config. Now you can choose the naming of your avatars.
+
+### Modified
+- Updated housekeeping permissions
+- Refactored housekeeping menu.
+- Refactored login. Now will run through this core package.
+- Refactored user registration. Now will run through event.
+
 ## 0.1.0 - 2019-12-16
 
 ### Added
