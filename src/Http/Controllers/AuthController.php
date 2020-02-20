@@ -4,10 +4,8 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings;
 
 class AuthController extends Controller
 {
@@ -42,6 +40,7 @@ class AuthController extends Controller
             ]);
 
         \auth()->login($user);
+
         return redirect()->intended('hotel');
     }
 }
