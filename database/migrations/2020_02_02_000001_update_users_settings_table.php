@@ -8,7 +8,7 @@ class UpdateUsersSettingsTable extends Migration
 {
     public function up()
     {
-        if(Schema::hasTable('users_settings')) {
+        if (Schema::hasTable('users_settings')) {
             Schema::table('users_settings', function (Blueprint $table) {
                 $table->boolean('welcome_flow_enabled')->default(1);
                 $table->tinyInteger('welcome_flow_step')->default(1);
@@ -18,7 +18,7 @@ class UpdateUsersSettingsTable extends Migration
 
     public function down()
     {
-        if(Schema::hasTable('users_settings')) {
+        if (Schema::hasTable('users_settings')) {
             Schema::table('users_settings', function (Blueprint $table) {
                 $table->dropColumn('welcome_flow_enabled');
                 $table->dropColumn('welcome_flow_step');

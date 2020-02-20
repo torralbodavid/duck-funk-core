@@ -1,9 +1,10 @@
 <?php
+
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class ForgotPasswordController extends Controller
 {
@@ -36,6 +37,4 @@ class ForgotPasswordController extends Controller
             ->withInput($request->only('mail'))
             ->withErrors(['mail' => trans($response)]);
     }
-
-
 }

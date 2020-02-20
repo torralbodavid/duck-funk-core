@@ -2,9 +2,9 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class ResetPasswordController extends Controller
 {
@@ -57,6 +57,4 @@ class ResetPasswordController extends Controller
             ->withInput($request->only('mail'))
             ->withErrors(['mail' => trans($response)]);
     }
-
-
 }

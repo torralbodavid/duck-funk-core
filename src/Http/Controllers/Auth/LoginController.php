@@ -2,11 +2,9 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
-use Torralbodavid\DuckFunkCore\Http\Request\Request;
 
 class LoginController extends Controller
 {
@@ -45,9 +43,10 @@ class LoginController extends Controller
         return 'mail';
     }
 
-    public function logout() {
+    public function logout()
+    {
         Session::flush();
+
         return redirect(route('login'));
     }
-
 }
