@@ -31,11 +31,11 @@ class UserTest extends TestCase
             'username' => 'gromenauer',
             'mail' => 'perico@palotes.com',
             'password' => 'secretWord93',
-            'password_confirmation' => 'secretWord93'
+            'password_confirmation' => 'secretWord93',
         ]);
 
         $user = User::where('username', 'gromenauer')->first();
-        
+
         $this->assertEquals('gromenauer', $user->username);
         $response->assertRedirect();
     }

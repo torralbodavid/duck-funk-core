@@ -1,8 +1,9 @@
 <?php
+
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
+use Illuminate\Routing\Controller;
 
 class ConfirmPasswordController extends Controller
 {
@@ -23,6 +24,7 @@ class ConfirmPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+
     /**
      * Create a new controller instance.
      *

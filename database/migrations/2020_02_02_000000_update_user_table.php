@@ -11,7 +11,7 @@ class UpdateUserTable extends Migration
     {
         DB::connection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
 
-        if(Schema::hasTable('users')) {
+        if (Schema::hasTable('users')) {
             Schema::table('users', function (Blueprint $table) {
                 $table->string('password', 255)->nullable()->change();
                 $table->string('mail', 255)->change();
@@ -21,7 +21,7 @@ class UpdateUserTable extends Migration
 
     public function down()
     {
-        if(Schema::hasTable('users')) {
+        if (Schema::hasTable('users')) {
             Schema::table('users', function (Blueprint $table) {
                 $table->string('password', 64)->nullable(false)->change();
                 $table->string('mail', 50)->change();
