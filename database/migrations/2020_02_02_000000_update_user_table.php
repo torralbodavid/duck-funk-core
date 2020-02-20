@@ -10,17 +10,22 @@ class UpdateUserTable extends Migration
     public function up()
     {
         DB::connection()->getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password', 255)->nullable()->change();
-            $table->string('mail', 255)->change();
-        });
+
+        if(Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('password', 255)->nullable()->change();
+                $table->string('mail', 255)->change();
+            });
+        }
     }
 
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('password', 64)->nullable(false)->change();
-            $table->string('mail', 50)->change();
-        });
+        if(Schema::hasTable('users')) {
+            Schema::table('users', function (Blueprint $table) {
+                $table->string('password', 64)->nullable(false)->change();
+                $table->string('mail', 50)->change();
+            });
+        }
     }
 }
