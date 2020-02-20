@@ -41,17 +41,7 @@ class AuthController extends Controller
                 'ip_current' => request()->ip(),
             ]);
 
-        UserSettings::firstOrCreate(
-            ['user_id' => $user->id],
-            [
-                'user_id' => $user->id,
-                'can_change_name' => '1',
-                'allow_name_change' => '1',
-            ]
-        );
-
-        if (Auth::loginUsingId($user->id)) {
-            return redirect()->intended('hotel');
-        }
+        \auth()->login($user);
+        return redirect()->intended('hotel');
     }
 }

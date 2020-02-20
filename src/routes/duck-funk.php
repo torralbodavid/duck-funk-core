@@ -28,8 +28,8 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Torralbodavid\DuckFunkCor
 });
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
-    Route::get('auth/social', 'AuthController@redirectToProvider');
-    Route::get('auth/facebook/callback', 'AuthController@handleProviderCallback');
+    Route::get('auth/social', 'AuthController@redirectToProvider')->name('facebook.login');
+    Route::get('auth/facebook/callback', 'AuthController@handleProviderCallback')->name('facebook.callback');
 });
 
 Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
