@@ -3,13 +3,12 @@
 namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Carbon\Carbon;
+use Illuminate\Auth\Passwords\CanResetPassword as CanResetPasswordTrait;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Torralbodavid\DuckFunkCore\Events\UserEvent;
-use \Illuminate\Auth\Passwords\CanResetPassword as CanResetPasswordTrait;
-
 
 class User extends Model implements Authenticatable, CanResetPassword
 {
