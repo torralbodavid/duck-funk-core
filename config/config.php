@@ -11,6 +11,10 @@ return [
     'name' => 'Duck Funk',
 
     /*
+     * Keko naming
+     */
+    'keko' => 'Duck',
+    /*
      * The route the CMS core will get to build the website.
      */
     'route' => '/',
@@ -41,4 +45,10 @@ return [
     'host_rcon' => '127.0.0.1',
     'port_rcon' => '3001',
     'auth_key_rcon' => env('RCON_AUTH_KEY', 'IA1LLX4QZI7U63AKQEULQ3D84SYAKTO7'),
+
+    /*
+     * Welcome params
+     */
+
+    'welcome_enabled' => true,
 ];

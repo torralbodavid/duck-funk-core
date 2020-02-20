@@ -10,7 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
-        "axios": "^0.18",
+        "axios": "^0.18.1",
         "bootstrap": "^4.4.1",
         "cross-env": "^5.1",
         "css-loader": "^3.3.2",
@@ -28,5 +28,15 @@
         "url-loader": "^2.3.0",
         "vue-template-compiler": "^2.6.10"
     },
-    "dependencies": {}
+    "dependencies": {
+        "filepond": "^4.9.3",
+        "filepond-plugin-file-validate-type": "^1.2.4",
+        "filepond-plugin-image-crop": "^2.0.3",
+        "filepond-plugin-image-edit": "^1.5.1",
+        "filepond-plugin-image-exif-orientation": "^1.0.6",
+        "filepond-plugin-image-preview": "^4.5.0",
+        "filepond-plugin-image-resize": "^2.0.4",
+        "filepond-plugin-image-transform": "^3.6.2",
+        "toastr": "^2.1.4"
+    }
 }

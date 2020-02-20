@@ -8,7 +8,7 @@ class HousekeepingMiddleware
 {
     public function handle($request, Closure $next)
     {
-        return core()->user()->permissions->canReadHousekeeping()
+        return core()->user()->permissions->housekeeping_read
             ? $next($request)
             : redirect('home')->with('status', 403);
     }

@@ -10,17 +10,17 @@ class DuckFunkCore
     /*
      * Package version
      */
-    const PACKAGE_VERSION = '0.1.0';
+    const PACKAGE_VERSION = '0.2.0';
 
     protected User $user;
 
     public function __construct()
     {
-        $this->user = User::find(Auth::id());
+        $this->user = User::find(Auth::user()->id);
     }
 
     public function user(): User
     {
-        return User::find(Auth::id());
+        return User::find(Auth::user()->id);
     }
 }

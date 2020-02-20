@@ -21,7 +21,18 @@ mix
         'src/resources/assets/js/plugins/peity-chart/jquery.peity.min.js',
         'src/resources/assets/housekeeping-js/pages/dashboard.js',
     ], 'public/js/labs/dependencies/dashboard.min.js')
+    //news dependencies
+    .combine([
+        'src/resources/assets/js/plugins/tinymce-dark/jquery.tinymce.min.js',
+        'src/resources/assets/js/plugins/tinymce-dark/tinymce.min.js',
+        'src/resources/assets/housekeeping-js/pages/form-editors.int.js',
+        'src/resources/assets/js/plugins/select2/js/select2.js',
+    ], 'public/js/labs/dependencies/news.min.js')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/plugins', 'public/js/labs/dependencies/plugins')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/themes', 'public/js/labs/dependencies/themes')
+    .copy('src/resources/assets/js/plugins/tinymce-dark/skins', 'public/js/labs/dependencies/skins')
     .version();
+
 
 mix.options({
     uglify: {
@@ -48,8 +59,16 @@ mix.options({
     .copy('src/resources/assets/css/metismenu.min.css', 'public/css')
     .copy('src/resources/assets/js/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css', 'public/css')
     .copy('src/resources/assets/js/plugins/jvectormap/jquery-jvectormap-2.0.2.css', 'public/css')
+    .copy('src/resources/assets/js/plugins/select2/css/select2.min.css', 'public/css')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
+    .js('src/resources/assets/js/duck_funk/labs/*', 'public/js/housekeeping/legacy/labs.js')
+    .js('src/resources/assets/js/filepond.js', 'public/js/legacy')
+    .styles([
+        'src/resources/assets/filepond/filepond.css',
+        'src/resources/assets/filepond/filepond-plugin-image-edit.css',
+        'src/resources/assets/filepond/filepond-plugin-image-preview.css'
+    ], 'public/css/filepond.css')
     .version()
     .webpackConfig({
         resolve: {

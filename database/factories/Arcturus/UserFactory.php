@@ -12,5 +12,15 @@ $factory->define(User::class, function (Faker $faker) {
         'account_created' => $faker->unixTime,
         'ip_register' => $faker->ipv4,
         'ip_current' => $faker->ipv4,
+        'last_login' => \Carbon\Carbon::now()->getTimestamp(),
+    ];
+});
+
+$factory->define(\Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings::class, function (Faker $faker) {
+    return [
+        'welcome_flow_enabled' => true,
+        'welcome_flow_step' => 1,
+        'allow_name_change' => true,
+        'can_change_name' => true,
     ];
 });

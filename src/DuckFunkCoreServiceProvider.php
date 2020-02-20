@@ -3,6 +3,10 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
+use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
+use Torralbodavid\DuckFunkCore\Observers\UserObserver;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -22,6 +26,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
+        $this->loadRoutesFrom(__DIR__.'/routes/duck-funk-api.php');
 
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('duck-funk.php'),
@@ -39,12 +44,14 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         ], 'duck-funk-core/assets');
 
         // Publishing the translation files.
-            /*$this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
-            ], 'lang');*/
+        /*$this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
+        ], 'lang');*/
 
-            // Registering package commands.
-            // $this->commands([]);
+        // Registering package commands.
+        // $this->commands([]);
+        User::observe(UserObserver::class);
+        News::observe(NewsObserver::class);
     }
 
     /**
@@ -52,6 +59,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(DuckFunkEventServiceProvider::class);
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
 
