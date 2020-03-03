@@ -2,6 +2,11 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.3.0 - 2020-03-03
+
+### Added
+- Larevel 7 support
+
 ## 0.2.0 - 2020-02-20
 
 ### Added
