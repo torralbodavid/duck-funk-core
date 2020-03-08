@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
 const webpack = require('webpack');
 
 /*
@@ -69,6 +70,7 @@ mix.options({
         'src/resources/assets/filepond/filepond-plugin-image-edit.css',
         'src/resources/assets/filepond/filepond-plugin-image-preview.css'
     ], 'public/css/filepond.css')
+    .purgeCss()
     .version()
     .webpackConfig({
         resolve: {
