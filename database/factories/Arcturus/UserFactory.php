@@ -1,6 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use Faker\Generator as Faker;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
@@ -16,7 +17,7 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(\Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings::class, function (Faker $faker) {
+$factory->define(\Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings::class, function () {
     return [
         'welcome_flow_enabled' => true,
         'welcome_flow_step' => 1,
