@@ -21,6 +21,6 @@ class DuckFunkCore
 
     public function user(): User
     {
-        return User::find(Auth::user()->id);
+        return $this->user;
     }
 }
