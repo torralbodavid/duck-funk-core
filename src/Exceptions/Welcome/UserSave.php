@@ -18,7 +18,6 @@ class UserSave extends Exception
 
     public function render()
     {
-        dd($this->validator->errors()->first());
         if ($this->validator->errors()->first() == 'validation.in') {
             return response()->json([
                 'code' => 'INVALID_GENDER',
