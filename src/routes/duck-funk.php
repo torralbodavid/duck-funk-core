@@ -42,6 +42,14 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
                 Route::post('dashboard-parser', 'DashboardController@getUpdateWall')->name('dashboard-parser');
             });
         });
+
+        /*
+         * Dynamic routing
+         */
+
+        Route::get('{slug}', [
+            'uses' => 'PageController@getPage'
+        ])->where('slug', '([A-Za-z0-9\-\/]+)');
     });
 });
 
