@@ -12,6 +12,19 @@ class PageController
     {
         $page = Page::where('route', $slug)->where('active', 1)->firstOrFail();
 
-        return view("duck-funk-core::{$page->slug}")->with('page', $page);
+        $controller = "Http\Controllers\Pages\\".ucfirst($page->slug)."Controller";
+        $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
+
+
+        if(! class_exists($controller)) {
+            return $response;
+        }
+
+        $action = new $controller();
+
+        return method_exists($action, 'index')
+            ? $action->index($page)
+            : $response;
+
     }
 }
