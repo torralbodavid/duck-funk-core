@@ -3,7 +3,6 @@
 namespace Torralbodavid\DuckFunkCore\Events\Avatar;
 
 use Illuminate\Queue\SerializesModels;
-use Torralbodavid\DuckFunkCore\Http\Request\Request;
 
 class UpdateAvatarEvent
 {
