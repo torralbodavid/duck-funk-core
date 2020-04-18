@@ -31,7 +31,7 @@ class PageController extends Controller
     {
         $data = [
             'permissions' => Permissions::all(),
-            'pages' => Page::where('active', true)->get()
+            'pages' => Page::where('active', true)->get(),
         ];
 
         return response()->view('housekeeping::pages.edit', $data, 200);
@@ -52,7 +52,6 @@ class PageController extends Controller
                 'slug' => $validated['slug'],
                 'route' => $validated['route'],
             ]);
-
 
         $news->categories = $validated['allCategories'];
         $news->draft = 0;
