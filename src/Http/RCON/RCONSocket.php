@@ -2,6 +2,8 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\RCON;
 
+use Exception;
+
 class RCONSocket
 {
     protected $socket;
@@ -15,7 +17,7 @@ class RCONSocket
     {
         try {
             $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return response()->json(
                 [
                     'connection' => 'failed',
@@ -35,7 +37,7 @@ class RCONSocket
 
         try {
             $result = socket_connect($socket, config('duck-funk.host_rcon'), config('duck-funk.port_rcon'));
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return response()->json(
               [
                   'connection' => 'failed',
@@ -64,7 +66,7 @@ class RCONSocket
             $this->sendCommand();
             $this->checkCommandReceived();
             $this->destruct();
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             return response()->json(
                 [
                     'connection' => 'failed',
