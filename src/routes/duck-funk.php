@@ -25,7 +25,6 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
      * Check where we start to construct the routes based in the config route param
      */
     Route::prefix(config('duck-funk.route'))->group(function () {
-        Route::get('home', 'DuckController')->name('home');
         Route::get('expulsion', function () {
             return view('duck-funk-core::ban');
         })->name('ban');
@@ -44,12 +43,7 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
             });
         });
 
-        /*
-         * Dynamic routing
-         */
-        Route::get('{slug}', [
-            'uses' => 'PageController@getPage',
-        ])->where('slug', '([A-Za-z0-9\-\/]+)');
+        Route::get('{slug}', ['uses' => 'PageController@getPage'])->where('slug', '([A-Za-z0-9\-\/]+)');
     });
 });
 
