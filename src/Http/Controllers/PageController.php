@@ -8,7 +8,6 @@ class PageController
 {
     public function getPage($slug = null)
     {
-
         $page = Page::where('route', $slug)->where('active', true)->firstOrFail();
 
         $controller = "App\Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
