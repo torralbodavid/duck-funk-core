@@ -8,9 +8,15 @@ class PageController
 {
     public function getPage($slug = null)
     {
-        $page = Page::where('route', $slug)->where('active', 1)->firstOrFail();
 
-        $controller = "Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
+        $page = Page::where('route', $slug)->where('active', true)->firstOrFail();
+
+        $controller = "App\Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
+
+        if (! view()->exists("duck-funk-core::{$page->slug}")) {
+            abort(404);
+        }
+
         $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
 
         if (! class_exists($controller)) {
