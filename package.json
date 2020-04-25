@@ -27,7 +27,8 @@
         "serialize-javascript": "^3.0.0",
         "style-loader": "^1.1.3",
         "url-loader": "^2.3.0",
-        "vue-template-compiler": "^2.6.11"
+        "vue-template-compiler": "^2.6.11",
+        "webpack-concat-plugin": "^3.0.0"
     },
     "dependencies": {
         "filepond": "^4.11.0",
