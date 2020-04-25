@@ -191,7 +191,7 @@
 
 @section('scripts')
     <!-- Dependencies  -->
-    <script src="{{ mix('/js/labs/dependencies/initial.min.js', '/vendor/duck-funk-core') }}"></script>
+    <script src="{{ mix('/js/initial.min.js', '/vendor/duck-funk-core') }}"></script>
     <script src="{{ mix('/js/labs/dependencies/news.min.js', '/vendor/duck-funk-core') }}"></script>
 
     <!-- App js -->

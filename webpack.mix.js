@@ -12,7 +12,7 @@ mix
         'src/resources/assets/js/metismenu.min.js',
         'src/resources/assets/js/jquery.slimscroll.js',
         'src/resources/assets/js/waves.min.js'
-    ], 'public/js/labs/dependencies/initial.min.js')
+    ], 'public/js/initial.min.js')
     //dashboard dependencies
     .combine([
         'src/resources/assets/housekeeping-js/pages/dashboard.js',
@@ -21,6 +21,12 @@ mix
     .combine([
         'src/resources/assets/housekeeping-js/pages/form-editors.int.js',
     ], 'public/js/labs/dependencies/news.min.js')
+    .styles([
+        'src/resources/assets/css/bootstrap.min.css',
+        'src/resources/assets/css/icons.css',
+        'src/resources/assets/css/icons.css.map',
+        'src/resources/assets/css/metismenu.min.css',
+    ], 'public/css/core.css')
     .version();
 
 
@@ -34,19 +40,10 @@ mix.options({
     },
 })
     .setPublicPath('public')
-    .copy('src/resources/assets/js/jquery.min.js', 'public/js')
-    .copy('src/resources/assets/js/bootstrap.bundle.min.js', 'public/js')
-    .copy('src/resources/assets/js/jquery.slimscroll.js', 'public/js')
-    .copy('src/resources/assets/js/metismenu.min.js', 'public/js')
-    .copy('src/resources/assets/js/waves.min.js', 'public/js')
     .copy('src/resources/assets/js/app.js', 'public/js')
     .copy('src/resources/assets/housekeeping-js/app.js', 'public/js/housekeeping')
-    .copy('src/resources/assets/css/bootstrap.min.css', 'public/css')
     .copy('src/resources/assets/fonts', 'public/fonts')
     .copy('src/resources/assets/icons', 'public/icons')
-    .copy('src/resources/assets/css/icons.css', 'public/css')
-    .copy('src/resources/assets/css/icons.css.map', 'public/css')
-    .copy('src/resources/assets/css/metismenu.min.css', 'public/css')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
     .js('src/resources/assets/js/duck_funk/labs/*', 'public/js/housekeeping/legacy/labs.js')
