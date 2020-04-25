@@ -64,12 +64,6 @@ mix.options({
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
     .js('src/resources/assets/js/duck_funk/labs/*', 'public/js/housekeeping/legacy/labs.js')
-    .js('src/resources/assets/js/filepond.js', 'public/js/legacy')
-    .styles([
-        'src/resources/assets/filepond/filepond.css',
-        'src/resources/assets/filepond/filepond-plugin-image-edit.css',
-        'src/resources/assets/filepond/filepond-plugin-image-preview.css'
-    ], 'public/css/filepond.css')
     .purgeCss()
     .version()
     .webpackConfig({
