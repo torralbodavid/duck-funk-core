@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Torralbodavid\DuckFunkCore\Http\Middleware;
-
 
 use Closure;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
