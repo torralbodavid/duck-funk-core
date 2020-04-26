@@ -5,7 +5,7 @@
 [![StyleCI](https://github.styleci.io/repos/7548986/shield)](https://github.styleci.io/repos/213175095)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/?branch=master)
 
-This is the core of the Duck Funk CMS for Arcturus emulator.
+> **Note:** This is the core of the Duck Funk CMS for Arcturus Morningstar. If you want to build your own hotel, visit the main [Duck funk repository](https://github.com/torralbodavid/duck-funk).
 
 ## Installation
 

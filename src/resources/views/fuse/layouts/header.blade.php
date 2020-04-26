@@ -28,31 +28,10 @@
                             </li>
                         @endauth
 
-                    <!-- language-->
-                        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/flags/us_flag.jpg" class="mr-2" height="12" alt=""/> English
-                                <span class="mdi mdi-chevron-down"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right language-switch">
-                                <a class="dropdown-item" href="#"><img src="assets/images/flags/germany_flag.jpg" alt=""
-                                                                       height="16"/><span> German </span></a>
-                                <a class="dropdown-item" href="#"><img src="assets/images/flags/italy_flag.jpg" alt=""
-                                                                       height="16"/><span> Italian </span></a>
-                                <a class="dropdown-item" href="#"><img src="assets/images/flags/french_flag.jpg" alt=""
-                                                                       height="16"/><span> French </span></a>
-                                <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt=""
-                                                                       height="16"/><span> Spanish </span></a>
-                                <a class="dropdown-item" href="#"><img src="assets/images/flags/russia_flag.jpg" alt=""
-                                                                       height="16"/><span> Russian </span></a>
-                            </div>
-                        </li>
-
                         <!-- full screen -->
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
                             <a class="nav-link" href="#" id="btn-fullscreen">
-                                <i class="ion ion-md-qr-scanner noti-icon"></i>
+                                <i class="retro-mid retro-mid-zoomin"></i>
                             </a>
                         </li>
 
@@ -62,7 +41,7 @@
                                 <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
                                    role="button"
                                    aria-haspopup="false" aria-expanded="false">
-                                    <i class="ion ion-md-notifications noti-icon"></i>
+                                    <i class="retro-mid retro-mid-v20_b2"></i>
                                     <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">

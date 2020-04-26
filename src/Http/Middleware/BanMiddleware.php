@@ -19,7 +19,9 @@ class BanMiddleware
         $this->currentTimestamp = Carbon::now()->timestamp;
         $this->banRoute = Route::current()->getAction('as') == 'ban';
 
-        if ($this->accountBan() || $this->ipBan() || $this->machineBan() || $this->superBan()) {
+        $accountBan = $this->accountBan();
+
+        if ($accountBan || $this->ipBan() || $this->machineBan() || $this->superBan()) {
             if ($this->banRoute) {
                 app()->instance('expulsion', $this->ban);
                 app()->instance('user_session', core()->user()->username);
@@ -30,7 +32,9 @@ class BanMiddleware
             } else {
                 return redirect()->route('ban');
             }
-        } elseif (! $this->accountBan() && $this->banRoute) {
+        }
+
+        if (! $accountBan && $this->banRoute) {
             return redirect()->route('home');
         }
 

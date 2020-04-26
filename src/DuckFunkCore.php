@@ -10,7 +10,7 @@ class DuckFunkCore
     /*
      * Package version
      */
-    const PACKAGE_VERSION = '0.3.0';
+    const PACKAGE_VERSION = '0.4.0';
 
     protected User $user;
 
@@ -21,6 +21,6 @@ class DuckFunkCore
 
     public function user(): User
     {
-        return User::find(Auth::user()->id);
+        return $this->user;
     }
 }

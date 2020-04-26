@@ -2,6 +2,14 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.4.0 - 2020-04-26
+
+### Added
+- Dynamic page control
+
+### Fixed
+- Delete icons, fonts and images which are not being used
+
 ## 0.3.0 - 2020-03-03
 
 ### Added

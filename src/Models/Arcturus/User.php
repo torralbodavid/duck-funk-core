@@ -8,10 +8,12 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 use Torralbodavid\DuckFunkCore\Events\UserEvent;
 
 class User extends Model implements Authenticatable, CanResetPassword
 {
+    use HasRoles;
     use Notifiable;
     use CanResetPasswordTrait;
 

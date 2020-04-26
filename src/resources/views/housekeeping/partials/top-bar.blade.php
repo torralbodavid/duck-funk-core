@@ -33,7 +33,7 @@
             <!-- notification -->
             <li class="dropdown notification-list list-inline-item">
                 <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <i class="ion ion-md-notifications noti-icon"></i>
+                    <i class="retro-mid retro-mid-alert_triangle"></i>
                     <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
