@@ -10,7 +10,12 @@ class PageController
     {
         $page = $request->page;
 
-        $controller = package_namespace().'\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
+        $packageController = package_namespace().'\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
+        $projectController = 'App\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
+
+        $controller = class_exists($projectController)
+            ? $projectController
+            : $packageController;
 
         if (! view()->exists("duck-funk-core::{$page->slug}") && ! class_exists($controller)) {
             return abort(404);
