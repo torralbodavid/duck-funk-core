@@ -6,20 +6,22 @@ use Illuminate\Http\Request;
 
 class PageController
 {
-    public function getPage(Request $request)
+    public function __invoke(Request $request)
     {
         $page = $request->page;
 
-        $controller = "App\Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
+        $controller = package_namespace().'\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
 
-        if (! view()->exists("duck-funk-core::{$page->slug}")) {
-            abort(404);
+        if (! view()->exists("duck-funk-core::{$page->slug}") && ! class_exists($controller)) {
+            return abort(404);
         }
 
-        $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
-
         if (! class_exists($controller)) {
-            return $response;
+            return abort(404);
+        }
+
+        if (view()->exists("duck-funk-core::{$page->slug}")) {
+            $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
         }
 
         $action = new $controller();

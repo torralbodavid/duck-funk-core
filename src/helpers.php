@@ -17,3 +17,8 @@ function faker($property = null)
 
     return $faker;
 }
+
+function package_namespace(): string
+{
+    return 'Torralbodavid\DuckFunkCore';
+}
