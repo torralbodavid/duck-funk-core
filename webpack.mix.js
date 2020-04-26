@@ -40,7 +40,6 @@ mix.options({
     .setPublicPath('public')
     .copy('src/resources/assets/js/app.js', 'public/js')
     .copy('src/resources/assets/housekeeping-js/app.js', 'public/js/housekeeping')
-    .copy('src/resources/assets/fonts', 'public/fonts')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
     .js('src/resources/assets/js/duck_funk/labs/*', 'public/js/housekeeping/legacy/labs.js')

@@ -31,7 +31,7 @@
                         <!-- full screen -->
                         <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
                             <a class="nav-link" href="#" id="btn-fullscreen">
-                                <i class="ion ion-md-qr-scanner noti-icon"></i>
+                                <i class="retro-mid retro-mid-zoomin"></i>
                             </a>
                         </li>
 
@@ -41,7 +41,7 @@
                                 <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#"
                                    role="button"
                                    aria-haspopup="false" aria-expanded="false">
-                                    <i class="ion ion-md-notifications noti-icon"></i>
+                                    <i class="retro-mid retro-mid-v20_b2"></i>
                                     <span class="badge badge-pill badge-danger noti-icon-badge">3</span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg">
