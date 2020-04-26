@@ -7,7 +7,7 @@ All notable changes to `duck-funk-core` will be documented in this file
 ### Added
 - Added support for project page controllers.
     + You will be redirected by default to your page slug blade.
-    + You can create your PageControllers on the project at `App/App\Http\Controllers\Pages` namespace and with the name `SlugController`.
+    + You can create your PageControllers on the project at `App\Http\Controllers\Pages` namespace and with the name `SlugController`.
     + You can pass additional data to the blade by overriding `getData` method. Page object is always injected.
 - You can get page route by calling `coure()->page('slug')`
 
