@@ -23,8 +23,6 @@ mix
     ], 'public/js/labs/dependencies/news.min.js')
     .styles([
         'src/resources/assets/css/bootstrap.min.css',
-        'src/resources/assets/css/icons.css',
-        'src/resources/assets/css/icons.css.map',
         'src/resources/assets/css/metismenu.min.css',
     ], 'public/css/core.css')
     .version();
@@ -43,11 +41,9 @@ mix.options({
     .copy('src/resources/assets/js/app.js', 'public/js')
     .copy('src/resources/assets/housekeeping-js/app.js', 'public/js/housekeeping')
     .copy('src/resources/assets/fonts', 'public/fonts')
-    .copy('src/resources/assets/icons', 'public/icons')
     .sass('src/resources/assets/scss/style.scss', 'public/css')
     .sass('src/resources/assets/housekeeping-scss/style.scss', 'public/css/housekeeping')
     .js('src/resources/assets/js/duck_funk/labs/*', 'public/js/housekeeping/legacy/labs.js')
-    .purgeCss()
     .version()
     .webpackConfig({
         resolve: {
