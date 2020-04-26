@@ -30,8 +30,6 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
             return view('duck-funk-core::ban');
         })->name('ban');
 
-        Route::get('hotel', 'GameController@showHotel')->name('hotel');
-
         /*
          * Housekeeping routes
          */
