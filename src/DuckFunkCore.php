@@ -4,6 +4,7 @@ namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\Facades\Auth;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
 class DuckFunkCore
 {
@@ -22,5 +23,12 @@ class DuckFunkCore
     public function user(): User
     {
         return $this->user;
+    }
+
+    public function page($slug = null): string
+    {
+        $page = Page::where('slug', $slug)->firstOrFail();
+
+        return $page->route;
     }
 }
