@@ -2,18 +2,12 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Pages;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
 
 class HotelController extends Controller
 {
     use RCONConnection;
-
-    public function index()
-    {
-        return view('duck-funk-core::hotel.hotel', ['sso' => $this->generateSSO()]);
-    }
 
     private function generateSSO()
     {
@@ -23,4 +17,13 @@ class HotelController extends Controller
 
         return $setSSO->auth_ticket;
     }
+
+    protected function getData(): array
+    {
+        return [
+          'sso' => $this->generateSSO()
+        ];
+    }
+
+
 }

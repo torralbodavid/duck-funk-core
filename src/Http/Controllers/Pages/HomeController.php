@@ -2,10 +2,7 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Pages;
 
-class HomeController
+class HomeController extends Controller
 {
-    public function index()
-    {
-        return view('duck-funk-core::home');
-    }
+
 }

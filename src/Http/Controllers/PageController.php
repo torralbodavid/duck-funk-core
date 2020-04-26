@@ -30,4 +30,5 @@ class PageController
             ? $action->index($page)
             : $response;
     }
+
 }
