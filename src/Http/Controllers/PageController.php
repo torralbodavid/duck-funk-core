@@ -2,13 +2,13 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
-use Torralbodavid\DuckFunkCore\Models\CMS\Page;
+use Illuminate\Http\Request;
 
 class PageController
 {
-    public function getPage($slug = null)
+    public function getPage(Request $request)
     {
-        $page = Page::where('route', $slug)->where('active', true)->firstOrFail();
+        $page = $request->page;
 
         $controller = "App\Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
 

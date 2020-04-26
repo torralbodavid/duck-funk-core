@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
 use Torralbodavid\DuckFunkCore\Http\Middleware\HousekeepingMiddleware;
+use Torralbodavid\DuckFunkCore\Http\Middleware\PageMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,7 +44,9 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
             });
         });
 
-        Route::get('{slug}', ['uses' => 'PageController@getPage'])->where('slug', '([A-Za-z0-9\-\/]+)');
+        Route::group(['middleware' => [PageMiddleware::class]], function () {
+            Route::get('{slug}', ['uses' => 'PageController@getPage'])->where('slug', '([A-Za-z0-9\-\/]+)');
+        });
     });
 });
 
