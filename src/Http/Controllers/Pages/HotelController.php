@@ -5,7 +5,6 @@ namespace Torralbodavid\DuckFunkCore\Http\Controllers\Pages;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Torralbodavid\DuckFunkCore\Http\Traits\RCONConnection;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class HotelController extends Controller
 {
