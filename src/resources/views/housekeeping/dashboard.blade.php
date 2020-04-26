@@ -25,7 +25,7 @@
                             <div class="col-sm-6">
                                 <div class="float-right d-none d-md-block">
                                     <div class="dropdown">
-                                        <a href="{{ route('hotel') }}" target="_blank" class="btn btn-danger dropdown-toggle arrow-none waves-effect waves-light" type="button">
+                                        <a href="{{ core()->page('hotel') }}" target="_blank" class="btn btn-danger dropdown-toggle arrow-none waves-effect waves-light" type="button">
                                             <i class="mdi mdi-chat mr-2"></i> Entrar al hotel
                                         </a>
                                     </div>

@@ -2,24 +2,31 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers;
 
-use Torralbodavid\DuckFunkCore\Models\CMS\Page;
+use Illuminate\Http\Request;
 
 class PageController
 {
-    public function getPage($slug = null)
+    public function __invoke(Request $request)
     {
-        $page = Page::where('route', $slug)->where('active', true)->firstOrFail();
+        $page = $request->page;
 
-        $controller = "App\Http\Controllers\Pages\\".ucfirst($page->slug).'Controller';
+        $packageController = package_namespace().'\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
+        $projectController = 'App\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
 
-        if (! view()->exists("duck-funk-core::{$page->slug}")) {
-            abort(404);
+        $controller = class_exists($projectController)
+            ? $projectController
+            : $packageController;
+
+        if (! view()->exists("duck-funk-core::{$page->slug}") && ! class_exists($controller)) {
+            return abort(404);
         }
 
-        $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
-
         if (! class_exists($controller)) {
-            return $response;
+            return abort(404);
+        }
+
+        if (view()->exists("duck-funk-core::{$page->slug}")) {
+            $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
         }
 
         $action = new $controller();
