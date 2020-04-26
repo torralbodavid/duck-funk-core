@@ -21,9 +21,7 @@ class HotelController extends Controller
     protected function getData(): array
     {
         return [
-          'sso' => $this->generateSSO()
+            'sso' => $this->generateSSO(),
         ];
     }
-
-
 }
