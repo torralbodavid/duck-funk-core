@@ -9,7 +9,7 @@ class PageMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $page = Page::where('route', $request->route('slug'))->where('active', true)->firstOrFail();
+        $page = Page::where('route', $request->route('slug'))->firstOrFail();
         $request->request->add(['page' => $page]);
 
         return (core()->user()->rank >= $page->min_rank) ? $next($request) : redirect('/');
