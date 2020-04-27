@@ -6,7 +6,7 @@
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-        @include('duck-funk-core::layouts.head')
+        @include('duck-funk-core::fuse.layouts.head')
   </head>
     <body class="bg-image pb-0">
         @yield('content')

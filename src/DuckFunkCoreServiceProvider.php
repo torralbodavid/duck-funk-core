@@ -16,7 +16,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
     public function boot()
     {
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'duck-funk-core');
-        $this->loadViewsFrom(__DIR__.'/resources/views/'.config('duck-funk.template'), 'duck-funk-core');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views/housekeeping', 'housekeeping');
         $this->loadViewsFrom(__DIR__.'/resources/views/auth', 'auth');
 
@@ -29,7 +29,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         ], 'duck-funk-core/config');
 
         $this->publishes([
-            __DIR__.'/resources/views/'.config('duck-funk.template') => resource_path('views/vendor/duck-funk-core'),
+            __DIR__.'/resources/views' => resource_path('views/vendor/duck-funk-core/'),
         ], 'duck-funk-core/views');
 
         $this->publishes([

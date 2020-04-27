@@ -1,4 +1,4 @@
-@extends('duck-funk-core::layouts.master')
+@extends('duck-funk-core::fuse.layouts.master')
 
 @section('css')
 @endsection
