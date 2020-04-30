@@ -372,7 +372,7 @@
                             <div class="float-right d-none d-md-block">
                                 <div class="dropdown">
                                     <a href="{{ core()->page('hotel') }}" class="btn btn-danger arrow-none waves-effect waves-light">
-                                        <i class="retro retro-tab_icon_02_hotel"></i> Entra en el hotel
+                                        <i class="retro retro-mid-hotel-button-medium-icon"></i> Entra en el hotel
                                     </a>
                                 </div>
                             </div>
