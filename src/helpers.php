@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Factory;
+use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
 function core()
 {

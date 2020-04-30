@@ -27,9 +27,11 @@
         "socialiteproviders/facebook": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5",
+        "laravel/ui": "^2.0",
+        "mockery/mockery": "^1.3",
         "orchestra/testbench": "^5.0",
-        "mockery/mockery": "^1.3"
+        "phpunit/phpunit": "^8.5",
+        "spatie/laravel-permission": "^3.11"
     },
     "prefer-stable" : true,
     "autoload": {

@@ -27,7 +27,7 @@ class DuckFunkCore
 
     public function page($slug = null): string
     {
-        $page = Page::where('slug', $slug)->firstOrFail();
+        $page = Page::where('route', $slug)->firstOrFail();
 
         return $page->route;
     }

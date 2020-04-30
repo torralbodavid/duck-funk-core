@@ -1,9 +1,10 @@
 <?php
 
-namespace Torralbodavid\DuckFunkCore\Tests;
+namespace Torralbodavid\DuckFunkCore\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Tests\TestCase;
 
 class UserTest extends TestCase
 {

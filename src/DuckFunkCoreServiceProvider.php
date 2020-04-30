@@ -3,6 +3,9 @@
 namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Ui\UiServiceProvider;
+use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
+use Torralbodavid\DuckFunkCore\Http\Middleware\PageMiddleware;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
@@ -52,6 +55,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->register(UiServiceProvider::class);
         $this->app->register(DuckFunkEventServiceProvider::class);
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
