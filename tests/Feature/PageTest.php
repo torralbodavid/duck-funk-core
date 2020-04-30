@@ -3,7 +3,6 @@
 namespace Torralbodavid\DuckFunkCore\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Auth;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 use Torralbodavid\DuckFunkCore\Tests\TestCase;
 

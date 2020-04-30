@@ -1,4 +1,5 @@
 <?php
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use Faker\Generator as Faker;
@@ -19,6 +20,6 @@ $factory->define(Page::class, function (Faker $faker) {
         'created_at' => now(),
         'updated_at' => now(),
         'published_at' => now(),
-        'deleted_at' => null
+        'deleted_at' => null,
     ];
 });

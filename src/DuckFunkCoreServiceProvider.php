@@ -4,8 +4,6 @@ namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiServiceProvider;
-use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
-use Torralbodavid\DuckFunkCore\Http\Middleware\PageMiddleware;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 use Torralbodavid\DuckFunkCore\Observers\NewsObserver;

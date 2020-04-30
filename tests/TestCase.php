@@ -9,6 +9,7 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected User $user;
+
     protected function setUp(): void
     {
         parent::setUp();
