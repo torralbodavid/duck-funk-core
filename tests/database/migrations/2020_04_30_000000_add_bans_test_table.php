@@ -16,7 +16,7 @@ class AddBansTestTable extends \Illuminate\Database\Migrations\Migration
             $table->integer('timestamp');
             $table->integer('ban_expire');
             $table->string('ban_reason');
-            $table->enum('type', ['account','ip','machine','super']);
+            $table->enum('type', ['account', 'ip', 'machine', 'super']);
             $table->integer('cfh_topic');
         });
     }
