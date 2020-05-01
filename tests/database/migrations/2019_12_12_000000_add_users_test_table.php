@@ -9,6 +9,7 @@ class AddUsersTestTable extends \Illuminate\Database\Migrations\Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->unsignedInteger('id', true);
+            $table->integer('rank');
             $table->string('username', 25);
             $table->string('password', 64);
             $table->string('mail', 50);

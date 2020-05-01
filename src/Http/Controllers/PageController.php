@@ -17,7 +17,7 @@ class PageController
             ? $projectController
             : $packageController;
 
-        if (! view()->exists("duck-funk-core::{$page->slug}") && ! class_exists($controller)) {
+        if (! view()->exists(template_namespace().".{$page->slug}") && ! class_exists($controller)) {
             return abort(404);
         }
 
@@ -25,8 +25,8 @@ class PageController
             return abort(404);
         }
 
-        if (view()->exists("duck-funk-core::{$page->slug}")) {
-            $response = view("duck-funk-core::{$page->slug}")->with('page', $page);
+        if (view()->exists(template_namespace().".{$page->slug}")) {
+            $response = view(template_namespace().".{$page->slug}")->with('page', $page);
         }
 
         $action = new $controller();

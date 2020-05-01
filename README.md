@@ -4,6 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/torralbodavid/duck-funk-core.svg?style=flat-square)](https://packagist.org/packages/torralbodavid/duck-funk-core)
 [![StyleCI](https://github.styleci.io/repos/7548986/shield)](https://github.styleci.io/repos/213175095)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/torralbodavid/duck-funk-core/?branch=master)
+[![Build Status](https://travis-ci.org/torralbodavid/duck-funk-core.svg?branch=master)](https://travis-ci.org/torralbodavid/duck-funk-core)
 
 > **Note:** This is the core of the Duck Funk CMS for Arcturus Morningstar. If you want to build your own hotel, visit the main [Duck funk repository](https://github.com/torralbodavid/duck-funk).
 
@@ -13,6 +14,11 @@ You can install the package via composer:
 
 ```bash
 composer require torralbodavid/duck-funk-core
+```
+### Testing
+
+``` bash
+composer test
 ```
 
 ### Changelog

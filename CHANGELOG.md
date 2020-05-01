@@ -2,14 +2,27 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.4.2 - 2020-05-01
+
+### Added
+- New tests for dynamic page development
+
+### Fixed
+- Fixed auth tests
+- Fixed icon sprites
+- Fixed vendor publishing in order to have more than one template.
+
+### Deleted
+- Non habbo icons
+
 ## 0.4.1 - 2020-04-26
 
 ### Added
 - Added support for project page controllers.
     + You will be redirected by default to your page slug blade.
-    + You can create your PageControllers on the project at `App/App\Http\Controllers\Pages` namespace and with the name `SlugController`.
+    + You can create your PageControllers on the project at `App\Http\Controllers\Pages` namespace and with the name `SlugController`.
     + You can pass additional data to the blade by overriding `getData` method. Page object is always injected.
-- You can get page route by calling `coure()->page('slug')`
+- You can get page route by calling `core()->page('slug')`
 
 ### Fixed
 - Route and styles corrections

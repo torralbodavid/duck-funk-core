@@ -8,16 +8,16 @@
         <title>{{ $page->meta_title }}</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
-        @include('duck-funk-core::layouts.head')
+        @include('duck-funk-core::fuse.layouts.head')
   </head>
 <body>
-  @include('duck-funk-core::layouts.header')
+  @include('duck-funk-core::fuse.layouts.header')
     <div class="wrapper">
         <div class="container-fluid">
           @yield('content')
         </div>
     </div>
-    @include('duck-funk-core::layouts.footer')
-    @include('duck-funk-core::layouts.footer-script')
+    @include('duck-funk-core::fuse.layouts.footer')
+    @include('duck-funk-core::fuse.layouts.footer-script')
     </body>
 </html>

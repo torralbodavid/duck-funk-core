@@ -11,7 +11,7 @@ class DuckFunkCore
     /*
      * Package version
      */
-    const PACKAGE_VERSION = '0.4.1';
+    const PACKAGE_VERSION = '0.4.2';
 
     protected User $user;
 
@@ -27,7 +27,7 @@ class DuckFunkCore
 
     public function page($slug = null): string
     {
-        $page = Page::where('slug', $slug)->firstOrFail();
+        $page = Page::where('route', $slug)->firstOrFail();
 
         return $page->route;
     }

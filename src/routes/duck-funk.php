@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
      */
     Route::prefix(config('duck-funk.route'))->group(function () {
         Route::get('expulsion', function () {
-            return view('duck-funk-core::ban');
+            return view('duck-funk-core::fuse.ban');
         })->name('ban');
 
         /*

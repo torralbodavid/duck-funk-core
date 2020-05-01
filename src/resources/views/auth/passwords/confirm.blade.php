@@ -1,4 +1,4 @@
-@extends('duck-funk-core::layouts.master-without-nav')
+@extends('duck-funk-core::fuse.layouts.master-without-nav')
 
 @section('css')
 @endsection

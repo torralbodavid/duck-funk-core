@@ -20,7 +20,7 @@ abstract class Controller extends BaseController
 
     public function index()
     {
-        return view('duck-funk-core::'.$this->page->slug, $this->data);
+        return view(template_namespace().'.'.$this->page->slug, $this->data);
     }
 
     /**

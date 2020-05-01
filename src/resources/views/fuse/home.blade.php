@@ -1,4 +1,4 @@
-@extends('duck-funk-core::layouts.master')
+@extends('duck-funk-core::fuse.layouts.master')
 
 @section('css')
 @endsection
@@ -20,10 +20,10 @@
             <div class="card">
                 <div class="card-body">
                     @guest
-                        @include('duck-funk-core::home.guest.content')
+                        @include('duck-funk-core::fuse.home.guest.content')
                     @endguest
                     @auth
-                        @include('duck-funk-core::home.auth.content')
+                        @include('duck-funk-core::fuse.home.auth.content')
                     @endauth
                 </div>
             </div>

@@ -22,3 +22,8 @@ function package_namespace(): string
 {
     return 'Torralbodavid\DuckFunkCore';
 }
+
+function template_namespace(): string
+{
+    return 'duck-funk-core::'.config('duck-funk.template');
+}
