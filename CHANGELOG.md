@@ -2,6 +2,19 @@
 
 All notable changes to `duck-funk-core` will be documented in this file
 
+## 0.4.2 - 2020-05-01
+
+### Added
+- New tests for dynamic page development
+
+### Fixed
+- Fixed auth tests
+- Fixed icon sprites
+- Fixed vendor publishing in order to have more than one template.
+
+### Deleted
+- Non habbo icons
+
 ## 0.4.1 - 2020-04-26
 
 ### Added
