@@ -55,8 +55,8 @@ class UserTest extends TestCase
 
         $response = $this->post(route('login'), [
             'mail' => 'lorem@ipsum.com',
-            'password' => 'illumina'
-            ]);
+            'password' => 'illumina',
+        ]);
 
         $response->assertRedirect('/home');
 
