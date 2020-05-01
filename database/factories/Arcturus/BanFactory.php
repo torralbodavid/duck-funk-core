@@ -12,6 +12,6 @@ $factory->define(Ban::class, function (Faker $faker) {
         'user_staff_id' => $faker->numberBetween(1, 99),
         'timestamp' => now()->timestamp,
         'ban_reason' => $faker->text,
-        'cfh_topic' => $faker->numberBetween(1, 99)
+        'cfh_topic' => $faker->numberBetween(1, 99),
     ];
 });

@@ -130,6 +130,4 @@ class BanTest extends TestCase
         $response = $this->actingAs($this->user)->get('/home');
         $response->assertRedirect('/expulsion');
     }
-
-
 }

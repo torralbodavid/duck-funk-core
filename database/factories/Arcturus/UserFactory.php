@@ -3,7 +3,6 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use Faker\Generator as Faker;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Ban;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSetting;
 
