@@ -49,10 +49,10 @@ class BanMiddleware
     {
         if (Auth::check()) {
             $ban = Ban::where(function ($q) {
-                    $q->where('ban_expire', '>', $this->currentTimestamp)
+                $q->where('ban_expire', '>', $this->currentTimestamp)
                         ->where('user_id', core()->user()->id)
                         ->where('type', 'account');
-                })
+            })
                 ->orWhere(function ($q) {
                     $q->where('ban_expire', '>', $this->currentTimestamp)
                         ->where('user_id', core()->user()->id)
@@ -71,7 +71,7 @@ class BanMiddleware
                 ->sortByDesc('ban_expire')
                 ->first();
 
-            if (!is_null($ban)) {
+            if (! is_null($ban)) {
                 $this->ban = $ban;
 
                 return true;
