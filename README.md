@@ -15,6 +15,11 @@ You can install the package via composer:
 ```bash
 composer require torralbodavid/duck-funk-core
 ```
+### Testing
+
+``` bash
+composer test
+```
 
 ### Changelog
 
