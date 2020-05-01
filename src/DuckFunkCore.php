@@ -2,6 +2,7 @@
 
 namespace Torralbodavid\DuckFunkCore;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
@@ -13,14 +14,14 @@ class DuckFunkCore
      */
     const PACKAGE_VERSION = '0.4.2';
 
-    protected User $user;
+    protected ?Authenticatable $user;
 
     public function __construct()
     {
-        $this->user = User::find(Auth::user()->id);
+        $this->user = Auth::user();
     }
 
-    public function user(): User
+    public function user(): Authenticatable
     {
         return $this->user;
     }
