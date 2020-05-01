@@ -3,7 +3,7 @@
 namespace Torralbodavid\DuckFunkCore\Tests;
 
 use Torralbodavid\DuckFunkCore\DuckFunkCoreServiceProvider;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Permissions;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Permission;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
@@ -18,7 +18,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->withFactories(__DIR__.'/../database/factories');
 
         $this->user = factory(User::class)->create();
-        $this->permissions = factory(Permissions::class)->create(['id' => 1, 'rank_name' => 'Test']);
+        $this->permissions = factory(Permission::class)->create(['id' => 1, 'rank_name' => 'Test']);
     }
 
     protected function makeAuth()

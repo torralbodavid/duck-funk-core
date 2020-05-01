@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Torralbodavid\DuckFunkCore\Http\Request\Housekeeping\News\NewsStoreRequest;
 use Torralbodavid\DuckFunkCore\Http\Resources\Marketing\NewsResource;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Permissions;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Permission;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 
@@ -30,7 +30,7 @@ class PageController extends Controller
     public function create()
     {
         $data = [
-            'permissions' => Permissions::all(),
+            'permissions' => Permission::all(),
             'pages' => Page::where('active', true)->get(),
         ];
 

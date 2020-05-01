@@ -35,7 +35,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password', 'rank', 'account_created', 'ip_register', 'ip_current', 'last_login',
+        'username', 'mail', 'password', 'rank', 'account_created', 'ip_register', 'ip_current', 'last_login', 'machine_id',
     ];
 
     /**
@@ -76,7 +76,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function permissions()
     {
-        return $this->hasOne(Permissions::class, 'id', 'rank');
+        return $this->hasOne(Permission::class, 'id', 'rank');
     }
 
     /*
@@ -84,7 +84,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function settings()
     {
-        return $this->hasOne(UserSettings::class, 'user_id', 'id');
+        return $this->hasOne(UserSetting::class, 'user_id', 'id');
     }
 
     /*
@@ -92,7 +92,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function bans()
     {
-        return $this->hasMany(Bans::class, 'id', 'user_id');
+        return $this->hasMany(Ban::class, 'id', 'user_id');
     }
 
     /**

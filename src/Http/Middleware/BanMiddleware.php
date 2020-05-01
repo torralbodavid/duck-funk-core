@@ -6,12 +6,13 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Bans;
+use Illuminate\Support\Facades\Session;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Ban;
 
 class BanMiddleware
 {
     private $currentTimestamp;
-    private Bans $ban;
+    private Ban $ban;
     private $banRoute;
 
     public function handle($request, Closure $next)
@@ -26,7 +27,7 @@ class BanMiddleware
                 app()->instance('expulsion', $this->ban);
                 app()->instance('user_session', core()->user()->username);
 
-                Auth::logout();
+                Session::flush();
 
                 return $next($request);
             } else {
@@ -47,7 +48,7 @@ class BanMiddleware
     private function accountBan(): bool
     {
         if (Auth::check()) {
-            $ban = Bans::with('user')
+            $ban = Ban::with('user')
                 ->where('user_id', core()->user()->id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'account')
@@ -71,7 +72,7 @@ class BanMiddleware
     private function ipBan(): bool
     {
         if (Auth::check()) {
-            $ban = Bans::with('user')
+            $ban = Ban::with('user')
                 ->where('ip', request()->ip())
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'ip')
@@ -95,7 +96,7 @@ class BanMiddleware
     private function machineBan(): bool
     {
         if (Auth::check()) {
-            $ban = Bans::with('user')
+            $ban = Ban::with('user')
                 ->where('machine_id', core()->user()->machine_id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'machine')
@@ -119,7 +120,7 @@ class BanMiddleware
     private function superBan(): bool
     {
         if (Auth::check()) {
-            $ban = Bans::with('user')
+            $ban = Ban::with('user')
                 ->where('user_id', core()->user()->id)
                 ->where('ban_expire', '>', $this->currentTimestamp)
                 ->where('type', 'super')

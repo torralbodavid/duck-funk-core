@@ -13,7 +13,6 @@ class PageTest extends TestCase
     /** @test */
     public function dynamic_home_page_can_be_visited()
     {
-        $this->withoutExceptionHandling();
         $this->makeAuth();
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home']);

@@ -50,7 +50,6 @@ class UserTest extends TestCase
     /** @test */
     public function user_can_be_logged_in()
     {
-        $this->withoutExceptionHandling();
         $user = factory(User::class)->create(['mail' => 'lorem@ipsum.com', 'password' => Hash::make('illumina')]);
 
         $response = $this->post(route('login'), [
