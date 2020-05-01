@@ -12,11 +12,16 @@ class Page extends Model
     use SoftDeletes;
 
     protected $table = 'duck_funk_pages';
-    protected $guarded = [];
 
     protected static function booted()
     {
         static::addGlobalScope(new PublishedScope());
         static::addGlobalScope(new ActiveScope());
     }
+
+    public function parent()
+    {
+        return $this->belongsTo(self::class, 'parent_id');
+    }
+
 }
