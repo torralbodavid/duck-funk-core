@@ -110,6 +110,24 @@ class BanTest extends TestCase
         $this->assertRedirectHome($page);
     }
 
+    /** @test */
+    public function expired_banned_user_is_redirected_to_welcome_page_if_entering_expulsion_page()
+    {
+        factory(Ban::class)->create(['user_id' => $this->user->id, 'ban_expire' => Carbon::yesterday()->timestamp, 'type' => 'account']);
+
+        $response = $this->actingAs($this->user)->get(route('ban'));
+        $response->assertStatus(301);
+        $response->assertRedirect(route('welcome'));
+    }
+
+    /** @test */
+    public function non_banned_user_is_redirected_to_welcome_page_if_entering_expulsion_page()
+    {
+        $response = $this->actingAs($this->user)->get(route('ban'));
+        $response->assertStatus(301);
+        $response->assertRedirect(route('welcome'));
+    }
+
     private function assertRedirectHome(Page $page)
     {
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);

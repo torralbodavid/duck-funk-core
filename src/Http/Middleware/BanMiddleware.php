@@ -36,7 +36,7 @@ class BanMiddleware
         }
 
         if (! $accountBan && $this->banRoute) {
-            return redirect()->route('home');
+            return redirect()->route('welcome', [], 301);
         }
 
         return $next($request);
