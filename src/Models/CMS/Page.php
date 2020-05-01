@@ -23,5 +23,4 @@ class Page extends Model
     {
         return $this->belongsTo(self::class, 'parent_id');
     }
-
 }
