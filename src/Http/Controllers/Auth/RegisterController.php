@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 
 class RegisterController extends Controller
 {
@@ -59,13 +60,14 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \Torralbodavid\DuckFunkCore\Models\Arcturus\User
+     * @return User
      */
     protected function create(array $data)
     {
-        return \Torralbodavid\DuckFunkCore\Models\Arcturus\User::create([
+        return User::create([
             'username' => $data['username'],
             'mail' => $data['mail'],
+            'rank' => 1,
             'password' => Hash::make($data['password']),
             'account_created' => Carbon::now()->timestamp,
             'last_login' => Carbon::now()->getTimestamp(),

@@ -34,6 +34,7 @@ class AuthController extends Controller
                 'username' => User::randomNickname(),
                 'real_name' => $user->getName(),
                 'mail' => $user->getEmail(),
+                'rank' => 1,
                 'account_created' => Carbon::now()->getTimestamp(),
                 'ip_register' => request()->ip(),
                 'ip_current' => request()->ip(),

@@ -10,7 +10,7 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings;
 $factory->define(User::class, function (Faker $faker) {
     return [
         'username' => $faker->userName,
-        'rank' => 0,
+        'rank' => 1,
         'mail' => $faker->email,
         'password' => $faker->password(6, 64),
         'account_created' => $faker->unixTime,

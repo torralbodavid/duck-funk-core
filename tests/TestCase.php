@@ -18,8 +18,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
         $this->withFactories(__DIR__.'/../database/factories');
 
         $this->user = factory(User::class)->create();
-        $this->permissions = factory(Permissions::class)->create(['id' => 0, 'rank_name' => 'Test']);
-        $this->be($this->user);
+        $this->permissions = factory(Permissions::class)->create(['id' => 1, 'rank_name' => 'Test']);
     }
 
     protected function makeAuth()
@@ -34,6 +33,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 
     protected function getEnvironmentSetUp($app)
     {
+        $app['config']->set('auth.providers.users.model', User::class);
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
             'driver'   => 'sqlite',

@@ -35,7 +35,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password', 'account_created', 'ip_register', 'ip_current', 'last_login',
+        'username', 'mail', 'password', 'rank', 'account_created', 'ip_register', 'ip_current', 'last_login',
     ];
 
     /**
