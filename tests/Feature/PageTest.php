@@ -41,6 +41,19 @@ class PageTest extends TestCase
     }
 
     /** @test */
+    public function can_access_published_dynamic_page()
+    {
+        $this->makeAuth();
+
+        $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'published_at' => Carbon::now()]);
+        factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+
+        $response = $this->actingAs($this->user)->get($page->route);
+
+        $response->assertStatus(200);
+    }
+
+    /** @test */
     public function deleted_dynamic_page_returns_404()
     {
         $this->makeAuth();

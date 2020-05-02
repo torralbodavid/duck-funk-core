@@ -34,4 +34,5 @@ class DuckFunkCore
 
         return $this->page->route;
     }
+
 }

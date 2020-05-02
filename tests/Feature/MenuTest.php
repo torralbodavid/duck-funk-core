@@ -4,6 +4,7 @@ namespace Torralbodavid\DuckFunkCore\Tests\Feature;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\CMS\Menu;
 use Torralbodavid\DuckFunkCore\Models\CMS\MenuItems;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
@@ -24,7 +25,31 @@ class MenuTest extends TestCase
     public function return_menu_instance_if_not_null()
     {
         factory(Menu::class)->create(['slug' => 'gromenauer']);
-        factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'published_at' => Carbon::today()]);
+
+        $this->assertNotNull(menu()->getBySlug('gromenauer'));
+        $this->assertInstanceOf(Menu::class, menu()->getBySlug('gromenauer'));
+    }
+
+    /** @test */
+    public function return_null_if_inactive_menu()
+    {
+        factory(Menu::class)->create(['slug' => 'gromenauer', 'active' => false]);
+
+        $this->assertNull(menu()->getBySlug('gromenauer'));
+    }
+
+    /** @test */
+    public function return_null_if_unpublished_menu()
+    {
+        factory(Menu::class)->create(['slug' => 'gromenauer', 'published_at' => Carbon::tomorrow()]);
+
+        $this->assertNull(menu()->getBySlug('gromenauer'));
+    }
+
+    /** @test */
+    public function return_menu_instance_if_published_menu()
+    {
+        factory(Menu::class)->create(['slug' => 'gromenauer', 'published_at' => Carbon::today()]);
 
         $this->assertNotNull(menu()->getBySlug('gromenauer'));
         $this->assertInstanceOf(Menu::class, menu()->getBySlug('gromenauer'));
@@ -89,5 +114,59 @@ class MenuTest extends TestCase
 
         $this->assertNotNull(menu()->getBySlug('gromenauer'));
         $this->assertNull(menu()->getBySlug('gromenauer')->items()->first()->page);
+    }
+
+    /** @test */
+    public function return_only_menus_with_same_or_lower_rank_level()
+    {
+        $user = factory(User::class)->create(['rank' => 2]);
+        $this->be($user);
+        factory(Menu::class)->create(['slug' => 'gromenauer', 'min_rank' => 1]);
+        factory(Menu::class)->create(['slug' => 'admin-menu', 'min_rank' => 3]);
+
+        $this->assertNotNull(menu()->getBySlug('gromenauer'));
+    }
+
+    /** @test */
+    public function can_return_menus_if_user_is_not_logged_in()
+    {
+        factory(Menu::class)->create(['slug' => 'gromenauer', 'min_rank' => 1]);
+
+        $this->assertGuest();
+        $this->assertInstanceOf(Menu::class, menu()->getBySlug('gromenauer'));
+    }
+
+    /** @test */
+    public function can_return_menu_items_if_user_is_not_logged_in()
+    {
+        $menu = factory(Menu::class)->create(['slug' => 'gromenauer']);
+        $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'published_at' => Carbon::today()]);
+        factory(MenuItems::class)->create(['menu_id' => $menu->id, 'page_id' => $page->id, 'published_at' => Carbon::today()]);
+
+        $this->assertGuest();
+        $this->assertNotNull(menu()->getBySlug('gromenauer'));
+        $this->assertInstanceOf(MenuItems::class, menu()->getBySlug('gromenauer')->items()->first());
+    }
+
+    /** @test */
+    public function can_return_page_menu_items_if_user_is_not_logged_in()
+    {
+        $menu = factory(Menu::class)->create(['slug' => 'gromenauer']);
+        $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'published_at' => Carbon::today()]);
+        factory(MenuItems::class)->create(['menu_id' => $menu->id, 'page_id' => $page->id, 'published_at' => Carbon::today()]);
+
+        $this->assertGuest();
+        $this->assertNotNull(menu()->getBySlug('gromenauer'));
+        $this->assertInstanceOf(Page::class, menu()->getBySlug('gromenauer')->items()->first()->page);
+    }
+
+    /** @test */
+    public function can_return_different_menus_using_same_method()
+    {
+        factory(Menu::class)->create(['slug' => 'gromenauer']);
+        factory(Menu::class)->create(['slug' => 'admin-menu']);
+
+        $this->assertEquals('gromenauer', menu()->getBySlug('gromenauer')->slug);
+        $this->assertEquals('admin-menu', menu()->getBySlug('admin-menu')->slug);
     }
 }
