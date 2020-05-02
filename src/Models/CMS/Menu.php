@@ -8,7 +8,6 @@ use Torralbodavid\DuckFunkCore\Scopes\PublishedScope;
 
 class Menu extends Model
 {
-
     protected $table = 'duck_funk_menus';
     public $with = ['items.page'];
 
