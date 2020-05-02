@@ -4,7 +4,7 @@ namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Models\CMS\Menu;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
 class DuckFunkCore
@@ -15,21 +15,24 @@ class DuckFunkCore
     const PACKAGE_VERSION = '0.4.2';
 
     protected ?Authenticatable $user;
+    protected ?Menu $menu;
+    protected Page $page;
 
     public function __construct()
     {
         $this->user = Auth::user();
     }
 
-    public function user(): Authenticatable
+    public function user(): ?Authenticatable
     {
         return $this->user;
     }
 
     public function page($slug = null): string
     {
-        $page = Page::where('route', $slug)->firstOrFail();
+        $this->page = Page::where('route', $slug)->firstOrFail();
 
-        return $page->route;
+        return $this->page->route;
     }
+
 }
