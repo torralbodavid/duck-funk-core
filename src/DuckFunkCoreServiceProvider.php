@@ -54,7 +54,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('duck-funk-core', fn() => new DuckFunkCore);
+        $this->app->singleton('duck-funk-core', fn () => new DuckFunkCore);
 
         $this->app->singleton(Menu::class);
         $this->app->register(UiServiceProvider::class);
