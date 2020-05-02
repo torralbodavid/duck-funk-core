@@ -6,11 +6,16 @@ use Torralbodavid\DuckFunkCore\Models\CMS\Menu as MenuModel;
 
 class Menu
 {
-    protected MenuModel $menu;
+    /**
+     * @var MenuModel
+     */
+    protected $menu;
 
-    public function getBySlug($slug = null): ?MenuModel
+    public function getBySlug($slug = null)
     {
-        $this->menu = MenuModel::where('slug', $slug)->first();
+        if($this->menu === null) {
+            $this->menu = MenuModel::where('slug', $slug)->first();
+        }
 
         return $this->menu;
     }
