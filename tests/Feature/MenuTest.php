@@ -2,7 +2,6 @@
 
 namespace Torralbodavid\DuckFunkCore\Tests\Feature;
 
-use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Tests\TestCase;
 
 class MenuTest extends TestCase
