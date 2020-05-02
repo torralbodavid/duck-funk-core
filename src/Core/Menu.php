@@ -13,7 +13,7 @@ class Menu
 
     public function getBySlug($slug = null)
     {
-        if($this->menu === null) {
+        if ($this->menu === null) {
             $this->menu = MenuModel::where('slug', $slug)->first();
         }
 
