@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Torralbodavid\DuckFunkCore\Models\CMS\Menu;
 use Torralbodavid\DuckFunkCore\Models\CMS\MenuItems;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
+
 use Torralbodavid\DuckFunkCore\Tests\TestCase;
 
 class MenuTest extends TestCase
