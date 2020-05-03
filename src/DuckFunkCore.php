@@ -4,7 +4,6 @@ namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Facades\Auth;
-use Torralbodavid\DuckFunkCore\Models\CMS\Menu;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
 class DuckFunkCore
