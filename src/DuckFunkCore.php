@@ -15,7 +15,6 @@ class DuckFunkCore
     const PACKAGE_VERSION = '0.4.2';
 
     protected ?Authenticatable $user;
-    protected ?Menu $menu;
     protected Page $page;
 
     public function __construct()
