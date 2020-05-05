@@ -67,8 +67,6 @@ class BanMiddleware
                         ->where('machine_id', core()->user()->machine_id)
                         ->where('type', 'machine');
                 })
-                ->get()
-                ->sortByDesc('ban_expire')
                 ->first();
 
             if (! is_null($ban)) {
