@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
     <div class="col-sm-6">
-        <h4 class="page-title">{{ auth()->user() }}</h4>
+        <h4 class="page-title">{{ core()->user() }}</h4>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
             <li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages</a></li>
@@ -19,7 +19,7 @@
         <div class="col-8">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title font-16 mt-0">Avatares de {{ auth()->user()->name }}</h4>
+                    <h4 class="card-title font-16 mt-0">Avatares de {{ core()->user()->name }}</h4>
                     <hr>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="nav-first" role="tabpanel"
@@ -59,7 +59,7 @@
                     <h5 class="font-16 my-0"><i class="mdi mdi-login-variant mr-3"></i>Tus avatares ({{ count($avatars) }})</h5>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title font-16 mt-0">{{ auth()->user()->name }}, ¡diviértete!</h5>
+                    <h5 class="card-title font-16 mt-0">{{ core()->user()->name }}, ¡diviértete!</h5>
                     <p class="card-text">Puedes jugar a {{ config('duck-funk.name') }} seleccionando el avatar con el que quieras acceder al hotel desde la lista de tu izquierda.</p>
                 </div>
             </div>
