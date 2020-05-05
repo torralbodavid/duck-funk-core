@@ -11,7 +11,7 @@ class HotelController extends Controller
 
     private function generateSSO()
     {
-        $setSSO = auth()->user();
+        $setSSO = core()->user();
         $setSSO->auth_ticket = 'DuckFunk-'.Str::random(25).'-SSO';
         $setSSO->save();
 
