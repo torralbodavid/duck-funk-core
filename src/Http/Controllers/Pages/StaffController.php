@@ -16,7 +16,7 @@ class StaffController extends Controller
             ->get();
 
         return [
-            'ranks' => $ranks
+            'ranks' => $ranks,
         ];
     }
 }
