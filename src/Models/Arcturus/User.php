@@ -188,4 +188,9 @@ class User extends Model implements Authenticatable, CanResetPassword
 
         return (self::where('username', $username)->exists()) ? self::randomNickname() : $username;
     }
+
+    public function figureImage($headOnly = 1, $size = 'n', $direction = 3, $headDirection = 4, $gesture = 'sml', $action = '')
+    {
+        return config('duck-funk.hotel')."habbo-imaging/avatarimage?figure={$this->look}&direction={$direction}&head_direction={$headDirection}&gesture={$gesture}&action={$action}&size={$size}&headonly={$headOnly}";
+    }
 }

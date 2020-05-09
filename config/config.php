@@ -32,6 +32,9 @@ return [
      */
     'template' => 'fuse',
 
+    /*
+     * From where we are going to get habbo images
+     */
     'hotel' => 'https://www.habbo.com/',
 
     /*

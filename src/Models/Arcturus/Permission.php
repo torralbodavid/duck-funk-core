@@ -10,6 +10,11 @@ class Permission extends Model
     protected $guarded = [];
     public $timestamps = false;
 
+    public function getTitleAttribute()
+    {
+        return $this->rank_name;
+    }
+
     public function getHousekeepingReadAttribute()
     {
         return $this->duck_funk_housekeeping_read;
@@ -18,5 +23,10 @@ class Permission extends Model
     public function getHousekeepingWriteAttribute()
     {
         return $this->duck_funk_housekeeping_write;
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'rank');
     }
 }
