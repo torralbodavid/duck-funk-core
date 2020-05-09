@@ -9,6 +9,13 @@ class PageController
     public function __invoke(Request $request)
     {
         $page = $request->page;
+        $method = 'index';
+
+        if($request->isMethod('get')) {
+            $method = 'index';
+        } elseif($request->isMethod('post')) {
+            $method = 'update';
+        }
 
         $packageController = package_namespace().'\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
         $projectController = 'App\Http\Controllers\Pages\\'.ucfirst($page->slug).'Controller';
@@ -27,8 +34,8 @@ class PageController
 
         $action = new $controller();
 
-        return method_exists($action, 'index')
-            ? $action->index($page)
+        return method_exists($action, $method)
+            ? $action->$method($request, $page)
             : abort(404);
     }
 }
