@@ -24,11 +24,6 @@ abstract class Controller extends BaseController
         return view(template_namespace().'.'.$this->page->slug, $this->data);
     }
 
-    public function update(Request $request)
-    {
-        return abort(404);
-    }
-
     /**
      * @return array
      */
