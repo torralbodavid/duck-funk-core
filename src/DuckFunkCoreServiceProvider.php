@@ -9,6 +9,7 @@ use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
 use Torralbodavid\DuckFunkCore\Observers\UserObserver;
+use Torralbodavid\DuckFunkCore\View\Components\Captcha;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,10 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views/housekeeping', 'housekeeping');
         $this->loadViewsFrom(__DIR__.'/resources/views/auth', 'auth');
+
+        $this->loadViewComponentsAs('core', [
+            Captcha::class,
+        ]);
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
