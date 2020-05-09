@@ -12,7 +12,7 @@ trait Captcha
         $captcha = new CaptchaService($recaptcha_response);
         $response = $captcha->getResponse();
 
-        if(! $response->success || $response->score < $score) {
+        if (! $response->success || $response->score < $score) {
             throw ValidationException::withMessages(['field_name' => 'validation.captcha.incorrect']);
         }
     }
