@@ -11,9 +11,9 @@ class PageController
         $page = $request->page;
         $method = 'index';
 
-        if($request->isMethod('get')) {
+        if ($request->isMethod('get')) {
             $method = 'index';
-        } elseif($request->isMethod('post')) {
+        } elseif ($request->isMethod('post')) {
             $method = 'update';
         }
 
