@@ -47,6 +47,7 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
 
         Route::group(['middleware' => [PageMiddleware::class]], function () {
             Route::get('{slug}', ['uses' => 'PageController'])->where('slug', '([A-Za-z0-9\-\/]+)');
+            Route::post('{slug}', ['uses' => 'PageController'])->where('slug', '([A-Za-z0-9\-\/]+)');
         });
     });
 });
