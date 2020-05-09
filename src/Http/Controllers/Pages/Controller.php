@@ -2,6 +2,7 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Pages;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
@@ -21,6 +22,11 @@ abstract class Controller extends BaseController
     public function index()
     {
         return view(template_namespace().'.'.$this->page->slug, $this->data);
+    }
+
+    public function update(Request $request)
+    {
+        return abort(404);
     }
 
     /**
