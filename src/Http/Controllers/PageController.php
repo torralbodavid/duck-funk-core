@@ -21,18 +21,14 @@ class PageController
             return abort(404);
         }
 
-        if (! class_exists($controller)) {
-            return abort(404);
-        }
-
-        if (view()->exists(template_namespace().".{$page->slug}")) {
-            $response = view(template_namespace().".{$page->slug}")->with('page', $page);
+        if (view()->exists(template_namespace().".{$page->slug}") && ! class_exists($controller)) {
+            return view(template_namespace().".{$page->slug}")->with('page', $page);
         }
 
         $action = new $controller();
 
         return method_exists($action, 'index')
             ? $action->index($page)
-            : $response;
+            : abort(404);
     }
 }
