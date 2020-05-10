@@ -5,7 +5,6 @@ namespace Torralbodavid\DuckFunkCore\Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
-use Torralbodavid\DuckFunkCore\Rules\Captcha;
 use Torralbodavid\DuckFunkCore\Tests\TestCase;
 
 class UserTest extends TestCase
