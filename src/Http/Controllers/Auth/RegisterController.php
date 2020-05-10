@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
+use Torralbodavid\DuckFunkCore\Rules\Captcha;
 
 class RegisterController extends Controller
 {
@@ -55,6 +56,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
+            'recaptcha_response' => ['required', new Captcha],
             'username' => ['required', 'string', 'max:25', 'unique:users'],
             'mail' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],

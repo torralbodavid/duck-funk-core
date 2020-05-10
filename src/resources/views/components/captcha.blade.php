@@ -4,7 +4,7 @@
     form.addEventListener("submit", function (e) {
         e.preventDefault()
         grecaptcha.ready(function () {
-            grecaptcha.execute("{{ config('duck-funk.captcha.site_key') }}", {action: '{{ request()->page->slug }}'}).then(function (token) {
+            grecaptcha.execute("{{ config('duck-funk.captcha.site_key') }}", {action: '{{ request()->page->slug ?? $form }}'}).then(function (token) {
                 let recaptcha_response = document.createElement('input')
                 recaptcha_response.type = 'hidden'
                 recaptcha_response.name = 'recaptcha_response'
