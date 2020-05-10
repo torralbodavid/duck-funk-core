@@ -61,6 +61,7 @@ return [
      * reCaptcha v3 documentation here: https://developers.google.com/recaptcha/docs/v3
      */
     'captcha' => [
+        'active' => env('CAPTCHA_ENABLED', true),
         'minimum_score' => 0.5,
         'site_key' => env('CAPTCHA_SITE_KEY', ''),
         'secret_key' => env('CAPTCHA_SECRET_KEY', ''),

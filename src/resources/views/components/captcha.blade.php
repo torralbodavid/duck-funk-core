@@ -3,6 +3,7 @@
     const form = document.getElementById('{{ $form }}')
     form.addEventListener("submit", function (e) {
         e.preventDefault()
+
         grecaptcha.ready(function () {
             grecaptcha.execute("{{ config('duck-funk.captcha.site_key') }}", {action: '{{ request()->page->slug ?? $form }}'}).then(function (token) {
                 let recaptcha_response = document.createElement('input')

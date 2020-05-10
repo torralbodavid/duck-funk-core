@@ -21,6 +21,7 @@ class BanTest extends TestCase
     {
         parent::setUp();
 
+        config()->set('duck-funk.captcha.active', false);
         $this->user = factory(User::class)->create(['mail' => 'lorem@ipsum.com', 'password' => Hash::make('illumina')]);
     }
 
@@ -29,6 +30,7 @@ class BanTest extends TestCase
     {
         factory(Ban::class)->create(['user_id' => $this->user->id, 'ban_expire' => Carbon::tomorrow()->timestamp, 'type' => 'account']);
         $response = $this->post(route('login'), [
+            'recaptcha_response' => 'gromenauer',
             'mail' => 'lorem@ipsum.com',
             'password' => 'illumina',
         ]);
@@ -42,6 +44,7 @@ class BanTest extends TestCase
         factory(Ban::class)->create(['user_id' => $this->user->id, 'ip' => request()->ip(), 'ban_expire' => Carbon::tomorrow()->timestamp, 'type' => 'ip']);
 
         $response = $this->post(route('login'), [
+            'recaptcha_response' => 'gromenauer',
             'mail' => 'lorem@ipsum.com',
             'password' => 'illumina',
         ]);
@@ -55,6 +58,7 @@ class BanTest extends TestCase
         factory(Ban::class)->create(['user_id' => $this->user->id, 'machine_id' => $this->user->machine_id, 'ban_expire' => Carbon::tomorrow()->timestamp, 'type' => 'machine']);
 
         $response = $this->post(route('login'), [
+            'recaptcha_response' => 'gromenauer',
             'mail' => 'lorem@ipsum.com',
             'password' => 'illumina',
         ]);
@@ -67,6 +71,7 @@ class BanTest extends TestCase
     {
         factory(Ban::class)->create(['user_id' => $this->user->id, 'ban_expire' => Carbon::tomorrow()->timestamp, 'type' => 'super']);
         $response = $this->post(route('login'), [
+            'recaptcha_response' => 'gromenauer',
             'mail' => 'lorem@ipsum.com',
             'password' => 'illumina',
         ]);
