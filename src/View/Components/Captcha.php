@@ -2,7 +2,6 @@
 
 namespace Torralbodavid\DuckFunkCore\View\Components;
 
-use Illuminate\Http\Request;
 use Illuminate\View\Component;
 
 class Captcha extends Component
