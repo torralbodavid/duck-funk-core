@@ -16,6 +16,10 @@ class Captcha implements Rule
            return true;
         }
 
+        if($value === null) {
+            return false;
+        }
+
         $captcha = new CaptchaService($value);
         $response = $captcha->getResponse();
 

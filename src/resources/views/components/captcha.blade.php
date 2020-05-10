@@ -1,3 +1,4 @@
+@if(config('duck-funk.captcha.active'))
 <script src="https://www.google.com/recaptcha/api.js?render={{ $site_key }}" async defer></script>
 <script>
     const form = document.getElementById('{{ $form }}')
@@ -19,3 +20,4 @@
         })
     })
 </script>
+@endif

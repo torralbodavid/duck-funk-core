@@ -60,7 +60,7 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         $request->validate([
-            'recaptcha_response' => ['required', new Captcha],
+            'recaptcha_response' => [new Captcha],
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
