@@ -15,7 +15,7 @@ class SettingsController extends Controller
         $currentPasswordRules = '';
         $newPasswordRules = '';
 
-        if($request->input('password') !== null) {
+        if ($request->input('password') !== null) {
             $currentPasswordRules = 'required|password';
             $newPasswordRules = 'required|confirmed|min:6';
         }
@@ -33,6 +33,7 @@ class SettingsController extends Controller
         $user->save();
 
         Session::flash('status', 'success');
+
         return view(template_namespace().'.'.$this->page->slug, $this->data);
     }
 }
