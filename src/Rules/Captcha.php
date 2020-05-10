@@ -12,8 +12,8 @@ class Captcha implements Rule
      */
     public function passes($attribute, $value)
     {
-        if(! config('duck-funk.captcha.active')) {
-           return true;
+        if (! config('duck-funk.captcha.active')) {
+            return true;
         }
 
         $captcha = new CaptchaService($value);
