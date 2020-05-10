@@ -10,7 +10,7 @@ class Captcha
 
     public function __construct($recaptcha_response)
     {
-        $this->secret = env('CAPTCHA_SECRET_KEY', '');
+        $this->secret = config('duck-funk.captcha.secret_key');
         $this->response = $recaptcha_response;
     }
 

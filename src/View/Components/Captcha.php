@@ -7,18 +7,18 @@ use Illuminate\View\Component;
 
 class Captcha extends Component
 {
-    public $action;
     public $site_key;
+    public $form;
 
     /**
      * Create a new component instance.
      *
-     * @param Request $request
+     * @param $form
      */
-    public function __construct(Request $request)
+    public function __construct($form)
     {
-        $this->action = $request->page->slug;
-        $this->site_key = env('CAPTCHA_SITE_KEY', '');
+        $this->site_key = config('duck-funk.captcha.site_key');
+        $this->form = $form;
     }
 
     /**
