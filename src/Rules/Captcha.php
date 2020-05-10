@@ -16,7 +16,7 @@ class Captcha implements Rule
             return true;
         }
 
-        if($value === null) {
+        if ($value === null) {
             return false;
         }
 
