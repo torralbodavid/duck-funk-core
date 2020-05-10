@@ -21,8 +21,8 @@ class SettingsController extends Controller
         }
 
         $validatedData = $request->validate([
-            'recaptcha_response' => ['required', new Captcha()],
-            'email' => ['required', new UniqueUserMail()],
+            'recaptcha_response' => ['required', new Captcha],
+            'email' => ['required', new UniqueUserMail],
             'current_password' => $currentPasswordRules,
             'password' => $newPasswordRules,
         ]);
