@@ -164,7 +164,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function setRememberToken($value)
     {
-        return core()->user()->setRememberToken();
+        $this->remember_token = $value;
     }
 
     /**
@@ -174,7 +174,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function getRememberTokenName()
     {
-        return core()->user()->getRememberTokenName();
+        return 'remember_token';
     }
 
     /*
