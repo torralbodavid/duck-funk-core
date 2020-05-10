@@ -20,6 +20,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home']);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($this->user)->get($page->route);
 
@@ -47,6 +48,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'published_at' => Carbon::now()]);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($this->user)->get($page->route);
 
@@ -86,6 +88,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'min_rank' => 1]);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($user)->get($page->route);
 
@@ -101,6 +104,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'min_rank' => 1]);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($user)->get($page->route);
 
@@ -130,6 +134,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home']);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($this->user)->get($page->route);
 
@@ -147,6 +152,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'no_robots' => true]);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($this->user)->get($page->route);
 
@@ -163,6 +169,7 @@ class PageTest extends TestCase
 
         $page = factory(Page::class)->create(['route' => 'home', 'slug' => 'home', 'no_robots' => false]);
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
 
         $response = $this->actingAs($this->user)->get($page->route);
 

@@ -131,6 +131,7 @@ class BanTest extends TestCase
     private function assertRedirectHome(Page $page)
     {
         factory(Page::class)->create(['route' => 'hotel', 'slug' => 'hotel']);
+        factory(Page::class)->create(['route' => 'settings', 'slug' => 'settings']);
         $response = $this->actingAs($this->user)->get($page->route);
 
         $response->assertSuccessful();
