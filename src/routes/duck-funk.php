@@ -7,7 +7,6 @@ use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
 use Torralbodavid\DuckFunkCore\Http\Middleware\HousekeepingMiddleware;
 use Torralbodavid\DuckFunkCore\Http\Middleware\PageMiddleware;
 
-
 Route::group(['middleware' => ['web'], 'namespace' => 'Torralbodavid\DuckFunkCore\Http\Controllers'], function () {
     Auth::routes();
 
