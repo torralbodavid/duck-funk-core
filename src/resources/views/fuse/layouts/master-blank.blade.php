@@ -2,14 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Veltrix - Responsive Bootstrap 4 Admin Dashboard</title>
-        <meta content="Admin Dashboard" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
-        @include('layouts.head')
-  </head>
+        <title>{{ $page->meta_title }}</title>
+        <meta content="{{ $page->meta_description }}" name="description" />
+
+        @if($page->no_robots)
+            <meta name="robots" content="noindex, nofollow">
+        @endif
+        @include('duck-funk-core::fuse.layouts.head')
+    </head>
     <body class="pb-0">
         @yield('content')
-        @include('layouts.footer-script')    
+        @include('duck-funk-core::fuse.layouts.footer-script')
     </body>
 </html>

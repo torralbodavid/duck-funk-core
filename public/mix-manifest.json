@@ -1,11 +1,5 @@
 {
-    "/js/housekeeping/legacy/labs.js": "/js/housekeeping/legacy/labs.js?id=b9941e96a1d81fa61581",
-    "/css/style.css": "/css/style.css?id=79fd535b9fdf24cb4179",
-    "/css/housekeeping/style.css": "/css/housekeeping/style.css?id=c9ec77b74d2141ca7688",
-    "/js/initial.min.js": "/js/initial.min.js?id=c2365275a644d0ae1a65",
-    "/js/labs/dependencies/dashboard.min.js": "/js/labs/dependencies/dashboard.min.js?id=3f955c59cfd2a246a8f6",
-    "/js/labs/dependencies/news.min.js": "/js/labs/dependencies/news.min.js?id=fea7921eaa23d806694c",
-    "/css/core.css": "/css/core.css?id=4190dc5ccf36bd33f6cd",
-    "/js/app.js": "/js/app.js?id=e7ce62c33e00b7e84570",
-    "/js/housekeeping/app.js": "/js/housekeeping/app.js?id=413881456f9b1a283503"
+    "/js/app.js": "/js/app.js?id=727593a4046294770f24",
+    "/css/app.css": "/css/app.css?id=ec21a6e0542f4859a16e",
+    "/js/app.js.map": "/js/app.js.map?id=93f56e81ad0a27e77ebd"
 }

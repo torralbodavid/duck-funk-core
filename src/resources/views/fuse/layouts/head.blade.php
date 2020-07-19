@@ -7,5 +7,4 @@
 @yield('css')
 
  <!-- App css -->
-<link href="{{ asset('vendor/duck-funk-core/css/core.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('vendor/duck-funk-core/css/style.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('vendor/duck-funk-core/css/app.css') }}" rel="stylesheet" type="text/css" />
