@@ -23,7 +23,7 @@
                             <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg" alt="Logo">
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
-                            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
+                            <button @click="isOpen = !isOpen" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 transition duration-150 ease-in-out" id="main-menu" aria-label="Main menu" aria-haspopup="true">
                                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                                 </svg>
@@ -54,7 +54,7 @@
                 From: "opacity-100 scale-100"
                 To: "opacity-0 scale-95"
             -->
-            <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <div x-data="{ isOpen: false }" x-show="isOpen" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
                 <div class="rounded-lg shadow-md">
                     <div class="rounded-lg bg-white shadow-xs overflow-hidden" role="menu" aria-orientation="vertical" aria-labelledby="main-menu">
                         <div class="px-5 pt-4 flex items-center justify-between">
