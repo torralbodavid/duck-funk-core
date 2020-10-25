@@ -14,7 +14,6 @@ class FacebookLoginCalled
      */
     public function __construct()
     {
-        Log::info('ei que tal');
     }
 
     /**
@@ -25,7 +24,5 @@ class FacebookLoginCalled
      */
     public function handle(SocialiteWasCalled $event)
     {
-        Log::info('ei que tal');
-        // Access the order using $event->order...
     }
 }
