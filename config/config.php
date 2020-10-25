@@ -35,7 +35,7 @@ return [
     /*
      * From where we are going to get habbo images
      */
-    'hotel' => 'https://www.habbo.com/',
+    'hotel' => env('HOTEL_DOMAIN', 'https://www.habbo.com/'),
 
     /*
      * Emulator connection params
@@ -53,7 +53,7 @@ return [
     /*
      * Welcome params
      */
-    'welcome_enabled' => true,
+    'welcome_enabled' => env('RCON_AUTH_KEY', true),
 
     /*
      * Captcha settings
