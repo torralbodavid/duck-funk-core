@@ -19,7 +19,7 @@
                     @if(core()->user()->friend_requests->count() > 0)
                         <li class="list-group-item"><i class="retro retro-new_01 position-absolute"></i>
                             <p class="ml-4 mb-0"><strong>Peticiones de amigo
-                                    pendientes: </strong> {{ core()->user()->friend_requests->count() }}</p></li>
+                                    pendientes </strong> {{ core()->user()->friend_requests->count() }}</p></li>
                     @endif
                     @if(core()->user()->friends->where('online', 1)->count() > 0)
                         <li class="list-group-item"><i class="retro retro-v20_7 position-absolute"></i>

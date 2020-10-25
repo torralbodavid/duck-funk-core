@@ -4,10 +4,11 @@ namespace Torralbodavid\DuckFunkCore\Models\Arcturus;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bans extends Model
+class Ban extends Model
 {
     protected $table = 'bans';
     protected $guarded = [];
+    public $timestamps = false;
 
     /*
      * Get the user related to this ban

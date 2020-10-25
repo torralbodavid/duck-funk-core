@@ -35,7 +35,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      * @var array
      */
     protected $fillable = [
-        'username', 'mail', 'password', 'rank', 'account_created', 'ip_register', 'ip_current', 'last_login',
+        'username', 'mail', 'password', 'rank', 'account_created', 'ip_register', 'ip_current', 'last_login', 'machine_id',
     ];
 
     /**
@@ -76,7 +76,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function permissions()
     {
-        return $this->hasOne(Permissions::class, 'id', 'rank');
+        return $this->hasOne(Permission::class, 'id', 'rank');
     }
 
     /*
@@ -84,7 +84,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function settings()
     {
-        return $this->hasOne(UserSettings::class, 'user_id', 'id');
+        return $this->hasOne(UserSetting::class, 'user_id', 'id');
     }
 
     /*
@@ -92,7 +92,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function bans()
     {
-        return $this->hasMany(Bans::class, 'id', 'user_id');
+        return $this->hasMany(Ban::class, 'id', 'user_id');
     }
 
     /**
@@ -153,7 +153,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function getRememberToken()
     {
-        return auth()->user()->getRememberToken();
+        return core()->user()->getRememberToken();
     }
 
     /**
@@ -164,7 +164,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function setRememberToken($value)
     {
-        return auth()->user()->setRememberToken();
+        $this->remember_token = $value;
     }
 
     /**
@@ -174,7 +174,7 @@ class User extends Model implements Authenticatable, CanResetPassword
      */
     public function getRememberTokenName()
     {
-        return auth()->user()->getRememberTokenName();
+        return 'remember_token';
     }
 
     /*
@@ -187,5 +187,10 @@ class User extends Model implements Authenticatable, CanResetPassword
         );
 
         return (self::where('username', $username)->exists()) ? self::randomNickname() : $username;
+    }
+
+    public function figureImage($headOnly = 1, $size = 'n', $direction = 3, $headDirection = 4, $gesture = 'sml', $action = '')
+    {
+        return config('duck-funk.hotel')."habbo-imaging/avatarimage?figure={$this->look}&direction={$direction}&head_direction={$headDirection}&gesture={$gesture}&action={$action}&size={$size}&headonly={$headOnly}";
     }
 }

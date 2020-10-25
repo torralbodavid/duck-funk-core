@@ -3,7 +3,7 @@
 namespace Torralbodavid\DuckFunkCore\Observers;
 
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSettings;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\UserSetting;
 
 class UserObserver
 {
@@ -15,7 +15,7 @@ class UserObserver
      */
     public function created(User $user)
     {
-        $settings = new UserSettings();
+        $settings = new UserSetting();
         $settings->user_id = $user->id;
         $settings->welcome_flow_enabled = config('duck-funk.welcome_enabled');
         $settings->welcome_flow_step = 1;

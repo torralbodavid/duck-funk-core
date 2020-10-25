@@ -4,10 +4,12 @@ namespace Torralbodavid\DuckFunkCore;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiServiceProvider;
+use Torralbodavid\DuckFunkCore\Core\Menu;
 use Torralbodavid\DuckFunkCore\Models\Arcturus\User;
 use Torralbodavid\DuckFunkCore\Models\Housekeeping\News;
 use Torralbodavid\DuckFunkCore\Observers\NewsObserver;
 use Torralbodavid\DuckFunkCore\Observers\UserObserver;
+use Torralbodavid\DuckFunkCore\View\Components\Captcha;
 
 class DuckFunkCoreServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,10 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views/housekeeping', 'housekeeping');
         $this->loadViewsFrom(__DIR__.'/resources/views/auth', 'auth');
+
+        $this->loadViewComponentsAs('core', [
+            Captcha::class,
+        ]);
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/routes/duck-funk.php');
@@ -53,14 +59,12 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('duck-funk-core', fn () => new DuckFunkCore);
+
+        $this->app->singleton(Menu::class);
         $this->app->register(UiServiceProvider::class);
         $this->app->register(DuckFunkEventServiceProvider::class);
-        // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
 
-        // Register the main class to use with the facade
-        $this->app->singleton('duck-funk-core', function () {
-            return new DuckFunkCore;
-        });
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Factory;
+use Torralbodavid\DuckFunkCore\Core\Menu;
 
 function core()
 {
@@ -26,4 +27,9 @@ function package_namespace(): string
 function template_namespace(): string
 {
     return 'duck-funk-core::'.config('duck-funk.template');
+}
+
+function menu(): Menu
+{
+    return app(Menu::class);
 }

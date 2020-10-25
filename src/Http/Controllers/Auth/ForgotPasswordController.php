@@ -37,4 +37,9 @@ class ForgotPasswordController extends Controller
             ->withInput($request->only('mail'))
             ->withErrors(['mail' => trans($response)]);
     }
+
+    public function showLinkRequestForm()
+    {
+        return view(template_namespace().'.auth.passwords.email');
+    }
 }

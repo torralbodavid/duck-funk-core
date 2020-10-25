@@ -2,13 +2,14 @@
 
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Pages;
 
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Torralbodavid\DuckFunkCore\Models\CMS\Page;
 
 abstract class Controller extends BaseController
 {
-    private Page $page;
-    private array $data;
+    protected Page $page;
+    protected array $data;
 
     public function __construct()
     {

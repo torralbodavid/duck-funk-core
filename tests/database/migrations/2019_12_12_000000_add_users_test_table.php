@@ -17,6 +17,7 @@ class AddUsersTestTable extends \Illuminate\Database\Migrations\Migration
             $table->timestamp('last_login');
             $table->string('ip_register', 45);
             $table->string('ip_current', 45);
+            $table->string('machine_id')->nullable();
             $table->timestamps();
         });
     }
