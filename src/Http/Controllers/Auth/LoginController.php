@@ -3,8 +3,10 @@
 namespace Torralbodavid\DuckFunkCore\Http\Controllers\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Session;
+use Torralbodavid\DuckFunkCore\Rules\Captcha;
 
 class LoginController extends Controller
 {
@@ -48,5 +50,19 @@ class LoginController extends Controller
         Session::flush();
 
         return redirect(route('login'));
+    }
+
+    public function showLoginForm()
+    {
+        return view(template_namespace().'.auth.login');
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            'recaptcha_response' => [new Captcha],
+            $this->username() => 'required|string',
+            'password' => 'required|string',
+        ]);
     }
 }

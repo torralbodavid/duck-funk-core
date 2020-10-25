@@ -6,12 +6,13 @@ use Carbon\Carbon;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Torralbodavid\DuckFunkCore\Models\Arcturus\Bans;
+use Illuminate\Support\Facades\Session;
+use Torralbodavid\DuckFunkCore\Models\Arcturus\Ban;
 
 class BanMiddleware
 {
     private $currentTimestamp;
-    private Bans $ban;
+    private Ban $ban;
     private $banRoute;
 
     public function handle($request, Closure $next)
@@ -19,14 +20,14 @@ class BanMiddleware
         $this->currentTimestamp = Carbon::now()->timestamp;
         $this->banRoute = Route::current()->getAction('as') == 'ban';
 
-        $accountBan = $this->accountBan();
+        $accountBan = $this->isBanned();
 
-        if ($accountBan || $this->ipBan() || $this->machineBan() || $this->superBan()) {
+        if ($accountBan) {
             if ($this->banRoute) {
                 app()->instance('expulsion', $this->ban);
                 app()->instance('user_session', core()->user()->username);
 
-                Auth::logout();
+                Session::flush();
 
                 return $next($request);
             } else {
@@ -35,96 +36,37 @@ class BanMiddleware
         }
 
         if (! $accountBan && $this->banRoute) {
-            return redirect()->route('home');
+            return redirect()->route('welcome', [], 301);
         }
 
         return $next($request);
     }
 
     /*
-     * Get the longest ban for an account ban type
+     * Get the longest ban for an account or super ban type
      */
-    private function accountBan(): bool
+    private function isBanned(): bool
     {
         if (Auth::check()) {
-            $ban = Bans::with('user')
-                ->where('user_id', core()->user()->id)
-                ->where('ban_expire', '>', $this->currentTimestamp)
-                ->where('type', 'account')
-                ->get()
-                ->sortByDesc('ban_expire')
-                ->first();
-
-            if (! is_null($ban)) {
-                $this->ban = $ban;
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /*
-     * Get the longest ban for an IP ban type
-     */
-    private function ipBan(): bool
-    {
-        if (Auth::check()) {
-            $ban = Bans::with('user')
-                ->where('ip', request()->ip())
-                ->where('ban_expire', '>', $this->currentTimestamp)
-                ->where('type', 'ip')
-                ->get()
-                ->sortByDesc('ban_expire')
-                ->first();
-
-            if (! is_null($ban)) {
-                $this->ban = $ban;
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /*
-     * Get the longest ban for a machine ban type
-     */
-    private function machineBan(): bool
-    {
-        if (Auth::check()) {
-            $ban = Bans::with('user')
-                ->where('machine_id', core()->user()->machine_id)
-                ->where('ban_expire', '>', $this->currentTimestamp)
-                ->where('type', 'machine')
-                ->get()
-                ->sortByDesc('ban_expire')
-                ->first();
-
-            if (! is_null($ban)) {
-                $this->ban = $ban;
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /*
-     * Get the longest ban for a superban type
-     */
-    private function superBan(): bool
-    {
-        if (Auth::check()) {
-            $ban = Bans::with('user')
-                ->where('user_id', core()->user()->id)
-                ->where('ban_expire', '>', $this->currentTimestamp)
-                ->where('type', 'super')
-                ->get()
-                ->sortByDesc('ban_expire')
+            $ban = Ban::where(function ($q) {
+                $q->where('ban_expire', '>', $this->currentTimestamp)
+                        ->where('user_id', core()->user()->id)
+                        ->where('type', 'account');
+            })
+                ->orWhere(function ($q) {
+                    $q->where('ban_expire', '>', $this->currentTimestamp)
+                        ->where('user_id', core()->user()->id)
+                        ->Where('type', 'super');
+                })
+                ->orWhere(function ($q) {
+                    $q->where('ban_expire', '>', $this->currentTimestamp)
+                        ->where('ip', request()->ip())
+                        ->where('type', 'ip');
+                })->orWhere(function ($q) {
+                    $q->where('ban_expire', '>', $this->currentTimestamp)
+                        ->where('machine_id', core()->user()->machine_id)
+                        ->where('type', 'machine');
+                })
                 ->first();
 
             if (! is_null($ban)) {

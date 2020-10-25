@@ -23,7 +23,9 @@ class UserTest extends TestCase
     /** @test */
     public function user_can_be_registered()
     {
+        config()->set('duck-funk.captcha.active', false);
         $response = $this->post(route('register'), [
+            'recaptcha_response' => 'lorem',
             'username' => 'gromenauer',
             'mail' => 'perico@palotes.com',
             'password' => 'secretWord93',
@@ -50,10 +52,11 @@ class UserTest extends TestCase
     /** @test */
     public function user_can_be_logged_in()
     {
-        $this->withoutExceptionHandling();
+        config()->set('duck-funk.captcha.active', false);
         $user = factory(User::class)->create(['mail' => 'lorem@ipsum.com', 'password' => Hash::make('illumina')]);
 
         $response = $this->post(route('login'), [
+            'recaptcha_response' => 'gromenauer',
             'mail' => 'lorem@ipsum.com',
             'password' => 'illumina',
         ]);

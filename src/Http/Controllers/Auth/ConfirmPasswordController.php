@@ -18,6 +18,7 @@ class ConfirmPasswordController extends Controller
     |
     */
     use ConfirmsPasswords;
+
     /**
      * Where to redirect users when the intended url fails.
      *
@@ -35,6 +36,6 @@ class ConfirmPasswordController extends Controller
 
     public function showConfirmForm()
     {
-        return view('auth::passwords.confirm');
+        return view(template_namespace().'.auth.passwords.confirm');
     }
 }

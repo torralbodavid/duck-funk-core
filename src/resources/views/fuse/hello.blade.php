@@ -5,7 +5,7 @@
 
 @section('breadcrumb')
     <div class="col-sm-6">
-        <h4 class="page-title">{{ auth()->user() }}</h4>
+        <h4 class="page-title">{{ core()->user() }}</h4>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="javascript:void(0);">Veltrix</a></li>
             <li class="breadcrumb-item"><a href="javascript:void(0);">Extra Pages</a></li>

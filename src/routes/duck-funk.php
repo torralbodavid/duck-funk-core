@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use Torralbodavid\DuckFunkCore\Http\Middleware\BanMiddleware;
 use Torralbodavid\DuckFunkCore\Http\Middleware\HousekeepingMiddleware;
 use Torralbodavid\DuckFunkCore\Http\Middleware\PageMiddleware;
@@ -27,6 +28,8 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
      */
     Route::prefix(config('duck-funk.route'))->group(function () {
         Route::get('expulsion', function () {
+            Session::flush();
+
             return view('duck-funk-core::fuse.ban');
         })->name('ban');
 
@@ -44,6 +47,7 @@ Route::group(['middleware' => ['web', 'auth', BanMiddleware::class], 'namespace'
 
         Route::group(['middleware' => [PageMiddleware::class]], function () {
             Route::get('{slug}', ['uses' => 'PageController'])->where('slug', '([A-Za-z0-9\-\/]+)');
+            Route::post('{slug}', ['uses' => 'PageController'])->where('slug', '([A-Za-z0-9\-\/]+)');
         });
     });
 });
