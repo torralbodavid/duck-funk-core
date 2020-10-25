@@ -18,7 +18,6 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views', 'duck-funk-core');
         $this->loadViewsFrom(__DIR__.'/resources/views/housekeeping', 'housekeeping');
         $this->loadViewsFrom(__DIR__.'/resources/views/auth', 'auth');
@@ -43,13 +42,8 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
             __DIR__.'/../public' => public_path('vendor/duck-funk-core'),
         ], 'duck-funk-core/assets');
 
-        // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/duck-funk-core'),
-        ], 'lang');*/
 
         // Registering package commands.
-        // $this->commands([]);
         User::observe(UserObserver::class);
         News::observe(NewsObserver::class);
     }
@@ -65,6 +59,7 @@ class DuckFunkCoreServiceProvider extends ServiceProvider
         $this->app->register(UiServiceProvider::class);
         $this->app->register(DuckFunkEventServiceProvider::class);
 
+        // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'duck-funk');
     }
 }
