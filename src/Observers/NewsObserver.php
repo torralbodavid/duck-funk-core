@@ -12,7 +12,7 @@ class NewsObserver
     /**
      * Handle the News "created" event.
      *
-     * @param News $news
+     * @param  News  $news
      * @return void
      */
     public function created(News $news)
