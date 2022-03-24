@@ -18,7 +18,7 @@ class UserUpdate
     /**
      * Handle the event.
      *
-     * @param UpdateAvatarEvent $event
+     * @param  UpdateAvatarEvent  $event
      * @return void
      */
     public function handle(UpdateAvatarEvent $event)
