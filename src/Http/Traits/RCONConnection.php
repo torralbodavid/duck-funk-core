@@ -12,8 +12,9 @@ trait RCONConnection
 {
     /**
      * Send a alert to a online user.
-     * @param string $message The message to send.
-     * @param int $user_id The id of the user to alert.
+     *
+     * @param  string  $message  The message to send.
+     * @param  int  $user_id  The id of the user to alert.
      * @return JsonResponse
      */
     public static function alertUser(string $message, int $user_id)
@@ -29,9 +30,10 @@ trait RCONConnection
 
     /**
      * Change room owner.
-     * @param int $room_id The id of the room to change.
-     * @param int $user_id The new user id of the room.
-     * @param string $username The new owner name of the room.
+     *
+     * @param  int  $room_id  The id of the room to change.
+     * @param  int  $user_id  The new user id of the room.
+     * @param  string  $username  The new owner name of the room.
      * @return JsonResponse
      */
     public static function changeRoomOwner(int $room_id, int $user_id, string $username)
@@ -48,12 +50,13 @@ trait RCONConnection
 
     /**
      * Create mod ticket.
-     * @param string $message The message that was included in the report.
-     * @param int $reported_id User id of the reported player.
-     * @param int $reported_room_id The room that was reported.
-     * @param string $reported_username Username of the reported player.
-     * @param int $sender_id User id who created the ticket.
-     * @param string $sender_username Username who created the ticket.
+     *
+     * @param  string  $message  The message that was included in the report.
+     * @param  int  $reported_id  User id of the reported player.
+     * @param  int  $reported_room_id  The room that was reported.
+     * @param  string  $reported_username  Username of the reported player.
+     * @param  int  $sender_id  User id who created the ticket.
+     * @param  string  $sender_username  Username who created the ticket.
      * @return JsonResponse
      */
     public static function createModToolTicket(
@@ -79,8 +82,9 @@ trait RCONConnection
 
     /**
      * Disconnect a user.
-     * @param string $username Optional user id of the player to disconnect.
-     * @param int|null $user_id Optional username of the player to disconnect.
+     *
+     * @param  string  $username  Optional user id of the player to disconnect.
+     * @param  int|null  $user_id  Optional username of the player to disconnect.
      * @return JsonResponse
      */
     public static function disconnect(string $username = null, int $user_id = null)
@@ -97,8 +101,9 @@ trait RCONConnection
 
     /**
      * Execute a command through user id.
-     * @param string $command Complete string including the semicolon at the start for the command to execute.
-     * @param int $user_id User id of the player to execute the command for.
+     *
+     * @param  string  $command  Complete string including the semicolon at the start for the command to execute.
+     * @param  int  $user_id  User id of the player to execute the command for.
      * @return JsonResponse
      */
     public static function executeCommand(string $command, int $user_id)
@@ -114,8 +119,9 @@ trait RCONConnection
 
     /**
      * Forward an user into a selected room.
-     * @param int $room_id Room id of the room to forward the player to.
-     * @param int $user_id User id of the player to forward.
+     *
+     * @param  int  $room_id  Room id of the room to forward the player to.
+     * @param  int  $user_id  User id of the player to forward.
      * @return JsonResponse
      */
     public static function forwardUser(int $room_id, int $user_id)
@@ -131,8 +137,9 @@ trait RCONConnection
 
     /**
      * Send a friend request.
-     * @param int $target_id User id of the player that receives a friend request.
-     * @param int $user_id User id of the player that creates a friend request.
+     *
+     * @param  int  $target_id  User id of the player that receives a friend request.
+     * @param  int  $user_id  User id of the player that creates a friend request.
      * @return JsonResponse
      */
     public static function sendFriendRequest(int $target_id, int $user_id)
@@ -148,8 +155,9 @@ trait RCONConnection
 
     /**
      * Give a badge to an user.
-     * @param string $badge Badge code of the badge that the player will receive.
-     * @param int $user_id User id of the player that receives a badge.
+     *
+     * @param  string  $badge  Badge code of the badge that the player will receive.
+     * @param  int  $user_id  User id of the player that receives a badge.
      * @return JsonResponse
      */
     public static function giveBadge(string $badge, int $user_id)
@@ -165,8 +173,9 @@ trait RCONConnection
 
     /**
      * Give clothes to an user.
-     * @param int $clothing_id The clothing ID
-     * @param int $user_id The id of the user to alert.
+     *
+     * @param  int  $clothing_id  The clothing ID
+     * @param  int  $user_id  The id of the user to alert.
      * @return JsonResponse
      */
     public static function giveClothing(int $clothing_id, int $user_id)
@@ -182,8 +191,9 @@ trait RCONConnection
 
     /**
      * Give credits to an user.
-     * @param int $credits Amount of credits that the player will be awarded.
-     * @param int $user_id User id of the player that will receive credits.
+     *
+     * @param  int  $credits  Amount of credits that the player will be awarded.
+     * @param  int  $user_id  User id of the player that will receive credits.
      * @return JsonResponse
      */
     public static function giveCredits(int $credits, int $user_id)
@@ -199,8 +209,9 @@ trait RCONConnection
 
     /**
      * Give pixels to an user.
-     * @param int $pixels Amount of pixels that the player will be awarded.
-     * @param int $user_id User id of the player that will receive the pixels.
+     *
+     * @param  int  $pixels  Amount of pixels that the player will be awarded.
+     * @param  int  $user_id  User id of the player that will receive the pixels.
      * @return JsonResponse
      */
     public static function givePixels(int $pixels, int $user_id)
@@ -215,9 +226,9 @@ trait RCONConnection
     }
 
     /**
-     * @param int $points Amount of points that the player will be awarded.
-     * @param int $type The type of points that the player will be awarded.
-     * @param int $user_id User id of the player that will be awarded.
+     * @param  int  $points  Amount of points that the player will be awarded.
+     * @param  int  $type  The type of points that the player will be awarded.
+     * @param  int  $user_id  User id of the player that will be awarded.
      * @return JsonResponse
      */
     public static function givePoints(int $points, int $type, int $user_id)
@@ -234,10 +245,11 @@ trait RCONConnection
 
     /**
      * Give respects to someone.
-     * @param int $daily_respects Amount that will be added to the current daily respect points.
-     * @param int $respect_given Amount that will be counted towards given respect statistic.
-     * @param int $respect_received Amount that will be counted towards received respect statistic.
-     * @param int $user_id User id of the player that will receive the respect.
+     *
+     * @param  int  $daily_respects  Amount that will be added to the current daily respect points.
+     * @param  int  $respect_given  Amount that will be counted towards given respect statistic.
+     * @param  int  $respect_received  Amount that will be counted towards received respect statistic.
+     * @param  int  $user_id  User id of the player that will receive the respect.
      * @return JsonResponse
      */
     public static function giveRespect(int $daily_respects, int $respect_given, int $respect_received, int $user_id)
@@ -255,8 +267,9 @@ trait RCONConnection
 
     /**
      * Send an alert to everyone online.
-     * @param string $message The message to display to all users online.
-     * @param string $url The link to include.
+     *
+     * @param  string  $message  The message to display to all users online.
+     * @param  string  $url  The link to include.
      * @return JsonResponse
      */
     public static function hotelAlert(string $message, string $url = null)
@@ -275,8 +288,9 @@ trait RCONConnection
 
     /**
      * Ignore an user.
-     * @param int $target_id User id of the player that will be ignored
-     * @param int $user_id User id of the player that will ignore target_id.
+     *
+     * @param  int  $target_id  User id of the player that will be ignored
+     * @param  int  $user_id  User id of the player that will ignore target_id.
      * @return JsonResponse
      */
     public static function ignoreUser(int $target_id, int $user_id)
@@ -292,14 +306,15 @@ trait RCONConnection
 
     /**
      * Send an image alert to an user.
-     * @param string $bubble_key Key of the bubble alert to define extra parameters in the external_flash_texts.
-     * @param string $display_type Display type
-     * @param string $image Image to display.
-     * @param string $message The message parameter that needs to be set.
-     * @param string $title Title of the popup window.
-     * @param string $url The url parameter that needs to be set.
-     * @param string $url_message The message of the url parameter that needs to be set.
-     * @param int $user_id The user id of the user that will receive the alert
+     *
+     * @param  string  $bubble_key  Key of the bubble alert to define extra parameters in the external_flash_texts.
+     * @param  string  $display_type  Display type
+     * @param  string  $image  Image to display.
+     * @param  string  $message  The message parameter that needs to be set.
+     * @param  string  $title  Title of the popup window.
+     * @param  string  $url  The url parameter that needs to be set.
+     * @param  string  $url_message  The message of the url parameter that needs to be set.
+     * @param  int  $user_id  The user id of the user that will receive the alert
      * @return JsonResponse
      */
     public static function imageAlertUser(string $bubble_key, string $display_type, string $image, string $message, string $title, string $url, string $url_message, int $user_id)
@@ -321,13 +336,14 @@ trait RCONConnection
 
     /**
      * Send an alert to all online users.
-     * @param string $bubble_key Key of the bubble alert to define extra parameters in the external_flash_texts.
-     * @param string $display_type Display type
-     * @param string $image Image to display.
-     * @param string $message The message parameter that needs to be set.
-     * @param string $title Title of the popup window.
-     * @param string $url The url parameter that needs to be set.
-     * @param string $url_message The message of the url parameter that needs to be set.
+     *
+     * @param  string  $bubble_key  Key of the bubble alert to define extra parameters in the external_flash_texts.
+     * @param  string  $display_type  Display type
+     * @param  string  $image  Image to display.
+     * @param  string  $message  The message parameter that needs to be set.
+     * @param  string  $title  Title of the popup window.
+     * @param  string  $url  The url parameter that needs to be set.
+     * @param  string  $url_message  The message of the url parameter that needs to be set.
      * @return JsonResponse
      */
     public static function imageHotelAlert(string $bubble_key, string $display_type, string $image, string $message, string $title, string $url, string $url_message)
@@ -348,9 +364,10 @@ trait RCONConnection
 
     /**
      * Add progress to an user achievement.
-     * @param int $achievement_id ID of the achievement.
-     * @param int $progress Amount to progress.
-     * @param int $user_id User id of the player that needs an achievement progress.
+     *
+     * @param  int  $achievement_id  ID of the achievement.
+     * @param  int  $progress  Amount to progress.
+     * @param  int  $user_id  User id of the player that needs an achievement progress.
      * @return JsonResponse
      */
     public static function progressAchievement(int $achievement_id, int $progress, int $user_id)
@@ -367,9 +384,10 @@ trait RCONConnection
 
     /**
      * Add a room event into a room.
-     * @param string $message Message that will have the room event
-     * @param int $room_id Room id of the room that will have the event
-     * @param int $user_id
+     *
+     * @param  string  $message  Message that will have the room event
+     * @param  int  $room_id  Room id of the room that will have the event
+     * @param  int  $user_id
      * @return JsonResponse
      */
     public static function createRoomEvent(string $message, int $room_id, int $user_id)
@@ -386,9 +404,10 @@ trait RCONConnection
 
     /**
      * Send a gift to an user.
-     * @param int $itemid Item id to gift.
-     * @param string $message Message to include in the gift.
-     * @param int $user_id User id of the player that receives a gift.
+     *
+     * @param  int  $itemid  Item id to gift.
+     * @param  string  $message  Message to include in the gift.
+     * @param  int  $user_id  User id of the player that receives a gift.
      * @return JsonResponse
      */
     public static function sendGift(int $itemid, string $message, int $user_id)
@@ -405,8 +424,9 @@ trait RCONConnection
 
     /**
      * Send room bundle to an user.
-     * @param int $catalog_page Id of the catalog page to buy.
-     * @param int $user_id User id of the player that will receive a room bundle.
+     *
+     * @param  int  $catalog_page  Id of the catalog page to buy.
+     * @param  int  $user_id  User id of the player that will receive a room bundle.
      * @return JsonResponse
      */
     public static function sendRoomBundle(int $catalog_page, int $user_id)
@@ -422,8 +442,9 @@ trait RCONConnection
 
     /**
      * Change the motto of an user.
-     * @param string $motto The motto to set.
-     * @param int $user_id The user id to change the motto for.
+     *
+     * @param  string  $motto  The motto to set.
+     * @param  int  $user_id  The user id to change the motto for.
      * @return JsonResponse
      */
     public static function setMotto(string $motto, int $user_id)
@@ -439,8 +460,9 @@ trait RCONConnection
 
     /**
      * Update an user rank.
-     * @param int $rank ID of the rank to set.
-     * @param int $user_id User id of the player to set the rank for.
+     *
+     * @param  int  $rank  ID of the rank to set.
+     * @param  int  $user_id  User id of the player to set the rank for.
      * @return JsonResponse
      */
     public static function setRank(int $rank, int $user_id)
@@ -455,7 +477,7 @@ trait RCONConnection
     }
 
     /**
-     * @param string $message The message to send to all staff online.
+     * @param  string  $message  The message to send to all staff online.
      * @return JsonResponse
      */
     public static function sendStaffAlert(string $message)
@@ -470,8 +492,9 @@ trait RCONConnection
 
     /**
      * Follow an user to another room.
-     * @param int $follow_id The user to stalk to.
-     * @param int $user_id User id of the player to stalk to another user.
+     *
+     * @param  int  $follow_id  The user to stalk to.
+     * @param  int  $user_id  User id of the player to stalk to another user.
      * @return JsonResponse
      */
     public static function stalkUser(int $follow_id, int $user_id)
@@ -486,10 +509,10 @@ trait RCONConnection
     }
 
     /**
-     * @param int $bubble_id Bubble type. -1 defaults to the user type.
-     * @param string $message The message to say.
-     * @param string $type Talk type to use: - talk - whisper - shout
-     * @param int $user_id User id of the player to talk.
+     * @param  int  $bubble_id  Bubble type. -1 defaults to the user type.
+     * @param  string  $message  The message to say.
+     * @param  string  $type  Talk type to use: - talk - whisper - shout
+     * @param  int  $user_id  User id of the player to talk.
      * @return JsonResponse
      */
     public static function talkUser(int $bubble_id, string $message, string $type, int $user_id)
@@ -506,7 +529,7 @@ trait RCONConnection
     }
 
     /**
-     * @param string $message Intern message
+     * @param  string  $message  Intern message
      * @return JsonResponse
      */
     public static function updateCatalog(string $message)
@@ -520,14 +543,14 @@ trait RCONConnection
     }
 
     /**
-     * @param int $achievement_score Add achievement score.
-     * @param int $block_camera_follow Optional: Block camera following.
-     * @param int $block_following Optional: Block following in the hotel.
-     * @param int $block_friendrequests Optional: Block friendrequests in the hotel.
-     * @param int $block_roominvites Optional: Block receiving room invites in the hotel.
-     * @param string $look Optional: Look of the player.
-     * @param int $old_chat Optional: Use new chat.
-     * @param int $user_id User id of the player to update.
+     * @param  int  $achievement_score  Add achievement score.
+     * @param  int  $block_camera_follow  Optional: Block camera following.
+     * @param  int  $block_following  Optional: Block following in the hotel.
+     * @param  int  $block_friendrequests  Optional: Block friendrequests in the hotel.
+     * @param  int  $block_roominvites  Optional: Block receiving room invites in the hotel.
+     * @param  string  $look  Optional: Look of the player.
+     * @param  int  $old_chat  Optional: Use new chat.
+     * @param  int  $user_id  User id of the player to update.
      * @return JsonResponse
      */
     public static function updateUser(int $achievement_score, int $block_camera_follow, int $block_following, int $block_friendrequests, int $block_roominvites, string $look, int $old_chat, int $user_id)
@@ -551,7 +574,7 @@ trait RCONConnection
     }
 
     /**
-     * @param string $message Intern message
+     * @param  string  $message  Intern message
      * @return JsonResponse
      */
     public static function updateWordFilter(string $message)

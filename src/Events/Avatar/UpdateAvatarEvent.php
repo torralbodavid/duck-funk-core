@@ -13,7 +13,7 @@ class UpdateAvatarEvent
     /**
      * Create a new event instance.
      *
-     * @param array $request
+     * @param  array  $request
      */
     public function __construct(array $request)
     {
