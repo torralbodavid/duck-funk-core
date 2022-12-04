@@ -20,7 +20,7 @@ class FacebookLoginCalled
     /**
      * Handle the event.
      *
-     * @param SocialiteWasCalled $event
+     * @param  SocialiteWasCalled  $event
      * @return void
      */
     public function handle(SocialiteWasCalled $event)
