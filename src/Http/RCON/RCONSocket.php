@@ -11,7 +11,8 @@ class RCONSocket
 
     /**
      * RCONSocket constructor.
-     * @param array $command
+     *
+     * @param  array  $command
      */
     public function __construct(array $command)
     {
